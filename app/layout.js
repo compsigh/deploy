@@ -2,7 +2,7 @@ import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const ProtoMono = localFont({
   src: [
@@ -26,10 +26,11 @@ const ProtoMono = localFont({
       weight: '600',
       style: 'normal'
     }
-  ]
+  ],
+  variable: '--font-proto-mono'
 })
 
-const IAWriterQuattro = localFont({
+const iAWriterQuattro = localFont({
   src: [
     {
       path: './fonts/iAWriterQuattroS-Regular.woff2',
@@ -51,7 +52,8 @@ const IAWriterQuattro = localFont({
       weight: '700',
       style: 'italic'
     }
-  ]
+  ],
+  variable: '--font-ia-writer-quattro'
 })
 
 export const metadata = {
@@ -61,8 +63,8 @@ export const metadata = {
 
 export default function RootLayout ({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${ProtoMono.variable} ${iAWriterQuattro.variable}`}>
+      <body>{children}</body>
     </html>
   )
 }

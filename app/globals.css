@@ -3,11 +3,14 @@
   --border-radius: 12px;
 
   /* Typography */
-  --font-headers: 'Proto Mono', var(--font-mono);
-  --font-body: 'iA Writer Quattro S', var(--font-mono);
+  --font-headers: var(--font-proto-mono), var(--font-mono);
+  --font-body: var(--font-ia-writer-quattro), var(--font-mono);
   --font-mono: ui-monospace, 'Menlo', 'Monaco', 'Cascadia Mono', 'Segoe UI Mono','Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --primary-text: hsb(0, 0, 100);
+  /* Colors */
+  --notion: hsl(0deg, 0%, 100%);
+  --c:      hsl(0deg, 0%, 0%);
+
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
 
@@ -39,7 +42,7 @@
 
 /* Grid */
 body {
-  color: rgb(var(--primary-text));
+  background-color: var(--c);
   background-image: url('/gridrect.svg');
   background-repeat: repeat;
 }
@@ -60,4 +63,24 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+/* Text */
+body {
+  color: var(--notion);
+}
+
+h1,
+h2 {
+  font-family: var(--font-headers);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
 }
