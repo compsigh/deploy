@@ -1,7 +1,58 @@
+import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
+
+const ProtoMono = localFont({
+  src: [
+    {
+      path: './fonts/ProtoMono-Light.woff',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: './fonts/ProtoMono-Regular.woff',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: './fonts/ProtoMono-Medium.woff',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: './fonts/ProtoMono-SemiBold.woff',
+      weight: '600',
+      style: 'normal'
+    }
+  ]
+})
+
+const IAWriterQuattro = localFont({
+  src: [
+    {
+      path: './fonts/IAWriterQuattroS-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: './fonts/IAWriterQuattroS-Bold.woff2',
+      weight: '700',
+      style: 'normal'
+    },
+    {
+      path: './fonts/IAWriterQuattroS-Italic.woff2',
+      weight: '400',
+      style: 'italic'
+    },
+    {
+      path: './fonts/IAWriterQuattroS-BoldItalic.woff2',
+      weight: '700',
+      style: 'italic'
+    }
+  ]
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +62,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={ProtoMono.className}>{children}</body>
     </html>
   )
 }
