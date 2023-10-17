@@ -74,11 +74,12 @@ h1,
 h2 {
   font-family: var(--font-headers);
   font-weight: 600;
-  line-height: 1.5;
+  line-height: 150%;
 }
 
 h1 {
   font-size: 3rem;
+  text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
 }
 
 h2 {
