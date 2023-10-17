@@ -32,22 +32,22 @@ const ProtoMono = localFont({
 const IAWriterQuattro = localFont({
   src: [
     {
-      path: './fonts/IAWriterQuattroS-Regular.woff2',
+      path: './fonts/iAWriterQuattroS-Regular.woff2',
       weight: '400',
       style: 'normal'
     },
     {
-      path: './fonts/IAWriterQuattroS-Bold.woff2',
+      path: './fonts/iAWriterQuattroS-Bold.woff2',
       weight: '700',
       style: 'normal'
     },
     {
-      path: './fonts/IAWriterQuattroS-Italic.woff2',
+      path: './fonts/iAWriterQuattroS-Italic.woff2',
       weight: '400',
       style: 'italic'
     },
     {
-      path: './fonts/IAWriterQuattroS-BoldItalic.woff2',
+      path: './fonts/iAWriterQuattroS-BoldItalic.woff2',
       weight: '700',
       style: 'italic'
     }
