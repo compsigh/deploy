@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  padding: 6rem;
   min-height: 100vh;
+}
+
+.title {
+  padding-top: 5rem;
+  padding-left: 6.25rem;
 }
 
 .description {
@@ -190,4 +193,25 @@
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
+}
+
+/* Play Button Animation */
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+span.playbutton {
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
 }
