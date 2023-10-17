@@ -30,7 +30,6 @@
     "react-dom": "^18",
     "next": "13.5.5",
     "next-auth": "^0.0.0-manual.d0952342",
-    "sass": "^1.58.3",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
