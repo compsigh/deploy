@@ -128,6 +128,11 @@ export default function Home () {
           </blockquote>
         </section>
       </section>
+
+      <footer className={styles.footer}>
+        <h2>Theory will only take you so far.</h2>
+        <h2>Good luck, have fun.</h2>
+      </footer>
     </main>
   )
 }

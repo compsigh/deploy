@@ -40,6 +40,11 @@ section.details > section > * {
   font-family: var(--font-proto-mono);
 }
 
+.footer {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
 .main {
   display: flex;
   flex-direction: column;
