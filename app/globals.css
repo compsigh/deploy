@@ -8,6 +8,7 @@
   /* Colors */
   --notion: hsl(0deg, 0%, 100%);
   --c:      hsl(0deg, 0%, 0%);
+  --gleam:  hsl(41deg, 98%, 59%);
 }
 
 /* Background Grid */
@@ -31,7 +32,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--gleam);
   text-decoration: none;
 }
 
