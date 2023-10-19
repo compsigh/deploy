@@ -4,6 +4,7 @@ export default function Home () {
   return (
     <main className={styles.main}>
       <h1 className={styles.title}><span className={styles.playbutton}>► </span>DEPLOY/23</h1>
+      <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — compsigh&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
@@ -69,6 +70,7 @@ export default function Home () {
             <code>                Recognition on compsigh platforms</code>
             <code>PPL&apos;S CHOICE &gt;&gt; Cat-shaped pillow 🐱</code>
           </pre>
+          <p>Prize distribution will take place after the event.</p>
         </section>
 
         <section className={styles.agenda}>

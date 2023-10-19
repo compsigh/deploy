@@ -21,9 +21,12 @@ section.spaces,
 section.resources,
 p.description {
   width: 500px;
-  padding: 10px;
   margin: 0 80px;
   margin-bottom: 6.25rem;
+}
+
+p.description {
+  padding-top: 10px;
 }
 
 section.details > section > * {
@@ -54,7 +57,11 @@ section.details > section > * {
 
 .title {
   padding-top: 5rem;
-  padding-left: 6.25rem;
+  padding-left: 5rem;
+}
+
+.subtitle {
+  padding-left: 5rem;
 }
 
 .code {

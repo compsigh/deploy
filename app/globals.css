@@ -43,7 +43,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--font-headers);
   font-weight: 600;
   line-height: 150%;
@@ -58,8 +59,13 @@ h2 {
   font-size: 2rem;
 }
 
+h3 {
+  font-size: 1.5rem;
+}
+
 p {
   font-family: var(--font-body);
+  line-height: 150%;
 }
 
 /* List Styles */
