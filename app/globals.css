@@ -39,6 +39,7 @@ a {
 /* Text Styles */
 body {
   color: var(--notion);
+  text-align: justify;
 }
 
 h1,
