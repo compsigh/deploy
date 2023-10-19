@@ -12,16 +12,10 @@ export default function Home () {
           <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome to participate.</p>
           <p>Teams (no solo participants) can have a maximum of four members.</p>
           <p><strong>All team members must present</strong> their projects in order for the entire team to be eligible for victory. Only one team member will be required to submit the project on behalf of the team.</p>
-          <div className='block'>
-            <p>Registration Deadline</p>
-            <p>&gt;&gt;</p>
-            <p>October 27th, 6pm</p>
-          </div>
-          <div className='block'>
-            <p>Team Declaration Deadline</p>
-            <p>&gt;&gt;</p>
-            <p>October 27th, 11pm</p>
-          </div>
+          <pre className={styles.block}>
+            <code>Registration Deadline     &gt;&gt; October 27th, 6pm</code>
+            <code>Team Declaration Deadline &gt;&gt; October 27th, 11pm</code>
+          </pre>
         </section>
 
         <section className={styles.submissions}>
@@ -63,123 +57,45 @@ export default function Home () {
         <section className={styles.prizes}>
           <h2>Prizes</h2>
           <p>All teammates of the winning teams will receive the prizes below:</p>
-          <div className='block'>
-            <p>1st Place</p>
-            <p>&gt;&gt;</p>
-            <p>
-              $100
-              <br />
-              Recognition on compsigh platforms
-              <br />
-              Discord Nitro
-              <br />
-              <strong>Access to club AI resources for the rest of the semester</strong>
-            </p>
-          </div>
-          <div className='block'>
-            <p>2nd Place</p>
-            <p>&gt;&gt;</p>
-            <p>
-              $50
-              <br />
-              Recognition on compsigh platforms
-              <br />
-              Discord Nitro
-            </p>
-          </div>
-          <div className='block'>
-            <p>3rd Place</p>
-            <p>&gt;&gt;</p>
-            <p>
-              $25
-              <br />
-              Recognition on compsigh platforms
-            </p>
-          </div>
-          <div className='block'>
-            <p>PPL&apos;S CHOICE</p>
-            <p>&gt;&gt;</p>
-            <p>
-              Cat-shaped pillow 🐱
-            </p>
-          </div>
+          <pre className={styles.block}>
+            <code>1st Place    &gt;&gt; $100</code>
+            <code>                Semester access to club AI resources</code>
+            <code>                Discord Nitro</code>
+            <code>                Recognition on compsigh platforms</code>
+            <code>2nd Place    &gt;&gt; $50</code>
+            <code>                Discord Nitro</code>
+            <code>                Recognition on compsigh platforms</code>
+            <code>3rd Place    &gt;&gt; $25</code>
+            <code>                Recognition on compsigh platforms</code>
+            <code>PPL&apos;S CHOICE &gt;&gt; Cat-shaped pillow 🐱</code>
+          </pre>
         </section>
 
         <section className={styles.agenda}>
           <h2>Agenda</h2>
           <p>Friday, October 27th</p>
-          <div className='block'>
-            <p>6pm</p>
-            <p>—</p>
-            <p>Check-in // Registration Deadline</p>
-          </div>
-          <div className='block'>
-            <p>6:30pm</p>
-            <p>—</p>
-            <p>Opening Ceremony</p>
-          </div>
-          <div className='block'>
-            <p>7pm</p>
-            <p>—</p>
-            <p>Dinner</p>
-          </div>
-          <div className='block'>
-            <p>8pm</p>
-            <p>—</p>
-            <p>Hacking Begins</p>
-          </div>
-          <div className='block'>
-            <p>11pm</p>
-            <p>—</p>
-            <p>Team Declaration Deadline</p>
-          </div>
+          <pre className={styles.block}>
+            <code>6pm    — Check-in // Registration Deadline</code>
+            <code>6:30pm — Opening Ceremony</code>
+            <code>7pm    — Dinner</code>
+            <code>8pm    — Hacking Begins</code>
+            <code>11pm   — Team Declaration Deadline</code>
+          </pre>
           <p>Saturday, October 28th</p>
-          <div className='block'>
-            <p>TBD</p>
-            <p>—</p>
-            <p>Mario Kart</p>
-          </div>
-          <div className='block'>
-            <p>TBD</p>
-            <p>—</p>
-            <p>Just Dance</p>
-          </div>
-          <div className='block'>
-            <p>TBD</p>
-            <p>—</p>
-            <p>Super Smash Bros</p>
-          </div>
-          <div className='block'>
-            <p>TBD</p>
-            <p>—</p>
-            <p>Kahoot</p>
-          </div>
+          <pre className={styles.block}>
+            <code>TBD    — Mario Kart</code>
+            <code>TBD    — Just Dance</code>
+            <code>TBD    — Super Smash Bros</code>
+            <code>TBD    — Kahoot</code>
+          </pre>
           <p>Sunday, October 29th</p>
-          <div className='block'>
-            <p>1pm</p>
-            <p>—</p>
-            <p>Check-in // Project Submission Deadline</p>
-          </div>
-          <div className='block'>
-            <p>1:30pm</p>
-            <p>—</p>
-            <p>Presentations Begin</p>
-          </div>
-          <div className='block'>
-            <p>2:30pm</p>
-            <p>—</p>
-            <p>Intermission</p>
-          </div>
-          <div className='block'>
-            <p>3pm</p>
-            <p>—</p>
-            <p>Presentations Continue</p>
-          </div>
-          <div className='block'>
-            <p>4pm</p>
-            <p>—</p>
-            <p>Results Announced</p>
-          </div>
+          <pre className={styles.block}>
+            <code>1pm    — Check-in // Project Submission Deadline</code>
+            <code>1:30pm — Presentations Begin</code>
+            <code>2:30pm — Intermission</code>
+            <code>3pm    — Presentations Continue</code>
+            <code>4pm    — Results Announced</code>
+          </pre>
         </section>
 
         <section className={styles.spaces}>

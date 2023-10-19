@@ -59,3 +59,16 @@ h2 {
 p {
   font-family: var(--font-body);
 }
+
+/* List Styles */
+li {
+  font-family: var(--font-proto-mono);
+  list-style-type: none;
+  text-indent: calc(-1em - 2px);
+  line-height: 1.5;
+}
+
+li::before {
+  content: ">";
+  margin-right: 0.5em;
+}

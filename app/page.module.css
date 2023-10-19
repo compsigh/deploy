@@ -2,6 +2,15 @@ section.details {
   display: flex;
   flex-direction: column;
 }
+
+section.details > section:nth-child(even) {
+  margin-left: auto;
+}
+
+section.details > section:nth-child(odd) {
+  margin-right: auto;
+}
+
 section.eligibility,
 section.submissions,
 section.presentations,
@@ -17,12 +26,18 @@ p.description {
   margin-bottom: 6.25rem;
 }
 
-section.details > section:nth-child(even) {
-  margin-left: auto;
+section.details > section > * {
+  margin-bottom: 0.625rem;
 }
 
-section.details > section:nth-child(odd) {
-  margin-right: auto;
+.block {
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.block code {
+  display: block;
+  font-family: var(--font-proto-mono);
 }
 
 .main {
