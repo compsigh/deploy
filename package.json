@@ -26,10 +26,10 @@
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-standard": "^5.0.0",
+    "next": "13.5.5",
+    "next-auth": "^4.24.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.5",
-    "next-auth": "^0.0.0-manual.d0952342",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
