@@ -1,0 +1,22 @@
+ul.todos {
+  margin: 10px 80px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  padding-top: 5rem;
+  padding-left: 5rem;
+}
+
+.subtitle {
+  margin-left: 5rem;
+}
+
+.todos button {
+  margin-top: 5rem;
+}
