@@ -60,6 +60,12 @@ export default function Home () {
           <p>Teams will be have the opportunity to earn points for good UI/UX, Presentation, and Hardware.</p>
         </section>
 
+        <section className={styles.judging}>
+          <h2>Judging</h2>
+          <p>Judges are sourced from a wide array of professors from the College of Arts and Sciences & the School of Management.</p>
+          <p>Event organizers will not participate directly in judging — with the exception of tiebreakers — but may adjust points as needed.</p>
+        </section>
+
         <section className={styles.prizes}>
           <h2>Prizes</h2>
           <p>All teammates of the winning teams will receive the prizes below:</p>
