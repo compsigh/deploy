@@ -1,4 +1,4 @@
-button.login {
+button.button {
   border: none;
   cursor: pointer;
 
@@ -24,7 +24,7 @@ button.login {
   flex-grow: 0;
 }
 
-button.login:hover {
+button.button:hover {
   background: var(--c);
   color: var(--notion);
   box-shadow: 0 0 0 2px var(--notion);
