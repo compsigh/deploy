@@ -7,7 +7,7 @@ export default function Home () {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.title}><span className={styles.playbutton}>► </span>DEPLOY/23</h1>
-        <LogInButton />
+        <LogInButton callbackUrl='/dashboard' />
       </header>
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
