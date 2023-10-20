@@ -1,10 +1,13 @@
 import styles from './Home.module.css'
 
+import LogInButton from '@/components/LogInButton'
+
 export default function Home () {
   return (
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.title}><span className={styles.playbutton}>► </span>DEPLOY/23</h1>
+        <LogInButton />
       </header>
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
@@ -136,6 +139,7 @@ export default function Home () {
       <footer className={styles.footer}>
         <h2>Theory will only take you so far.</h2>
         <h2>Good luck, have fun.</h2>
+        <LogInButton />
       </footer>
     </main>
   )

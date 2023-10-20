@@ -1,0 +1,31 @@
+button.login {
+  border: none;
+  cursor: pointer;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 60px;
+
+  background: var(--notion);
+  color: var(--c);
+
+  font-family: var(--font-proto-mono);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5em;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+button.login:hover {
+  background: var(--c);
+  color: var(--notion);
+  box-shadow: 0 0 0 2px var(--notion);
+}
