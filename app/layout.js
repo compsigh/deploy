@@ -1,3 +1,5 @@
+import AuthWrapper from '@/components/AuthWrapper'
+
 import localFont from 'next/font/local'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -63,8 +65,10 @@ export const metadata = {
 
 export default function RootLayout ({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${ProtoMono.variable} ${iAWriterQuattro.variable}`}>
-      <body>{children}</body>
-    </html>
+    <AuthWrapper>
+      <html lang="en" className={`${inter.variable} ${ProtoMono.variable} ${iAWriterQuattro.variable}`}>
+        <body>{children}</body>
+      </html>
+    </AuthWrapper>
   )
 }
