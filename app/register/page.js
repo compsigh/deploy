@@ -5,7 +5,7 @@ import Script from 'next/script'
 // Auth imports
 import { getSessionData } from '@/functions/user-management'
 
-import NamedRedirect from '@/components/NamedRedirect'
+import ParamClearer from '@/components/ParamClearer'
 
 export default async function Register () {
   const user = await getSessionData()
@@ -14,7 +14,7 @@ export default async function Register () {
 
   return (
     <>
-      <NamedRedirect user={user} />
+      <ParamClearer destination='/register' />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
         data-tally-src="https://tally.so/embed/w7KEWZ?transparentBackground=1&dynamicHeight=1"
