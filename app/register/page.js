@@ -7,7 +7,7 @@ import { getSessionData } from '@/functions/user-management'
 
 import NamedRedirect from '@/components/NamedRedirect'
 
-export default async function Dashboard () {
+export default async function Register () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
@@ -15,10 +15,6 @@ export default async function Dashboard () {
   return (
     <>
       <NamedRedirect user={user} />
-      <h1>Authenticated as:</h1>
-      <p>Name: {user.name}</p>
-      <p>Email: {user.email}</p>
-
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
         data-tally-src="https://tally.so/embed/w7KEWZ?transparentBackground=1&dynamicHeight=1"
