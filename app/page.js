@@ -1,9 +1,11 @@
-import styles from './page.module.css'
+import styles from './Home.module.css'
 
 export default function Home () {
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}><span className={styles.playbutton}>► </span>DEPLOY/23</h1>
+      <header className={styles.header}>
+        <h1 className={styles.title}><span className={styles.playbutton}>► </span>DEPLOY/23</h1>
+      </header>
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
       <section className={styles.details}>

@@ -13,7 +13,6 @@
 
 /* Background Grid */
 body {
-  background-color: var(--c);
   background-image: url('/gridrect.svg');
   background-repeat: repeat;
 }
@@ -38,6 +37,7 @@ a {
 
 /* Text Styles */
 body {
+  background-color: var(--c);
   color: var(--notion);
   text-align: justify;
 }
