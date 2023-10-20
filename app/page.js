@@ -13,6 +13,11 @@ export default function Home () {
 
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — compsigh&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
+        <div className={styles['video-container']}>
+          <video className={styles.video} src="trailer teaser.mp4" autoPlay muted loop type="video/mp4"></video>
+        <div className={styles.overlay}>Trailer coming soon</div>
+        </div>
+
         <section className={styles.eligibility}>
           <h2>Eligibility</h2>
           <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome to participate.</p>
