@@ -145,7 +145,7 @@ export default function Home () {
       <footer className={styles.footer}>
         <h2>Theory will only take you so far.</h2>
         <h2>Good luck, have fun.</h2>
-        <LogInButton />
+        <LogInButton callbackUrl='/dashboard' />
       </footer>
     </main>
   )
