@@ -62,8 +62,8 @@ export default function Home () {
 
         <section className={styles.judging}>
           <h2>Judging</h2>
-          <p>Judges are sourced from a wide array of professors from the College of Arts and Sciences & the School of Management.</p>
-          <p>Event organizers will not participate directly in judging — with the exception of tiebreakers — but may adjust points as needed.</p>
+          <p>Judges are invited from a wide array of professors from the College of Arts and Sciences & the School of Management.</p>
+          <p>Event organizers will not participate directly in judging — with the exception of any tiebreakers — but may adjust points as needed.</p>
         </section>
 
         <section className={styles.prizes}>
@@ -126,18 +126,21 @@ export default function Home () {
 
         <section className={styles.resources}>
           <h2>Remarks & Resources</h2>
-          <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event. To get the most out of the experience, here are a few remarks & resources we&apos;d like to leave you with:</p>
+          <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event. To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>
-            <p>Challenge yourself: in 72 hours, I learned more about React & Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</p>
-            <p>— <strong>Edward</strong></p>
+            <p><em>Challenge yourself: in 72 hours, I learned more about React & Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</em></p>
           </blockquote>
           <blockquote>
-            <p>Check out <a href='https://www.figma.com/community/file/1144013421600974167'>GitHub&apos;s design system for hackathons</a>.</p>
-            <p>— <strong>Edward</strong></p>
+            <p><em>Don&apos;t be afraid to mess up or not having something functioning as long as you took something out of it!</em></p>
           </blockquote>
           <blockquote>
-            <p>Document your process! Not just for the presentations, but for the camera roll too. :)</p>
-            <p>— <strong>Edward</strong></p>
+            <p><em>Go in with a plan to learn, and have fun. It&apos;s a good place to network, meet new people, and explore different opportunities as well.</em></p>
+          </blockquote>
+          <blockquote>
+            <p><em>Check out <a href='https://www.figma.com/community/file/1144013421600974167'>GitHub&apos;s design system for hackathons</a>.</em></p>
+          </blockquote>
+          <blockquote>
+            <p><em>Document your process! Not just for the presentations, but for the camera roll too. :)</em></p>
           </blockquote>
         </section>
       </section>
