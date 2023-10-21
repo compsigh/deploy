@@ -142,7 +142,7 @@ export default function Home () {
         </section>
 
         <section className={styles.resources}>
-          <h2>Remarks & Resources</h2>
+          <h2>Resources</h2>
           <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event. To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>
             <p><em>Challenge yourself: in 72 hours, I learned more about React & Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</em></p>

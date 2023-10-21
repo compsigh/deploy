@@ -1,5 +1,7 @@
+// Component imports
 import AuthWrapper from '@/components/AuthWrapper'
 
+// Style imports
 import localFont from 'next/font/local'
 import './globals.css'
 
@@ -55,9 +57,19 @@ const iAWriterQuattro = localFont({
   variable: '--font-ia-writer-quattro'
 })
 
+let metadataBase
+if (process.env.VERCEL_URL)
+  metadataBase = `https://${process.env.VERCEL_URL}`
+else
+  metadataBase = `http://localhost:${process.env.PORT || 3000}`
+
 export const metadata = {
+  metadataBase,
   title: 'DEPLOY/23',
-  description: 'DEPLOY/23 — compsigh\'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.'
+  description: 'DEPLOY/23 — compsigh\'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.',
+  openGraph: {
+    images: '/banner-grid.png'
+  }
 }
 
 export default function RootLayout ({ children }) {
