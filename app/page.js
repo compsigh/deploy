@@ -1,5 +1,5 @@
+import Link from 'next/link'
 import styles from './Home.module.css'
-
 import Button from '@/components/Button'
 
 export default function Home () {
@@ -12,7 +12,7 @@ export default function Home () {
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
       <section className={styles.details}>
-        <p className={styles.description}>DEPLOY/23 — compsigh&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
+        <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
         <div className={styles['video-container']}>
           <video className={styles.video} src="trailer teaser.mp4" autoPlay muted loop type="video/mp4"></video>
         <div className={styles.overlay}>Trailer coming soon</div>
@@ -20,9 +20,10 @@ export default function Home () {
 
         <section className={styles.eligibility}>
           <h2>Eligibility</h2>
-          <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome to participate.</p>
+          <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome and encouraged to participate.</p>
+          <p>Anyone is welcome to come hang out and hack, but only those that register for the event will be eligible for victory.</p>
           <p>Teams (no solo participants) can have a maximum of four members.</p>
-          <p><strong>All team members must present</strong> their projects in order for the entire team to be eligible for victory. Only one team member will be required to submit the project on behalf of the team.</p>
+          <p><strong>All team members must present</strong> their project in order for the entire team to be eligible for victory.</p>
           <pre className={styles.block}>
             <code>Registration Deadline     &gt;&gt; October 27th, 6pm</code>
             <code>Team Declaration Deadline &gt;&gt; October 27th, 11pm</code>
@@ -31,6 +32,7 @@ export default function Home () {
 
         <section className={styles.submissions}>
           <h2>Submissions</h2>
+          <p>Only one team member will be required to submit the project on behalf of the team.</p>
           <p>Project submissions are not limited to a theme, and the mediums are open-ended. We suggest one of the following:</p>
           <ul>
             <li>Mobile app</li>
@@ -40,21 +42,22 @@ export default function Home () {
             <li>Design system</li>
             <li>Hardware/robotics</li>
           </ul>
-          <p>For any submission, <strong>before you present your project</strong>, please ensure it is open-source or otherwise publicly accessible. You&apos;re welcome to keep it private until after project submissions close.</p>
+          <p>For any submission, <strong>before you present your project</strong>, please ensure it is open-source or otherwise publicly accessible. You&apos;re welcome to keep it private until project submissions close.</p>
+          <p>Submissions don&apos;t have to be complete. In that case, what would be interesting to hear is what worked, what didn&apos;t, and how you would continue to develop the project.</p>
         </section>
 
         <section className={styles.presentations}>
           <h2>Presentations</h2>
-          <p>Teams will have a maximum of five minutes to present. Teams are welcome to spend the majority of that time on background, a live demo, or whichever way they see fit. We highly encourage creative presentation formats. Some ideas:</p>
+          <p>When your team submits your project, you&apos;ll be asked to input:</p>
+          <ul>
+            <li>A team name</li>
+            <li>A song to walk out on stage to (the walkout won&apos;t count against time)</li>
+          </ul>
+          <p>Teams will have a <strong>maximum of five minutes</strong> to present. You&apos;re welcome to spend the majority of that time on background, a live demo, or whichever way you see fit. We highly encourage creative presentation formats. Some ideas:</p>
           <ul>
             <li>Fictitious product launch trailer</li>
             <li>Skit between users and problem solvers</li>
             <li>Audience interaction (though remember to keep time in mind)</li>
-          </ul>
-          <p>When teams submit their projects, they&apos;ll be able to input:</p>
-          <ul>
-            <li>A team name</li>
-            <li>A song to walk out on stage to (the walkout won&apos;t count against time)</li>
           </ul>
         </section>
 
@@ -67,7 +70,7 @@ export default function Home () {
 
         <section className={styles.judging}>
           <h2>Judging</h2>
-          <p>Judges are invited from a wide array of professors from the College of Arts and Sciences & the School of Management.</p>
+          <p>An array of professors from the CS, design, and engineering departments will be joining us on Sunday to watch project presentations and assess them in the categories mentioned above.</p>
           <p>Event organizers will not participate directly in judging — with the exception of any tiebreakers — but may adjust points as needed.</p>
         </section>
 
@@ -95,7 +98,7 @@ export default function Home () {
           <pre className={styles.block}>
             <code>6pm    — Check-in // Registration Deadline</code>
             <code>6:30pm — Opening Ceremony</code>
-            <code>7pm    — Dinner</code>
+            <code>7pm    — Dinner (provided)</code>
             <code>8pm    — Hacking Begins</code>
             <code>11pm   — Team Declaration Deadline</code>
           </pre>
@@ -116,16 +119,25 @@ export default function Home () {
           </pre>
         </section>
 
+        <section className={styles.checkin}>
+          <h2>Check-in</h2>
+          <p>During check-in on Friday, we&apos;ll ask for:</p>
+          <ul>
+            <li>Your Hacker ID, which you&apos;ll see on the dashboard after registering</li>
+            <li>A picture of you — this is for presentations on Sunday, but let us know if you wouldn&apos;t be comfortable doing this</li>
+          </ul>
+        </section>
+
         <section className={styles.spaces}>
           <h2>Breakout Spaces</h2>
-          <p>The following rooms will be available throughout the weekend for teams to work in:</p>
+          <p>These rooms will be available throughout the weekend for teams to work in:</p>
           <ul>
             <li>LS 103</li>
             <li>LS 209</li>
             <li>LS 210</li>
             <li>LS 303</li>
-            <li>UC 4th Floor Lounge</li>
             <li>UC 402/403</li>
+            <li>UC 4th Floor Lounge</li>
           </ul>
         </section>
 
