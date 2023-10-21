@@ -80,3 +80,29 @@ li::before {
   content: ">";
   margin-right: 0.5em;
 }
+
+li.back::before {
+  content: "<";
+  margin-right: 0.5em;
+}
+
+/* Play Button Animation */
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+span.playbutton {
+  animation-name: fade;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}

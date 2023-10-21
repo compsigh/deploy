@@ -17,14 +17,16 @@ export default async function Dashboard () {
 
   return (
     <main className={styles.main}>
-        <h1 className={styles.title}>Dashboard</h1>
-        <h2 className={styles.subtitle}>Things to do, resources, and other bits</h2>
+      <h1 className={styles.title}><span className='playbutton'>► </span>Welcome, Hacker</h1>
+
       <ul className={styles.todos}>
         <li><Button text='Register' type='link' destination='/register' user={user} /></li>
-        <li>Team Declaration (coming soon)</li>
-        <li><Button text='compsigh Discord' type='link' destination='https://discord.compsigh.so' /></li>
-        <li><Button text="GitHub's design system for hackathons" type='link' destination='https://www.figma.com/community/file/1144013421600974167' /></li>
-        <Button text='Back to DEPLOY/23' type='button' destination='/' />
+        <li>Declare your team (coming soon)</li>
+        <li>Submit your project (coming soon)</li>
+        <br />
+        <li><Button text='Discord' type='link' destination='https://discord.compsigh.so' /></li>
+        <br />
+        <li className='back'><Button text='Back to DEPLOY/23' type='link' destination='/' /></li>
       </ul>
     </main>
   )
