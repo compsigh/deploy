@@ -15,7 +15,14 @@ export default async function Register () {
 
   return (
     <>
-      <ParamsValidator expect={['firstName', 'lastName', 'email']} redirect='/dashboard' />
+      <ParamsValidator
+        expect={{
+          firstName: user.name.split(' ')[0],
+          lastName: user.name.split(' ')[1],
+          email: user.email
+        }}
+        redirect='/dashboard'
+      />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
         data-tally-src="https://tally.so/embed/w7KEWZ?transparentBackground=1&dynamicHeight=1"
