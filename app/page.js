@@ -1,13 +1,23 @@
+// Style imports
 import Link from 'next/link'
 import styles from './Home.module.css'
 import Button from '@/components/Button'
 
-export default function Home () {
+// Auth imports
+import { getSessionData } from '@/functions/user-management'
+
+export default async function Home () {
+  const user = await getSessionData()
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.title}><span className='playbutton'>► </span>DEPLOY/23</h1>
-        <Button text='Register' type='login' />
+        {
+          user
+            ? <Button text='Dashboard' type='button' destination='/dashboard' />
+            : <Button text='Register' type='login' />
+        }
       </header>
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
 
