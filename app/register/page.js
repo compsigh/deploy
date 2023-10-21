@@ -5,7 +5,8 @@ import Script from 'next/script'
 // Auth imports
 import { getSessionData } from '@/functions/user-management'
 
-import ParamClearer from '@/components/ParamClearer'
+// Component imports
+import ParamsValidator from '@/components/ParamsValidator'
 
 export default async function Register () {
   const user = await getSessionData()
@@ -14,16 +15,16 @@ export default async function Register () {
 
   return (
     <>
-      <ParamClearer destination='/register' />
+      <ParamsValidator expect={['firstName', 'lastName', 'email']} redirect='/dashboard' />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
         data-tally-src="https://tally.so/embed/w7KEWZ?transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
-        height="146"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
+        height="300"
+        frameBorder="0"
+        marginHeight="0"
+        marginWidth="0"
         title="DEPLOY/23 Participant Registration">
       </iframe>
     </>
