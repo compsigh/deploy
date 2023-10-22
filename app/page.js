@@ -52,6 +52,7 @@ export default async function Home () {
             <li>Design system</li>
             <li>Hardware/robotics</li>
           </ul>
+          <p>Please do not start working on your project (coding/designing/building, but ideas are great) until after the Opening Keynote on Friday.</p>
           <p>For any submission, <strong>before you present your project</strong>, please ensure it is open-source or otherwise publicly accessible. You&apos;re welcome to keep it private until project submissions close.</p>
           <p>Submissions don&apos;t have to be complete. In that case, what would be interesting to hear is what worked, what didn&apos;t, and how you would continue to develop the project.</p>
         </section>
@@ -106,26 +107,26 @@ export default async function Home () {
           <h2>Agenda</h2>
           <p>Friday, October 27th</p>
           <pre className={styles.block}>
-            <code>6pm    — Check-in // Registration Deadline</code>
-            <code>6:30pm — Opening Ceremony</code>
-            <code>7pm    — Dinner (provided)</code>
-            <code>8pm    — Hacking Begins</code>
-            <code>11pm   — Team Declaration Deadline</code>
+            <code>6pm     — Check-in // Registration Deadline</code>
+            <code>6:30pm  — Opening Keynote</code>
+            <code>7pm     — Dinner (provided)</code>
+            <code>11pm    — Team Declaration Deadline</code>
           </pre>
           <p>Saturday, October 28th</p>
           <pre className={styles.block}>
-            <code>TBD    — Mario Kart</code>
-            <code>TBD    — Just Dance</code>
-            <code>TBD    — Super Smash Bros</code>
-            <code>TBD    — Kahoot</code>
+            <code>TBD     — Mario Kart</code>
+            <code>TBD     — Just Dance</code>
+            <code>TBD     — Super Smash Bros</code>
+            <code>TBD     — Kahoot</code>
           </pre>
           <p>Sunday, October 29th</p>
           <pre className={styles.block}>
-            <code>1pm    — Check-in // Project Submission Deadline</code>
-            <code>1:30pm — Presentations Begin</code>
-            <code>2:30pm — Intermission</code>
-            <code>3pm    — Presentations Continue</code>
-            <code>4pm    — Results Announced</code>
+            <code>12pm    — Project Submission Deadline</code>
+            <code>12:30pm — Check-in</code>
+            <code>1pm     — Presentations Begin</code>
+            <code>2pm     — Intermission</code>
+            <code>2:15pm  — Presentations Continue</code>
+            <code>4pm     — Closing Keynote // Results Announced</code>
           </pre>
         </section>
 
