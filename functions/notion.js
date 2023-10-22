@@ -33,7 +33,9 @@ export async function fetchParticipant (user) {
 export async function fetchTeam (participant) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
-  const teamPageId = participant.properties.Team.relation[0].id
+  const teamPageId = participant.properties.Team?.relation[0]?.id
+  if (!teamPageId)
+    return null
   const team = await notion.pages.retrieve({ page_id: teamPageId })
   return team
 }
@@ -44,7 +46,11 @@ export async function normalizeParticipant (participant) {
   const normalizedParticipant = {}
   const props = participant.properties
   const hackerId = props['Hacker ID'].unique_id.number
+  normalizedParticipant.hackerId = hackerId
+
   const team = await fetchTeam(participant)
+  if (!team)
+    return normalizedParticipant
   const teamName = team.properties.Name.title[0].text.content
   const teammateIds = team.properties.Members.relation
 
@@ -56,7 +62,6 @@ export async function normalizeParticipant (participant) {
     teammates.push(`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`)
   }
 
-  normalizedParticipant.hackerId = hackerId
   normalizedParticipant.teamName = teamName
   normalizedParticipant.teammates = teammates
 
