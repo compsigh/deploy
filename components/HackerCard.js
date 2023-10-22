@@ -4,6 +4,7 @@ import styles from './HackerCard.module.css'
 // TODO: referral system
 
 export default async function HackerCard ({ user }) {
+  console.log(user)
   return (
     <div className={styles.card}>
       <div className={styles.id}>

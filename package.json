@@ -18,6 +18,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@notionhq/client": "^2.2.13",
     "@types/react": "^18",
     "eslint": "8.37.0",
     "eslint-config-next": "latest",
