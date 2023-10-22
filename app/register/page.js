@@ -8,10 +8,17 @@ import { getSessionData } from '@/functions/user-management'
 // Component imports
 import ParamsValidator from '@/components/ParamsValidator'
 
+// Function imports
+import { fetchParticipant } from '@/functions/notion'
+
 export default async function Register () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
+
+  const registered = fetchParticipant(user)
+  if (registered)
+    redirect('/dashboard')
 
   return (
     <>

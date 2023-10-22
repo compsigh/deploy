@@ -1,6 +1,7 @@
 import styles from './HackerCard.module.css'
 
-// TODO: hook up with the Notion API to conditionally render the ID, team name (or "judge"), and teammates
+// TODO: conditional rendering for judges
+// TODO: team system
 // TODO: referral system
 
 export default async function HackerCard ({ user }) {
