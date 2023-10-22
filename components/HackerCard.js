@@ -4,25 +4,35 @@ import styles from './HackerCard.module.css'
 // TODO: referral system
 
 export default async function HackerCard ({ user }) {
-  console.log(user)
+  const hackerId = user.participant?.hackerId
+  const teamName = user.participant?.teamName
+  const teammates = user.participant?.teammates
+
   return (
     <div className={styles.card}>
-      <div className={styles.id}>
-        <p className={styles.prefix}>{prefixId('1')}</p>
-        <p className={styles.number}>1</p>
-      </div>
+      {
+        user.participant &&
+        <div className={styles.id}>
+          <p className={styles.prefix}>{prefixId(hackerId)}</p>
+          <p className={styles.number}>{hackerId}</p>
+        </div>
+      }
       <h3 className={styles.name}>{user.name}</h3>
 
-      <div className={styles['team-bar']}>
-        <h3 className={styles['team-name']}>Team DEPLOY</h3>
-      </div>
+      {
+        teamName &&
+        <>
+          <div className={styles['team-bar']}>
+            <h3 className={styles['team-name']}>Team {teamName}</h3>
+          </div>
 
-      <ul className={styles.teammates}>
-        <li><h4>Teammate 1</h4></li>
-        <li><h4>Teammate 2</h4></li>
-        <li><h4>Teammate 3</h4></li>
-        <li><h4>Teammate 4</h4></li>
-      </ul>
+          <ul className={styles.teammates}>
+            {
+              teammates.map(teammate => <li key={teammate}><h4>{teammate}</h4></li>)
+            }
+          </ul>
+        </>
+      }
 
       <p className={styles['referral-count']}>0 referrals</p>
     </div>
@@ -30,6 +40,7 @@ export default async function HackerCard ({ user }) {
 }
 
 function prefixId (id) {
+  id = id.toString()
   const prefix = '#000'
   return prefix.substring(0, prefix.length - id.length)
 }

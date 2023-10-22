@@ -11,16 +11,18 @@ import Button from '@/components/Button'
 import styles from './Dashboard.module.css'
 import HackerCard from '@/components/HackerCard'
 
-// SDK imports
-import { Client } from '@notionhq/client'
+// Function imports
+import { fetchParticipant, normalizeParticipant } from '@/functions/notion'
 
 export default async function Dashboard () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
-  const participant = await fetchParticipant(user)
-  if (participant)
+  let participant = await fetchParticipant(user)
+  if (participant) {
+    participant = await normalizeParticipant(participant)
     user.participant = participant
+  }
 
   return (
     <main className={styles.main}>
@@ -45,27 +47,4 @@ export default async function Dashboard () {
       </div>
     </main>
   )
-}
-
-async function fetchParticipant (user) {
-  const notion = new Client({ auth: process.env.NOTION_API_KEY })
-
-  let response = await notion.databases.query({
-    database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID
-  })
-  const participants = response.results
-
-  let hasMore = response.has_more
-  while (hasMore) {
-    response = await notion.databases.query({
-      database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID,
-      start_cursor: response.next_cursor
-    })
-    participants.push(...response.results)
-    hasMore = response.has_more
-  }
-
-  for (const participant of participants)
-    if (participant.properties.Email.title[0].text.content === user.email)
-      return participant
 }
