@@ -175,7 +175,11 @@ export default async function Home () {
       <footer className={styles.footer}>
         <h2>Theory will only take you so far.</h2>
         <h2>Good luck, have fun.</h2>
-        <Button text='Register' type='login' />
+        {
+          user
+            ? <Button text='Dashboard' type='button' destination='/dashboard' />
+            : <Button text='Register' type='login' />
+        }
       </footer>
     </main>
   )
