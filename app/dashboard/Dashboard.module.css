@@ -13,8 +13,13 @@ ul.todos {
   padding-left: 5rem;
 }
 
-.subtitle {
-  margin-left: 5rem;
+.card-wrapper {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .todos button {

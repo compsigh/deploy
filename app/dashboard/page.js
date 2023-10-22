@@ -9,6 +9,7 @@ import Button from '@/components/Button'
 
 // Style imports
 import styles from './Dashboard.module.css'
+import HackerCard from '@/components/HackerCard'
 
 export default async function Dashboard () {
   const user = await getSessionData()
@@ -28,6 +29,10 @@ export default async function Dashboard () {
         <br />
         <li className='back'><Button text='Back to DEPLOY/23' type='link' destination='/' /></li>
       </ul>
+
+      <div className={styles['card-wrapper']}>
+        <HackerCard user={user} />
+      </div>
     </main>
   )
 }
