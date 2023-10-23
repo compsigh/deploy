@@ -33,6 +33,9 @@ export default function Button (props) {
     queryParams = appendQueryParams(queryParams, object)
   }
 
+  if (type === 'copy')
+    return <Link href='#' onClick={() => navigator.clipboard.writeText(`${destination}`)}>{text}</Link>
+
   if (type === 'link')
     return <Link href={`${destination}${queryParams}`}>{text}</Link>
 

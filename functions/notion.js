@@ -40,6 +40,22 @@ export async function fetchTeam (participant) {
   return team
 }
 
+export async function fetchReferrals (participant) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const referrals = await notion.databases.query({
+    database_id: process.env.NOTION_REFERRALS_DATABASE_ID,
+    filter: {
+      property: 'Referred by',
+      rich_text: {
+        contains: participant.properties.Email.title[0].text.content
+      }
+    }
+  })
+
+  return referrals.results.length
+}
+
 export async function normalizeParticipant (participant) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -62,8 +78,11 @@ export async function normalizeParticipant (participant) {
     teammates.push(`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`)
   }
 
+  const referrals = await fetchReferrals(participant)
+
   normalizedParticipant.teamName = teamName
   normalizedParticipant.teammates = teammates
+  normalizedParticipant.referrals = referrals
 
   return normalizedParticipant
 }

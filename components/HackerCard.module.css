@@ -69,3 +69,20 @@ p.referral-count {
   left: 0;
   right: 0;
 }
+
+p.referral-text {
+  margin-top: 20px;
+  width: 300px;
+  color: #888888;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+p.referral-link {
+  margin-top: 10px;
+  width: 300px;
+  color: var(--gleam);
+  font-size: 0.875rem;
+  font-family: var(--font-headers);
+  text-align: center;
+}
