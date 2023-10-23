@@ -24,8 +24,9 @@ export default async function Home () {
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
         <div className={styles['video-container']}>
-          <video className={styles.video} src="trailer teaser.mp4" autoPlay muted loop type="video/mp4"></video>
-        <div className={styles.overlay}>Trailer coming soon</div>
+          <div className={styles.video}>
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         </div>
 
         <section className={styles.eligibility}>
