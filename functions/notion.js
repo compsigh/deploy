@@ -4,30 +4,20 @@ import { Client } from '@notionhq/client'
 export async function fetchParticipant (user) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
-  let response = await notion.databases.query({
-    database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID
-  })
-  const participants = response.results
-
-  let hasMore = response.has_more
-  while (hasMore) {
-    response = await notion.databases.query({
-      database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID,
-      start_cursor: response.next_cursor
-    })
-    participants.push(...response.results)
-    hasMore = response.has_more
-  }
-
-  let participant = null
-  for (const entry of participants)
-    if (entry.properties.Email.title[0].text.content === user.email) {
-      participant = entry
-      break
+  const response = await notion.databases.query({
+    database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID,
+    filter: {
+      property: 'Email',
+      rich_text: {
+        contains: user.email
+      }
     }
+  })
 
-  if (participant)
-    participant = await notion.pages.retrieve({ page_id: participant.id })
+  if (response.results.length === 0)
+    return null
+
+  const participant = await notion.pages.retrieve({ page_id: response.results[0].id })
   return participant
 }
 
@@ -65,6 +55,9 @@ export async function normalizeParticipant (participant) {
   const hackerId = props['Hacker ID'].unique_id.number
   normalizedParticipant.hackerId = hackerId
 
+  const referrals = await fetchReferrals(participant)
+  normalizedParticipant.referrals = referrals
+
   const team = await fetchTeam(participant)
   if (!team)
     return normalizedParticipant
@@ -79,11 +72,8 @@ export async function normalizeParticipant (participant) {
     teammates.push(`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`)
   }
 
-  const referrals = await fetchReferrals(participant)
-
   normalizedParticipant.teamName = teamName
   normalizedParticipant.teammates = teammates
-  normalizedParticipant.referrals = referrals
 
   return normalizedParticipant
 }
