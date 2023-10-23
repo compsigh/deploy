@@ -3,7 +3,7 @@
 import { signIn, signOut } from 'next-auth/react'
 import styles from './Button.module.css'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useSearchParams, useRouter } from 'next/navigation'
 
 export default function Button (props) {
   const { text, type, user, destination } = props
@@ -11,8 +11,14 @@ export default function Button (props) {
   let onClick
   let queryParams = ''
 
+  const searchParams = useSearchParams()
+  const object = {}
+  for (const [key, value] of searchParams.entries())
+    object[key] = value
+  queryParams = appendQueryParams(queryParams, object)
+
   if (type === 'login')
-    onClick = () => signIn('google', { callbackUrl: '/dashboard' })
+    onClick = () => signIn('google', { callbackUrl: `/dashboard${queryParams}` })
   else if (type === 'logout')
     onClick = () => signOut()
   else if (type === 'button' && destination)
@@ -22,7 +28,9 @@ export default function Button (props) {
     const firstName = user.name.split(' ')[0]
     const lastName = user.name.split(' ')[1]
     const email = user.email
-    queryParams = `?firstName=${firstName}&lastName=${lastName}&email=${email}`
+
+    const object = { firstName, lastName, email }
+    queryParams = appendQueryParams(queryParams, object)
   }
 
   if (type === 'link')
@@ -34,4 +42,22 @@ export default function Button (props) {
   return (
     <button className={styles.button} onClick={onClick}>{text}</button>
   )
+}
+
+function appendQueryParams (queryParams, object) {
+  if (!object)
+    return queryParams
+
+  if (queryParams === '')
+    queryParams += '?'
+  else
+    queryParams += '&'
+
+  for (const [key, value] of Object.entries(object)) {
+    queryParams += `${key}=${value}`
+    if (key !== Object.keys(object)[Object.keys(object).length - 1])
+      queryParams += '&'
+  }
+
+  return queryParams
 }
