@@ -26,7 +26,7 @@ export async function fetchParticipant (user) {
       break
     }
 
-  participant = await notion.pages.retrieve({ page_id: participant.id })
+  participant = await notion.pages.retrieve({ page_id: participant?.id })
   return participant
 }
 
