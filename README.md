@@ -1,6 +1,6 @@
-# DEPLOY/23
+[![DEPLOY/23 Banner](https://raw.githubusercontent.com/compsigh/deploy/main/public/banner-grid.png)](https://deploy.compsigh.so)
 
-[![DEPLOY/23 Banner](https://raw.githubusercontent.com/compsigh/deploy/main/public/banner-grid.png)](https://deploy23.compsigh.so)
+# DEPLOY/23
 
 Welcome to the repo for the landing page & platform for DEPLOY/23 — [compsigh](https://compsigh.so)'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event running from Friday October 27th–Sunday October 29th, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.
 
