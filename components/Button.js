@@ -48,7 +48,7 @@ export default function Button (props) {
 }
 
 function appendQueryParams (queryParams, object) {
-  if (!object)
+  if (Object.keys(object).length === 0)
     return queryParams
 
   if (queryParams === '')
