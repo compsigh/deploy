@@ -16,7 +16,7 @@ export default async function Register () {
   if (!user)
     redirect('/')
 
-  const registered = fetchParticipant(user)
+  const registered = await fetchParticipant(user)
   if (registered)
     redirect('/dashboard')
 
