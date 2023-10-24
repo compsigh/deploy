@@ -36,7 +36,7 @@ export default async function Home () {
           <p>Teams (no solo participants) can have a maximum of four members.</p>
           <p><strong>All team members must present</strong> their project in order for the entire team to be eligible for victory.</p>
           <pre className={styles.block}>
-            <code>Registration Deadline     &gt;&gt; October 27th, 6pm</code>
+            <code>Registration Deadline     &gt;&gt; October 27th, 6:30pm</code>
             <code>Team Declaration Deadline &gt;&gt; October 27th, 11pm</code>
           </pre>
         </section>
@@ -108,8 +108,8 @@ export default async function Home () {
           <h2>Agenda</h2>
           <p>Friday, October 27th</p>
           <pre className={styles.block}>
-            <code>6pm     — Check-in // Registration Deadline</code>
-            <code>6:30pm  — Opening Keynote</code>
+            <code>6pm     — Check-in</code>
+            <code>6:30pm  — Opening Keynote // Registration Deadline</code>
             <code>7pm     — Dinner (provided)</code>
             <code>11pm    — Team Declaration Deadline</code>
           </pre>
