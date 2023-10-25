@@ -16,7 +16,7 @@ export default async function Home () {
         {
           user
             ? <Button text='Dashboard' type='button' destination='/dashboard' />
-            : <Button text='Register' type='login' />
+            : <Button text='Dashboard' type='login' />
         }
       </header>
       <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
@@ -180,7 +180,7 @@ export default async function Home () {
         {
           user
             ? <Button text='Dashboard' type='button' destination='/dashboard' />
-            : <Button text='Register' type='login' />
+            : <Button text='Dashboard' type='login' />
         }
       </footer>
     </main>
