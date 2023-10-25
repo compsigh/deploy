@@ -107,7 +107,7 @@ export default async function Home () {
 
         <section className={styles.agenda}>
           <h2>Agenda</h2>
-          <p>Friday, November 17th</p>
+          <p>Friday, November 17th • Harney Science Center 136</p>
           <pre className={styles.block}>
             <code>6pm     — Check-in // Registration Deadline</code>
             <code>6:30pm  — Opening Keynote</code>
@@ -121,7 +121,7 @@ export default async function Home () {
             <code>TBD     — Super Smash Bros</code>
             <code>TBD     — Kahoot</code>
           </pre>
-          <p>Sunday, November 19th</p>
+          <p>Sunday, November 19th • McLaren Conference Center</p>
           <pre className={styles.block}>
             <code>11:30am — Project Submission Deadline</code>
             <code>12pm    — Check-in</code>
