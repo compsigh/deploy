@@ -73,21 +73,32 @@ p {
   line-height: 150%;
 }
 
+p.comment {
+  display: inline;
+  font-family: var(--font-headers);
+  color: #888888;
+}
+
+p.comment::before {
+  content: '// ';
+}
+
 /* List Styles */
 li {
   font-family: var(--font-proto-mono);
   list-style-type: none;
   text-indent: calc(-1em - 2px);
   line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 li::before {
-  content: ">";
+  content: '>';
   margin-right: 0.5em;
 }
 
 li.back::before {
-  content: "<";
+  content: '<';
   margin-right: 0.5em;
 }
 

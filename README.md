@@ -2,7 +2,7 @@
 
 # DEPLOY/23
 
-Welcome to the repo for the landing page & platform for DEPLOY/23 — [compsigh](https://compsigh.so)'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event running from Friday October 27th–Sunday October 29th, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.
+Welcome to the repo for the landing page & platform for DEPLOY/23 — [compsigh](https://compsigh.so)'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event running from Friday November 17th – Sunday November 19th, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.
 
 ## Stack
 

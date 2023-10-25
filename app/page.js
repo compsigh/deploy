@@ -19,25 +19,26 @@ export default async function Home () {
             : <Button text='Dashboard' type='login' />
         }
       </header>
-      <h3 className={styles.subtitle}>Friday, October 27th–Sunday, October 29th</h3>
+      <h3 className={styles.subtitle}>Friday, November 17th – Sunday, November 19th</h3>
 
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
         <div className={styles['video-container']}>
           <div className={styles.video}>
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            <iframe width='100%' height='100%' src='https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen></iframe>
           </div>
         </div>
 
         <section className={styles.eligibility}>
           <h2>Eligibility</h2>
           <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome and encouraged to participate.</p>
-          <p>Anyone is welcome to come hang out and hack, but only those that register for the event will be eligible for victory.</p>
+          <p>Anyone is welcome to come hang out and hack, but <strong>only those that register for the event will be eligible for victory</strong>.</p>
           <p>Teams (no solo participants) can have a maximum of four members.</p>
-          <p><strong>All team members must present</strong> their project in order for the entire team to be eligible for victory.</p>
+          <p>All team members must present their project for the entire team to be eligible for victory.</p>
           <pre className={styles.block}>
-            <code>Registration Deadline     &gt;&gt; October 27th, 6:30pm</code>
-            <code>Team Declaration Deadline &gt;&gt; October 27th, 11pm</code>
+            <code>Registration Deadline       &gt;&gt; November 17th, 6pm</code>
+            <code>Team Declaration Deadline   &gt;&gt; November 17th, 11pm</code>
+            <code>Project Submission Deadline &gt;&gt; November 19th, 11:30am</code>
           </pre>
         </section>
 
@@ -106,28 +107,28 @@ export default async function Home () {
 
         <section className={styles.agenda}>
           <h2>Agenda</h2>
-          <p>Friday, October 27th</p>
+          <p>Friday, November 17th</p>
           <pre className={styles.block}>
-            <code>6pm     — Check-in</code>
-            <code>6:30pm  — Opening Keynote // Registration Deadline</code>
+            <code>6pm     — Check-in // Registration Deadline</code>
+            <code>6:30pm  — Opening Keynote</code>
             <code>7pm     — Dinner (provided)</code>
             <code>11pm    — Team Declaration Deadline</code>
           </pre>
-          <p>Saturday, October 28th</p>
+          <p>Saturday, November 18th</p>
           <pre className={styles.block}>
             <code>TBD     — Mario Kart</code>
             <code>TBD     — Just Dance</code>
             <code>TBD     — Super Smash Bros</code>
             <code>TBD     — Kahoot</code>
           </pre>
-          <p>Sunday, October 29th</p>
+          <p>Sunday, November 19th</p>
           <pre className={styles.block}>
-            <code>12pm    — Project Submission Deadline</code>
-            <code>12:30pm — Check-in</code>
-            <code>1pm     — Presentations Begin</code>
-            <code>2pm     — Intermission</code>
-            <code>2:15pm  — Presentations Continue</code>
-            <code>4pm     — Closing Keynote // Results Announced</code>
+            <code>11:30am — Project Submission Deadline</code>
+            <code>12pm    — Check-in</code>
+            <code>12:30pm — Presentations Begin</code>
+            <code>1:30pm  — Intermission</code>
+            <code>2pm     — Presentations Continue</code>
+            <code>3pm     — Closing Keynote // Results Announced</code>
           </pre>
         </section>
 
