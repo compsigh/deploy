@@ -18,7 +18,7 @@ export default function Button (props) {
   queryParams = appendQueryParams(queryParams, object)
 
   if (type === 'login')
-    onClick = () => signIn('google', { callbackUrl: `/dashboard${queryParams}` })
+    onClick = () => signIn('google', { callbackUrl: `/console${queryParams}` })
   else if (type === 'logout')
     onClick = () => signOut()
   else if (type === 'button' && destination)

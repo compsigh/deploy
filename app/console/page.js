@@ -8,13 +8,13 @@ import { getSessionData } from '@/functions/user-management'
 import Button from '@/components/Button'
 
 // Style imports
-import styles from './Dashboard.module.css'
+import styles from './Console.module.css'
 import HackerCard from '@/components/HackerCard'
 
 // Function imports
 import { fetchParticipant, normalizeParticipant } from '@/functions/notion'
 
-export default async function Dashboard () {
+export default async function Console () {
   const user = await getSessionData()
   if (!user)
     redirect('/')

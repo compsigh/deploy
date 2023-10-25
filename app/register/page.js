@@ -18,7 +18,7 @@ export default async function Register () {
 
   const registered = await fetchParticipant(user)
   if (registered)
-    redirect('/dashboard')
+    redirect('/console')
 
   return (
     <>
@@ -28,7 +28,7 @@ export default async function Register () {
           lastName: user.name.split(' ')[1],
           email: user.email
         }}
-        redirect='/dashboard'
+        redirect='/console'
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe

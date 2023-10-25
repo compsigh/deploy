@@ -15,8 +15,8 @@ export default async function Home () {
         <h1 className={styles.title}><span className='fade'>► </span>DEPLOY/23</h1>
         {
           user
-            ? <Button text='Dashboard' type='button' destination='/dashboard' />
-            : <Button text='Dashboard' type='login' />
+            ? <Button text='Console >' type='button' destination='/console' />
+            : <Button text='Console >' type='login' />
         }
       </header>
       <h3 className={styles.subtitle}>Friday, November 17th – Sunday, November 19th</h3>
@@ -136,7 +136,7 @@ export default async function Home () {
           <h2>Check-in</h2>
           <p>During check-in on Friday, we&apos;ll ask for:</p>
           <ul>
-            <li>Your Hacker ID, which you&apos;ll see on the dashboard after registering</li>
+            <li>Your Hacker ID, which you&apos;ll see on the console after registering</li>
             <li>A picture of you — this is for presentations on Sunday, but let us know if you wouldn&apos;t be comfortable doing this</li>
           </ul>
         </section>
@@ -180,8 +180,8 @@ export default async function Home () {
         <h2>Good luck, have fun.</h2>
         {
           user
-            ? <Button text='Dashboard' type='button' destination='/dashboard' />
-            : <Button text='Dashboard' type='login' />
+            ? <Button text='Console >' type='button' destination='/console' />
+            : <Button text='Console >' type='login' />
         }
       </footer>
     </main>
