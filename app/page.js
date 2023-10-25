@@ -12,7 +12,7 @@ export default async function Home () {
   return (
     <main className={styles.main}>
       <header className={styles.header}>
-        <h1 className={styles.title}><span className='playbutton'>► </span>DEPLOY/23</h1>
+        <h1 className={styles.title}><span className='fade'>► </span>DEPLOY/23</h1>
         {
           user
             ? <Button text='Dashboard' type='button' destination='/dashboard' />

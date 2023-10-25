@@ -26,13 +26,13 @@ export default async function Dashboard () {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}><span className='playbutton'>► </span>Welcome, Hacker</h1>
+      <h1 className={styles.title}><span className='fade'>► </span>Welcome, Hacker</h1>
 
       <ul className={styles.todos}>
         {
           participant
             ? <li style={{ color: '#888888' }}>You&apos;ve registered — you&apos;re all set to attend</li>
-            : <li><Button text='Register' type='link' destination='/register' user={user} /></li>
+            : <li className='fade'><Button text='Register' type='link' destination='/register' user={user} /></li>
         }
         <li>Declare your team (coming soon)</li>
         <li>Submit your project (coming soon)</li>

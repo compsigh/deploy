@@ -104,7 +104,7 @@ li.back::before {
   }
 }
 
-span.playbutton {
+.fade {
   animation-name: fade;
   animation-duration: 2s;
   animation-timing-function: linear;
