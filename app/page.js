@@ -43,8 +43,10 @@ export default async function Home () {
           <pre className={`${styles['block-mobile']} ${styles.block}`}>
             <code>Registration Deadline</code>
             <code>&gt;&gt; November 17th, 6pm</code>
+            <br />
             <code>Team Declaration Deadline</code>
             <code>&gt;&gt; November 17th, 11pm</code>
+            <br />
             <code>Project Submission Deadline</code>
             <code>&gt;&gt; November 19th, 11:30am</code>
           </pre>
