@@ -24,7 +24,7 @@ section.resources,
 p.description {
   width: 500px;
   margin: 0 80px;
-  margin-bottom: 6.25rem;
+  margin-bottom: 100px;
 }
 
 @media (max-width: 700px) {
@@ -39,7 +39,7 @@ p.description {
   width: 100vw;
   height: 500px;
   overflow: hidden;
-  margin-bottom: 6.25rem;
+  margin-bottom: 100px;
 }
 
 .video {
@@ -54,7 +54,7 @@ p.description {
 }
 
 section.details > section > * {
-  margin-bottom: 0.625rem;
+  margin-bottom: 10px;
 }
 
 .block {
@@ -88,24 +88,33 @@ section.details > section > * {
 }
 
 .header button {
-  margin-top: 5rem;
-  margin-right: 5rem;
+  margin-top: 80px;
+  margin-right: 80px;
+
+.title {
+  padding-top: 80px;
+  padding-left: 80px;
+}
+
+.subtitle {
+  padding-left: 80px;
+}
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 5rem;
+  margin-bottom: 80px;
 }
 
 .footer button {
-  margin-top: 2.5rem;
+  margin-top: 40px;
 }
 
 @media (max-width: 700px) {
   .footer {
-    margin: 5rem auto;
+    margin: 80px auto;
     width: 75vw;
     text-align: center;
   }
@@ -116,13 +125,4 @@ section.details > section > * {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
-}
-
-.title {
-  padding-top: 5rem;
-  padding-left: 5rem;
-}
-
-.subtitle {
-  padding-left: 5rem;
 }
