@@ -13,6 +13,7 @@ export default async function Home () {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.title}><span className='fade'>► </span>DEPLOY/23</h1>
+        <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>Friday, November 17th<br />Sunday, November 19th</h3>
         {
           user
             ? <Button text='Console >' type='button' destination='/console' />
@@ -39,6 +40,16 @@ export default async function Home () {
             <code>Registration Deadline       &gt;&gt; November 17th, 6pm</code>
             <code>Team Declaration Deadline   &gt;&gt; November 17th, 11pm</code>
             <code>Project Submission Deadline &gt;&gt; November 19th, 11:30am</code>
+          </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>Registration Deadline</code>
+            <code>&gt;&gt; November 17th, 6pm</code>
+            <br />
+            <code>Team Declaration Deadline</code>
+            <code>&gt;&gt; November 17th, 11pm</code>
+            <br />
+            <code>Project Submission Deadline</code>
+            <code>&gt;&gt; November 19th, 11:30am</code>
           </pre>
         </section>
 
@@ -102,6 +113,25 @@ export default async function Home () {
             <code>                Recognition on compsigh platforms</code>
             <code>PPL&apos;S CHOICE &gt;&gt; Cat-shaped pillow 🐱</code>
           </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>1st Place</code>
+            <li>$100</li>
+            <li>Semester access to club AI resources</li>
+            <li>Discord Nitro</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <code>2nd Place</code>
+            <li>$50</li>
+            <li>Discord Nitro</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <code>3rd Place</code>
+            <li>$25</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <code>PPL&apos;S CHOICE</code>
+            <li>Cat-shaped pillow 🐱</li>
+          </pre>
           <p>Prize distribution will take place after the event.</p>
         </section>
 
@@ -114,12 +144,33 @@ export default async function Home () {
             <code>7pm     — Dinner (provided)</code>
             <code>11pm    — Team Declaration Deadline</code>
           </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>6pm</code>
+            <li>Check-in</li>
+            <li>Registration Deadline</li>
+            <br />
+            <code>6:30pm</code>
+            <li>Opening Keynote</li>
+            <br />
+            <code>7pm</code>
+            <li>Dinner (provided)</li>
+            <br />
+            <code>11pm</code>
+            <li>Team Declaration Deadline</li>
+          </pre>
           <p>Saturday, November 18th</p>
           <pre className={styles.block}>
             <code>TBD     — Mario Kart</code>
             <code>TBD     — Just Dance</code>
             <code>TBD     — Super Smash Bros</code>
             <code>TBD     — Kahoot</code>
+          </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>TBD</code>
+            <li>Mario Kart</li>
+            <li>Just Dance</li>
+            <li>Super Smash Bros</li>
+            <li>Kahoot</li>
           </pre>
           <p>Sunday, November 19th • McLaren Conference Center</p>
           <pre className={styles.block}>
@@ -129,6 +180,26 @@ export default async function Home () {
             <code>1:30pm  — Intermission</code>
             <code>2pm     — Presentations Continue</code>
             <code>3pm     — Closing Keynote // Results Announced</code>
+          </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>11:30am</code>
+            <li>Project Submission Deadline</li>
+            <br />
+            <code>12pm</code>
+            <li>Check-in</li>
+            <br />
+            <code>12:30pm</code>
+            <li>Presentations Begin</li>
+            <br />
+            <code>1:30pm</code>
+            <li>Intermission</li>
+            <br />
+            <code>2pm</code>
+            <li>Presentations Continue</li>
+            <br />
+            <code>3pm</code>
+            <li>Closing Keynote</li>
+            <li>Results Announced</li>
           </pre>
         </section>
 
