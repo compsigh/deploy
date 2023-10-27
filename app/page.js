@@ -13,6 +13,7 @@ export default async function Home () {
     <main className={styles.main}>
       <header className={styles.header}>
         <h1 className={styles.title}><span className='fade'>► </span>DEPLOY/23</h1>
+        <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>Friday, November 17th<br />Sunday, November 19th</h3>
         {
           user
             ? <Button text='Console >' type='button' destination='/console' />

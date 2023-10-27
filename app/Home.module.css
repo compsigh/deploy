@@ -29,8 +29,12 @@ p.description {
 
 @media (max-width: 700px) {
   section.details > * {
-    margin: 0 auto;
+    margin: 40px auto;
     width: 75vw;
+  }
+
+  p.description {
+    margin-bottom: 80px;
   }
 }
 
@@ -90,6 +94,7 @@ pre.block-mobile {
 .header button {
   margin-top: 80px;
   margin-right: 80px;
+}
 
 .title {
   padding-top: 80px;
@@ -99,6 +104,40 @@ pre.block-mobile {
 .subtitle {
   padding-left: 80px;
 }
+
+h3.subtitle-mobile {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 80px;
+  }
+
+  .header > * {
+    margin: 0 auto;
+    width: 75vw;
+  }
+
+  .title,
+  .subtitle-mobile {
+    width: fit-content;
+    padding: 0;
+  }
+
+  h3.subtitle {
+    display: none;
+  }
+
+  h3.subtitle-mobile {
+    display: block;
+  }
+
+  .header button {
+    margin: 40px auto;
+  }
 }
 
 .footer {
