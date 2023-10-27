@@ -27,6 +27,13 @@ p.description {
   margin-bottom: 6.25rem;
 }
 
+@media (max-width: 700px) {
+  section.details > * {
+    margin: 0 auto;
+    width: 75vw;
+  }
+}
+
 .video-container {
   position: relative;
   width: 100vw;
