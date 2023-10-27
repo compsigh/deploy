@@ -67,16 +67,16 @@ section.details > section > * {
   font-family: var(--font-proto-mono);
 }
 
-.block-mobile code {
+pre.block-mobile {
   display: none;
 }
 
 @media (max-width: 700px) {
-  .block code {
+  pre.block {
     display: none;
   }
 
-  .block-mobile code {
+  pre.block-mobile {
     display: block;
   }
 }
