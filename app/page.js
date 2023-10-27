@@ -40,6 +40,14 @@ export default async function Home () {
             <code>Team Declaration Deadline   &gt;&gt; November 17th, 11pm</code>
             <code>Project Submission Deadline &gt;&gt; November 19th, 11:30am</code>
           </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>Registration Deadline</code>
+            <code>&gt;&gt; November 17th, 6pm</code>
+            <code>Team Declaration Deadline</code>
+            <code>&gt;&gt; November 17th, 11pm</code>
+            <code>Project Submission Deadline</code>
+            <code>&gt;&gt; November 19th, 11:30am</code>
+          </pre>
         </section>
 
         <section className={styles.submissions}>
@@ -101,6 +109,25 @@ export default async function Home () {
             <code>3rd Place    &gt;&gt; $25</code>
             <code>                Recognition on compsigh platforms</code>
             <code>PPL&apos;S CHOICE &gt;&gt; Cat-shaped pillow 🐱</code>
+          </pre>
+          <pre className={`${styles['block-mobile']} ${styles.block}`}>
+            <code>1st Place</code>
+            <li>$100</li>
+            <li>Semester access to club AI resources</li>
+            <li>Discord Nitro</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <code>2nd Place</code>
+            <li>$50</li>
+            <li>Discord Nitro</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <li>3rd Place</li>
+            <li>$25</li>
+            <li>Recognition on compsigh platforms</li>
+            <br />
+            <li>PPL&apos;S CHOICE</li>
+            <li>Cat-shaped pillow 🐱</li>
           </pre>
           <p>Prize distribution will take place after the event.</p>
         </section>
