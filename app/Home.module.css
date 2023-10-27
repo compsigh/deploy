@@ -103,6 +103,14 @@ section.details > section > * {
   margin-top: 2.5rem;
 }
 
+@media (max-width: 700px) {
+  .footer {
+    margin: 5rem auto;
+    width: 75vw;
+    text-align: center;
+  }
+}
+
 .main {
   display: flex;
   flex-direction: column;
