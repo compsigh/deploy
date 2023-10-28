@@ -1,9 +1,14 @@
-// Style imports
+// Next imports
 import Link from 'next/link'
+import Image from 'next/image'
+
+// Style imports
 import styles from './Home.module.css'
+
+// Component imports
 import Button from '@/components/Button'
 
-// Auth imports
+// Function imports
 import { getSessionData } from '@/functions/user-management'
 
 export default async function Home () {
@@ -254,6 +259,41 @@ export default async function Home () {
             ? <Button text='Console >' type='button' destination='/console' />
             : <Button text='Console >' type='login' />
         }
+
+        <div className={styles['version-status']}>
+          <Image
+            src='/circle.svg'
+            alt='circle'
+            width={10}
+            height={10}
+            className='fade'
+          />
+          <p>v1.2.1 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
+        </div>
+
+        <div className={styles['logo-wrapper']}>
+          <Link href='https://compsigh.so' target='_blank'>
+            <Image
+              src='/compsigh-filled.svg'
+              alt='compsigh logo'
+              width={30}
+              height={30}
+              className={styles['compsigh-logo']}
+            />
+          </Link>
+          <Image
+            src='/line.svg'
+            alt='delimiter'
+            width={30}
+            height={30}
+          />
+          <Image
+            src='/logo.svg'
+            alt='DEPLOY/23 logo'
+            width={30}
+            height={30}
+          />
+        </div>
       </footer>
     </main>
   )
