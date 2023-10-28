@@ -151,6 +151,30 @@ h3.subtitle-mobile {
   margin-top: 40px;
 }
 
+.footer div.version-status {
+  margin-top: 80px;
+}
+
+.footer div.version-status p {
+  margin-left: 10px;
+  font-family: var(--font-proto-mono);
+  display: inline;
+}
+
+.footer div.logo-wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer div.logo-wrapper img {
+  margin: 0 10px;
+}
+
+.footer div.logo-wrapper img.compsigh-logo:hover {
+  content: url(/compsigh-white.svg);
+}
+
 @media (max-width: 700px) {
   .footer {
     margin: 80px auto;
