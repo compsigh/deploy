@@ -12,16 +12,26 @@ import styles from './Console.module.css'
 import HackerCard from '@/components/HackerCard'
 
 // Function imports
-import { fetchParticipant, normalizeParticipant } from '@/functions/notion'
+import { fetchJudge, fetchParticipant, normalizeParticipant } from '@/functions/notion'
 
 export default async function Console () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
-  let participant = await fetchParticipant(user)
-  if (participant) {
-    participant = await normalizeParticipant(participant)
-    user.participant = participant
+
+  let judge
+  let participant
+  if (!user.email.endsWith('@dons.usfca.edu')) {
+    judge = await fetchJudge(user)
+    if (judge)
+      user.judge = judge
+  }
+  else {
+    participant = await fetchParticipant(user)
+    if (participant) {
+      participant = await normalizeParticipant(participant)
+      user.participant = participant
+    }
   }
 
   return (
