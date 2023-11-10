@@ -142,7 +142,7 @@ export default async function Home () {
 
         <section className={styles.agenda}>
           <h2>Agenda</h2>
-          <p>Friday, November 17th • Harney Science Center 136</p>
+          <p>Friday, November 17th • The Hive (Harney 1st Floor)</p>
           <pre className={styles.block}>
             <code>6pm     — Check-in // Registration Deadline</code>
             <code>6:30pm  — Opening Keynote</code>
