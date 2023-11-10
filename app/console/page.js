@@ -5,42 +5,40 @@ import { redirect } from 'next/navigation'
 import { getSessionData } from '@/functions/user-management'
 
 // Component imports
-import Button from '@/components/Button'
+import HackerCard from '@/components/HackerCard'
+import Todos from '@/components/Todos'
 
 // Style imports
 import styles from './Console.module.css'
-import HackerCard from '@/components/HackerCard'
 
 // Function imports
-import { fetchParticipant, normalizeParticipant } from '@/functions/notion'
+import { fetchJudge, fetchParticipant, normalizeParticipant } from '@/functions/notion'
 
 export default async function Console () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
-  let participant = await fetchParticipant(user)
-  if (participant) {
-    participant = await normalizeParticipant(participant)
-    user.participant = participant
+
+  let judge
+  let participant
+  if (!user.email.endsWith('@dons.usfca.edu')) {
+    judge = await fetchJudge(user)
+    if (judge)
+      user.judge = judge
+  }
+  else {
+    participant = await fetchParticipant(user)
+    if (participant) {
+      participant = await normalizeParticipant(participant)
+      user.participant = participant
+    }
   }
 
   return (
     <main className={styles.main}>
       <h1 className={styles.title}><span className='fade'>► </span>Welcome, Hacker</h1>
 
-      <ul className={styles.todos}>
-        {
-          participant
-            ? <li style={{ color: '#888888' }}>You&apos;ve registered — you&apos;re all set to attend</li>
-            : <li className='fade'><Button text='Register' type='link' destination='/register' user={user} /></li>
-        }
-        <li>Declare your team   <p className='comment'>opens Friday, Nov. 17</p></li>
-        <li>Submit your project <p className='comment'>opens Sunday, Nov. 19</p></li>
-        <br />
-        <li><Button text='Discord' type='link' destination='https://discord.compsigh.so' /></li>
-        <br />
-        <li className='back'><Button text='Back to DEPLOY/23' type='link' destination='/' /></li>
-      </ul>
+      <Todos user={user} />
 
       <div className={styles['card-wrapper']}>
         <HackerCard user={user} />

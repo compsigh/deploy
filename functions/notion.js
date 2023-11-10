@@ -1,6 +1,36 @@
 // SDK imports
 import { Client } from '@notionhq/client'
 
+export async function fetchJudge (user) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const confirmedJudges = await notion.databases.query({
+    database_id: process.env.NOTION_JUDGES_DATABASE_ID,
+    filter: {
+      property: 'Email',
+      email: {
+        is_not_empty: true
+      }
+    }
+  })
+
+  let judge = confirmedJudges.results.find(judge => judge.properties.Email.email === user.email)
+  if (!judge)
+    return null
+  judge = await notion.pages.retrieve({ page_id: judge.id })
+
+  const normalizedJudge = {}
+  normalizedJudge.teamName = 'Team Judges'
+  normalizedJudge.teammates = []
+  const otherJudges = confirmedJudges.results.filter(judge => judge.properties.Email.email !== user.email)
+  for (const otherJudge of otherJudges) {
+    const otherJudgePage = await notion.pages.retrieve({ page_id: otherJudge.id })
+    normalizedJudge.teammates.push(`${otherJudgePage.properties.Name.title[0].text.content}`)
+  }
+
+  return normalizedJudge
+}
+
 export async function fetchParticipant (user) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -72,7 +102,7 @@ export async function normalizeParticipant (participant) {
     teammates.push(`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`)
   }
 
-  normalizedParticipant.teamName = teamName
+  normalizedParticipant.teamName = `Team ${teamName}`
   normalizedParticipant.teammates = teammates
 
   return normalizedParticipant

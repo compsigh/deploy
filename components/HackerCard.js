@@ -1,13 +1,12 @@
 import Button from './Button'
 import styles from './HackerCard.module.css'
 
-// TODO: conditional rendering for judges
 // TODO: team system
 
 export default async function HackerCard ({ user }) {
   const hackerId = user.participant?.hackerId
-  const teamName = user.participant?.teamName
-  const teammates = user.participant?.teammates
+  const teamName = user.participant?.teamName || user.judge?.teamName
+  const teammates = user.participant?.teammates || user.judge?.teammates
   const referrals = user.participant?.referrals
 
   return (
@@ -29,18 +28,18 @@ export default async function HackerCard ({ user }) {
         <div className={styles['team-bar']}>
         {
           teamName
-            ? <h3 className={styles['team-name']}>Team {teamName}</h3>
+            ? <h3 className={styles['team-name']}>{teamName}</h3>
             : <h3 className={styles['team-name']}>Team TBD</h3>
         }
         </div>
 
-          <ul className={styles.teammates}>
-            {
-              teammates
-                ? teammates.map(teammate => <li key={teammate}><h4>{teammate}</h4></li>)
-                : <li key='tbd'><h4>Teammates TBD</h4></li>
-            }
-          </ul>
+        <ul className={styles.teammates}>
+          {
+            teammates
+              ? teammates.map(teammate => <li key={teammate}><h4>{teammate}</h4></li>)
+              : <li key='tbd'><h4>Teammates TBD</h4></li>
+          }
+        </ul>
 
         <p className={styles['referral-count']}>{referrals ?? '?'} {referrals === 1 ? 'referral' : 'referrals'}</p>
       </div>

@@ -17,7 +17,7 @@
       {
         "ignoreImports": true,
         "ignoreDestructuring": true,
-        "allow": ["max_tokens", "database_id", "start_cursor", "page_id", "rich_text"]
+        "allow": ["max_tokens", "database_id", "start_cursor", "page_id", "rich_text", "is_not_empty"]
       }
     ]
   }
