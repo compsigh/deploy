@@ -42,13 +42,13 @@ export default async function Home () {
           <p>Teams (no solo participants) can have a maximum of four members.</p>
           <p>All team members must present their project for the entire team to be eligible for victory.</p>
           <pre className={styles.block}>
-            <code>Registration Deadline       &gt;&gt; November 17th, 6pm</code>
+            <code>Registration Deadline       &gt;&gt; November 17th, 8pm</code>
             <code>Team Declaration Deadline   &gt;&gt; November 17th, 11pm</code>
             <code>Project Submission Deadline &gt;&gt; November 19th, 11:30am</code>
           </pre>
           <pre className={`${styles['block-mobile']} ${styles.block}`}>
             <code>Registration Deadline</code>
-            <code>&gt;&gt; November 17th, 6pm</code>
+            <code>&gt;&gt; November 17th, 8pm</code>
             <br />
             <code>Team Declaration Deadline</code>
             <code>&gt;&gt; November 17th, 11pm</code>
@@ -144,21 +144,24 @@ export default async function Home () {
           <h2>Agenda</h2>
           <p>Friday, November 17th • The Hive (Harney 1st Floor)</p>
           <pre className={styles.block}>
-            <code>6pm     — Check-in // Registration Deadline</code>
+            <code>6pm     — Check-in</code>
             <code>6:30pm  — Opening Keynote</code>
-            <code>7pm     — Dinner (provided)</code>
+            <code>7pm     — Dinner & LFG</code>
+            <code>8pm     — Registration Deadline</code>
             <code>11pm    — Team Declaration Deadline</code>
           </pre>
           <pre className={`${styles['block-mobile']} ${styles.block}`}>
             <code>6pm</code>
             <li>Check-in</li>
-            <li>Registration Deadline</li>
             <br />
             <code>6:30pm</code>
             <li>Opening Keynote</li>
             <br />
             <code>7pm</code>
-            <li>Dinner (provided)</li>
+            <li>Dinner & LFG</li>
+            <br />
+            <code>8pm</code>
+            <li>Registration Deadline</li>
             <br />
             <code>11pm</code>
             <li>Team Declaration Deadline</li>
