@@ -60,7 +60,7 @@ export default async function Home () {
 
         <section className={styles.submissions}>
           <h2>Submissions</h2>
-          <p>Only one team member will be required to submit the project on behalf of the team.</p>
+          <p>Only one team member should submit the project on behalf of the team.</p>
           <p>Project submissions are not limited to a theme, and the mediums are open-ended. We suggest one of the following:</p>
           <ul>
             <li>Mobile app</li>
@@ -82,24 +82,31 @@ export default async function Home () {
             <li>A team name</li>
             <li>A song to walk out on stage to (the walkout won&apos;t count against time)</li>
           </ul>
-          <p>Teams will have a <strong>maximum of five minutes</strong> to present. You&apos;re welcome to spend the majority of that time on background, a live demo, or whichever way you see fit. We highly encourage creative presentation formats. Some ideas:</p>
+          <p>Teams will have a <strong>maximum of five minutes</strong> to present, with questions from judges to follow. You&apos;re welcome to spend the majority of that time on background, a live demo, or whichever way you see fit. We highly encourage creative presentation formats. Some ideas:</p>
           <ul>
             <li>Fictitious product launch trailer</li>
             <li>Skit between users and problem solvers</li>
             <li>Audience interaction (though remember to keep time in mind)</li>
           </ul>
+          <p>In your presentation, please make sure your team members&apos; roles in building the project are clearly articulated.</p>
         </section>
 
         <section className={styles.victory}>
           <h2>Victory</h2>
           <p>Teams fight for a People&apos;s Choice, 3rd, 2nd, and 1st Place victory.</p>
-          <p>A victory is determined by the accumulation of categorical points in addition to bonuses for scalability, functionality, and collaboration. The teams with the highest total points will win their respective positions on the leaderboard.</p>
-          <p>Teams will be have the opportunity to earn points for good UI/UX, Presentation, and Hardware.</p>
+          <p>Projects will be evaluated on <strong>Craft & Polish</strong>, <strong>Presentation & Delivery</strong>, and <strong>Ambition & Technical Complexity</strong>.</p>
+          <p>Here are some tips based on what judges will be looking for:</p>
+          <ul>
+            <li>Be creative and engaging — see some ideas above</li>
+            <li>Clearly the define the problem (and target users for whom) you sought to solve</li>
+            <li>Really take some time to prepare. This is one of the reasons there is an hour between the submission deadline and check-in!</li>
+          </ul>
         </section>
 
         <section className={styles.judging}>
           <h2>Judging</h2>
           <p>An array of professors from the CS, design, and engineering departments will be joining us on Sunday to watch project presentations and assess them in the categories mentioned above.</p>
+          <p>To ensure a fair point count, judge evaluations will be tabulated and <strong>averaged</strong>.</p>
           <p>Event organizers will not participate directly in judging — with the exception of any tiebreakers — but may adjust points as needed.</p>
         </section>
 
