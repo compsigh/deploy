@@ -98,7 +98,7 @@ export default async function Home () {
           <p>Here are some tips based on what judges will be looking for:</p>
           <ul>
             <li>Be creative and engaging — see some ideas above</li>
-            <li>Clearly the define the problem (and target users for whom) you sought to solve</li>
+            <li>Clearly define the problem (and target users for whom) you sought to solve</li>
             <li>Really take some time to prepare. This is one of the reasons there is an hour between the submission deadline and check-in!</li>
           </ul>
         </section>
