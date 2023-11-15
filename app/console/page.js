@@ -18,6 +18,8 @@ export default async function Console () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
+  if (!user.email.endsWith('usfca.edu'))
+    redirect('/api/auth/error?error=AccessDenied')
 
   let judge
   let participant
