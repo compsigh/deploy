@@ -1,8 +1,6 @@
 import Button from './Button'
 import styles from './HackerCard.module.css'
 
-// TODO: team system
-
 export default async function HackerCard ({ user }) {
   const hackerId = user.participant?.hackerId
   const teamName = user.participant?.teamName || user.judge?.teamName

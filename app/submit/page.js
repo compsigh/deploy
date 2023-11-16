@@ -9,15 +9,15 @@ import { getSessionData } from '@/functions/user-management'
 import ParamsValidator from '@/components/ParamsValidator'
 
 // Function imports
-import { fetchJudge } from '@/functions/notion'
+import { fetchParticipant } from '@/functions/notion'
 
-export default async function Evaluate () {
+export default async function Submit () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
 
-  const judge = await fetchJudge(user)
-  if (!judge)
+  const registered = await fetchParticipant(user)
+  if (!registered)
     redirect('/console')
 
   return (
@@ -32,14 +32,14 @@ export default async function Evaluate () {
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
-        data-tally-src="https://tally.so/embed/mZ29ja?transparentBackground=1&dynamicHeight=1"
+        data-tally-src="https://tally.so/embed/mZ2OlB?transparentBackground=1&dynamicHeight=1"
         loading="lazy"
         width="100%"
         height="300"
         frameBorder="0"
         marginHeight="0"
         marginWidth="0"
-        title="DEPLOY/23 Project Evaluation">
+        title="DEPLOY/23 Project Submission">
       </iframe>
     </>
   )
