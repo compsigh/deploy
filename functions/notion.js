@@ -77,6 +77,47 @@ export async function fetchReferrals (participant) {
   return referrals.results.length
 }
 
+export async function submissionFound (participant) {
+  console.log(participant)
+  let submitted = false
+
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const submissions = await notion.databases.query({
+    database_id: process.env.NOTION_SUBMISSIONS_DATABASE_ID,
+    filter: {
+      property: 'Submitted by',
+      rich_text: {
+        contains: participant.properties.Email.title[0].text.content
+      }
+    }
+  })
+
+  if (submissions.results.length > 0) {
+    submitted = true
+    return submitted
+  }
+
+  for (const teammate of participant.teammates) {
+    const teammateSubmissions = await notion.databases.query({
+      database_id: process.env.NOTION_SUBMISSIONS_DATABASE_ID,
+      filter: {
+        property: 'Submitted by',
+        rich_text: {
+          contains: teammate.properties.Email.title[0].text.content
+        }
+      }
+    })
+
+    if (teammateSubmissions.results.length > 0) {
+      submitted = true
+      break
+    }
+  }
+
+  return submitted
+}
+
 export async function normalizeParticipant (participant) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -99,11 +140,15 @@ export async function normalizeParticipant (participant) {
     if (teammateId.id === participant.id)
       continue
     const teammate = await notion.pages.retrieve({ page_id: teammateId.id })
-    teammates.push(`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`)
+    teammates.push(teammate)
   }
 
   normalizedParticipant.teamName = `Team ${teamName}`
   normalizedParticipant.teammates = teammates
+
+  participant.teammates = teammates
+  const submitted = await submissionFound(participant)
+  normalizedParticipant.project = submitted
 
   return normalizedParticipant
 }

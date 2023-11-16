@@ -34,7 +34,11 @@ export default async function HackerCard ({ user }) {
         <ul className={styles.teammates}>
           {
             teammates
-              ? teammates.map(teammate => <li key={teammate}><h4>{teammate}</h4></li>)
+              ? teammates.map(
+                teammate => <li key={teammate.properties.Email.title[0].text.content}>
+                  <h4>{`${teammate.properties['First Name'].rich_text[0].text.content} ${teammate.properties['Last Name'].rich_text[0].text.content}`}</h4>
+                </li>
+              )
               : <li key='tbd'><h4>Teammates TBD</h4></li>
           }
         </ul>
