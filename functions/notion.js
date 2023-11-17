@@ -78,7 +78,6 @@ export async function fetchReferrals (participant) {
 }
 
 export async function submissionFound (participant) {
-  console.log(participant)
   let submitted = false
 
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
