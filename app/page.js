@@ -278,7 +278,7 @@ export default async function Home () {
             height={10}
             className='fade'
           />
-          <p>v1.4.3 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
+          <p>v1.4.4 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
         </div>
 
         <div className={styles['logo-wrapper']}>

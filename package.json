@@ -3,7 +3,7 @@
   "author": "compsigh",
   "bugs": "https://github.com/compsigh/deploy/issues",
   "homepage": "https://deploy.compsigh.so",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "license": "UNLICENSED",
   "description": "Landing page and platform for DEPLOY/23, compsigh's Fall 2023 hackathon",
   "repository": {

@@ -11,7 +11,7 @@ import ParamsValidator from '@/components/ParamsValidator'
 // Function imports
 import { fetchParticipant } from '@/functions/notion'
 
-export default async function Register () {
+export default async function ParticipantRegistration () {
   const user = await getSessionData()
   if (!user)
     redirect('/')
