@@ -117,6 +117,27 @@ export async function submissionFound (participant) {
   return submitted
 }
 
+export async function voteFound (participant) {
+  let voted = false
+
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const votes = await notion.databases.query({
+    database_id: process.env.NOTION_VOTES_DATABASE_ID,
+    filter: {
+      property: 'Participant email',
+      rich_text: {
+        contains: participant.properties.Email.title[0].text.content
+      }
+    }
+  })
+
+  if (votes.results.length > 0) {
+    voted = true
+    return voted
+  }
+}
+
 export async function normalizeParticipant (participant) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -147,7 +168,10 @@ export async function normalizeParticipant (participant) {
 
   participant.teammates = teammates
   const submitted = await submissionFound(participant)
-  normalizedParticipant.project = submitted
+  normalizedParticipant.submitted = submitted
+
+  const voted = await voteFound(participant)
+  normalizedParticipant.voted = voted
 
   return normalizedParticipant
 }

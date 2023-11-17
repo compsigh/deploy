@@ -9,6 +9,7 @@ export default async function Todos ({ user }) {
   const projectSubmissionOpenDatetime = new Date('2023-11-19T09:00:00-08:00')
   const teamDeclarationOpen = isOpen(teamDeclarationOpenDatetime)
   const projectSubmissionOpen = isOpen(projectSubmissionOpenDatetime)
+  const peoplesChoiceVoteOpen = false
 
   if (user.judge)
     return (
@@ -23,13 +24,13 @@ export default async function Todos ({ user }) {
     <ul className={styles.todos}>
       {
         user.participant
-          ? <li style={{ color: '#888888' }}>You&apos;ve registered   <p className='comment'>you&apos;re all set to attend</p></li>
+          ? <li style={{ color: '#888888' }}>You&apos;ve registered        <p className='comment'>you&apos;re all set to attend</p></li>
           : <li className='fade'><Button text='Register' type='link' destination='/register' user={user} /></li>
       }
 
       {
         !teamDeclarationOpen &&
-            <li>Declare your team   <p className='comment'>open Friday, Nov. 17 8pm–11pm</p></li>
+            <li>Declare your team        <p className='comment'>open Friday, Nov. 17 8pm</p></li>
       }
       {
         teamDeclarationOpen && user.participant && !user.participant?.teamName &&
@@ -37,20 +38,33 @@ export default async function Todos ({ user }) {
       }
       {
         teamDeclarationOpen && user.participant?.teamName &&
-            <li style={{ color: '#888888' }}>You&apos;re on a team    <p className='comment'>you&apos;re all set to submit</p></li>
+            <li style={{ color: '#888888' }}>You&apos;re on a team         <p className='comment'>you&apos;re all set to submit</p></li>
       }
 
       {
         !projectSubmissionOpen &&
-            <li>Submit your project <p className='comment'>open Sunday, Nov. 19 9am–11:30am</p></li>
+            <li>Submit your project      <p className='comment'>open Sunday, Nov. 19 9am</p></li>
       }
       {
-        projectSubmissionOpen && user.participant && user.participant?.teamName && !user.participant?.project &&
-            <li className='fade'><Button text='Submit your project' type='link' destination={`/submit?participant_email=${user.email}&teamname=${user.participant?.teamname}`} /></li>
+        projectSubmissionOpen && user.participant && user.participant?.teamName && !user.participant?.submitted &&
+            <li className='fade'><Button text='Submit your project' type='link' destination={`/submit?participant_email=${user.email}&teamname=${user.participant?.teamName}`} /></li>
       }
       {
-        projectSubmissionOpen && user.participant?.project &&
-            <li style={{ color: '#888888' }}>You&apos;ve submitted    <p className='comment'>you&apos;re ready, good luck!</p></li>
+        projectSubmissionOpen && user.participant?.submitted &&
+            <li style={{ color: '#888888' }}>You&apos;ve submitted         <p className='comment'>you&apos;re ready, good luck!</p></li>
+      }
+
+      {
+        !peoplesChoiceVoteOpen &&
+            <li>Vote for People&apos;s Choice <p className='comment'>open after presentations</p></li>
+      }
+      {
+        peoplesChoiceVoteOpen && user.participant && user.participant?.teamName && !user.participant?.voted &&
+            <li className='fade'><Button text='Vote for People&apos;s Choice' type='link' destination={`/vote?participant_email=${user.email}&teamname=${user.participant?.teamName}`} /></li>
+      }
+      {
+        peoplesChoiceVoteOpen && user.participant?.voted &&
+            <li style={{ color: '#888888' }}>You&apos;ve voted             <p className='comment'>thanks for participating</p></li>
       }
       <br />
       <li><Button text='Discord' type='link' destination='https://discord.compsigh.so' /></li>
