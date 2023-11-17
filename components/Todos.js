@@ -33,7 +33,7 @@ export default async function Todos ({ user }) {
       }
       {
         teamDeclarationOpen && user.participant && !user.participant?.teamName &&
-            <li className='fade'><Button text='Declare your team' type='link' destination='/team' user={user} /></li>
+            <li className='fade'><Button text='Declare your team' type='link' destination={`/team?participant_email=${user.email}`} /></li>
       }
       {
         teamDeclarationOpen && user.participant?.teamName &&
