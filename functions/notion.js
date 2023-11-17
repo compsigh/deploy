@@ -20,7 +20,7 @@ export async function fetchJudge (user) {
   judge = await notion.pages.retrieve({ page_id: judge.id })
 
   const normalizedJudge = {}
-  normalizedJudge.teamName = 'Team Judges'
+  normalizedJudge.teamName = 'Judge'
   normalizedJudge.teammates = []
   const otherJudges = confirmedJudges.results.filter(judge => judge.properties.Email.email !== user.email)
   for (const otherJudge of otherJudges) {
@@ -142,7 +142,7 @@ export async function normalizeParticipant (participant) {
     teammates.push(teammate)
   }
 
-  normalizedParticipant.teamName = `Team ${teamName}`
+  normalizedParticipant.teamName = teamName
   normalizedParticipant.teammates = teammates
 
   participant.teammates = teammates
