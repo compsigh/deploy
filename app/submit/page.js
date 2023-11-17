@@ -9,7 +9,7 @@ import { getSessionData } from '@/functions/user-management'
 import ParamsValidator from '@/components/ParamsValidator'
 
 // Function imports
-import { fetchParticipant } from '@/functions/notion'
+import { fetchParticipant, normalizeParticipant } from '@/functions/notion'
 
 export default async function ProjectSubmission () {
   const user = await getSessionData()
@@ -20,12 +20,14 @@ export default async function ProjectSubmission () {
   if (!registered)
     redirect('/console')
 
+  user.participant = await normalizeParticipant(registered)
+
   return (
     <>
       <ParamsValidator
         expect={{
           participant_email: user.email,
-          teamname: user.participant?.teamName
+          teamname: user.participant.teamName
         }}
         redirect='/console'
       />
