@@ -173,18 +173,24 @@ export default async function Home () {
             <code>11pm</code>
             <li>Team Declaration Deadline</li>
           </pre>
-          <p>Saturday, November 18th</p>
+          <p>Saturday, November 18th • LS 103</p>
           <pre className={styles.block}>
-            <code>TBD     — Mario Kart</code>
-            <code>TBD     — Just Dance</code>
-            <code>TBD     — Super Smash Bros</code>
+            <code>10am    — Mario Kart</code>
+            <code>12pm    — Just Dance</code>
+            <code>2pm     — Super Smash Bros</code>
             <code>TBD     — Kahoot</code>
           </pre>
           <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>TBD</code>
+            <code>10am</code>
             <li>Mario Kart</li>
+            <br />
+            <code>12pm</code>
             <li>Just Dance</li>
+            <br />
+            <code>2pm</code>
             <li>Super Smash Bros</li>
+            <br />
+            <code>TBD</code>
             <li>Kahoot</li>
           </pre>
           <p>Sunday, November 19th • McLaren Conference Center</p>
