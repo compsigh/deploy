@@ -7,14 +7,14 @@ export async function fetchJudge (user) {
   const confirmedJudges = await notion.databases.query({
     database_id: process.env.NOTION_JUDGES_DATABASE_ID,
     filter: {
-      property: 'Email',
-      email: {
-        is_not_empty: true
+      property: 'Status',
+      select: {
+        equals: 'Confirmed'
       }
     }
   })
 
-  let judge = confirmedJudges.results.find(judge => judge.properties.Email.email === user.email)
+  let judge = confirmedJudges.results.find(judge => judge.properties.Email.title[0].text.content === user.email)
   if (!judge)
     return null
   judge = await notion.pages.retrieve({ page_id: judge.id })
@@ -22,10 +22,10 @@ export async function fetchJudge (user) {
   const normalizedJudge = {}
   normalizedJudge.teamName = 'Judge'
   normalizedJudge.teammates = []
-  const otherJudges = confirmedJudges.results.filter(judge => judge.properties.Email.email !== user.email)
+  const otherJudges = confirmedJudges.results.filter(judge => judge.properties.Email.title[0].text.content !== user.email)
   for (const otherJudge of otherJudges) {
     const otherJudgePage = await notion.pages.retrieve({ page_id: otherJudge.id })
-    normalizedJudge.teammates.push(`${otherJudgePage.properties.Name.title[0].text.content}`)
+    normalizedJudge.teammates.push(otherJudgePage)
   }
 
   return normalizedJudge
