@@ -46,7 +46,7 @@ export default async function Todos ({ user }) {
       }
       {
         projectSubmissionOpen && user.participant && user.participant?.teamName && !user.participant?.project &&
-            <li className='fade'><Button text='Submit your project' type='link' destination='/submit' user={user} /></li>
+            <li className='fade'><Button text='Submit your project' type='link' destination={`/submit?participant_email=${user.email}&teamname=${user.participant?.teamname}`} /></li>
       }
       {
         projectSubmissionOpen && user.participant?.project &&

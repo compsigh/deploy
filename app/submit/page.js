@@ -24,9 +24,8 @@ export default async function ProjectSubmission () {
     <>
       <ParamsValidator
         expect={{
-          firstName: user.name.split(' ')[0],
-          lastName: user.name.split(' ')[1],
-          email: user.email
+          participant_email: user.email,
+          teamname: user.participant?.teamName
         }}
         redirect='/console'
       />
