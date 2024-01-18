@@ -16,23 +16,20 @@ One of our club's values is [Learning/Building in Public](https://www.swyx.io/le
 
 ## Technical Breakdown
 
-Aside from JSX and CSS, the platform is primarily composed of cohesive integrations.
-
 ### Registration
 
-The participant registration form is courtesy of Tally, a fantastic Notion-like form builder. The form is embedded in the page using an `<iframe>`, and the submissions are synced with a Notion database.
+The participant registration form is courtesy of Tally, a Notion-like form builder. The form is embedded in the page using an `<iframe>`, and the submissions are synced with a Notion database.
 
 ### Authentication
 
-While it's unlikely anything malicious or even accidental would occur with the form, unfortunately Tally does not yet have any native safety integrations, so the situation called for a DIY workaround. Not only is the form submission page locked behind an authwall (only accessible to USFCA students) — thanks to NextAuth — but it also expects `firstName`, `lastName`, and `email` query parameters. Effectively, the form can only be submitted by the logged-in student. Check out [the `ParamsValidator` component](/components/ParamsValidator.js) to see how this works.
+While it's unlikely anything malicious would happen, unfortunately Tally does not yet have any native permissions, so the situation called for a DIY workaround. The form submission page is locked behind an authwall (only accessible to USFCA students) and expects matching `firstName`, `lastName`, and `email` query parameters. We've increased the likelihood that the form is only ever submitted by the logged-in student. Check out [the `ParamsValidator` component](/components/ParamsValidator.js) to see how this works.
 
-### Hacker Card
+### Console
 
-![Hacker Card screenshot](/public/dashboard-hackercard.png)
+![DEPLOY/23 console](/public/console.png)
 
-The Hacker Card is a custom component that nicely renders participant data fetched from the Notion database.
-
-> ⚠️ Be aware that querying three databases (for us, we have one for participants, teams, and referrals (*could probably eliminate this one honestly*)) on each request is not the most performant, and will result in noticeable latency. I'm working on a solution whereby page load is independent of rendering the card.
+The Console shows the participant (or judge) a set of personalized todos. For example, if they've yet to declare a team, the Console will show them a link where they can do so.
+The Console also displays the participant's unique Hacker Card, which renders participant data fetched from the Notion API — we have a database each for **participants**, **teams**, **referrals**, **project submissions**, and **project evaluations**.
 
 ## Contributing
 
