@@ -20,6 +20,7 @@
   "dependencies": {
     "@notionhq/client": "^2.2.13",
     "@types/react": "^18",
+    "@vercel/edge-config": "^0.4.1",
     "eslint": "8.37.0",
     "eslint-config-next": "latest",
     "eslint-config-standard": "^17.0.0",

@@ -1,3 +1,6 @@
+// Next imports
+import { get } from '@vercel/edge-config'
+
 // Component imports
 import Button from '@/components/Button'
 
@@ -7,9 +10,9 @@ import styles from '@/app/console/Console.module.css'
 export default async function Todos ({ user }) {
   const teamDeclarationOpenDatetime = new Date('2023-11-17T20:00:00-08:00')
   const projectSubmissionOpenDatetime = new Date('2023-11-19T09:00:00-08:00')
-  const teamDeclarationOpen = isOpen(teamDeclarationOpenDatetime)
-  const projectSubmissionOpen = isOpen(projectSubmissionOpenDatetime)
-  const peoplesChoiceVoteOpen = true
+  const teamDeclarationOpen = get('teamDeclarationOpen') || isOpen(teamDeclarationOpenDatetime)
+  const projectSubmissionOpen = get('projectSubmissionOpen') || isOpen(projectSubmissionOpenDatetime)
+  const peoplesChoiceVoteOpen = get('peoplesChoiceVoteOpen') || false
 
   if (user.judge)
     return (
