@@ -1,5 +1,5 @@
 // Component imports
-import AuthWrapper from '@/components/AuthWrapper'
+import { AuthWrapper } from '@/components/AuthWrapper'
 
 // Style imports
 import localFont from 'next/font/local'
