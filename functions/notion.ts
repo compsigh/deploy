@@ -2,7 +2,7 @@ import { Client, isFullPageOrDatabase } from '@notionhq/client'
 import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints'
 import type { User } from 'next-auth'
 
-export type judgePageTitleType = {
+type judgePageTitleType = {
   type: "title",
   id: string,
   title: Array<{
@@ -16,7 +16,7 @@ export type judgePageTitleType = {
   }>
 }
 
-export async function fetchJudges () {
+async function fetchJudges () {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const confirmedJudgesResponse = await notion.databases.query({
@@ -66,5 +66,25 @@ export async function fetchJudgeTeammatesNotionPages (user: User) {
   }
 
   return judgeTeammatesNotionPages
+}
+
+export async function fetchParticipantNotionPage (user: User) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const participantResponse = await notion.databases.query({
+    database_id: process.env.NOTION_PARTICIPANTS_DATABASE_ID,
+    filter: {
+      property: 'Email',
+      rich_text: {
+        contains: user.email
+      }
+    }
+  })
+
+  if (participantResponse.results.length === 0)
+    return null
+
+  const participant = await notion.pages.retrieve({ page_id: participantResponse.results[0].id })
+  return participant
 }
 
