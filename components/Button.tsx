@@ -1,28 +1,37 @@
 'use client'
 
-import { signIn, signOut } from 'next-auth/react'
-import styles from './Button.module.css'
-import Link from 'next/link'
+// Next
 import { useSearchParams, useRouter } from 'next/navigation'
+import Link from 'next/link'
+import type { MouseEventHandler } from 'react'
+import type { Route } from 'next'
 
-export default function Button (props) {
-  const { text, type, user, destination } = props
-  const router = useRouter()
-  let onClick
+// Auth
+import { signIn, signOut } from 'next-auth/react'
+import type { User } from 'next-auth'
+
+// Styles
+import styles from './Button.module.css'
+
+export function Button ({ text, type, user, destination }:
+  { text: string, type: string, user?: User, destination?: string }
+) {
+
   let queryParams = ''
-
   const searchParams = useSearchParams()
   const object = {}
   for (const [key, value] of searchParams.entries())
     object[key] = value
   queryParams = appendQueryParams(queryParams, object)
 
+  let onClick: MouseEventHandler<HTMLButtonElement>
+  const router = useRouter()
   if (type === 'login')
     onClick = () => signIn('google', { callbackUrl: `/console${queryParams}` })
   else if (type === 'logout')
     onClick = () => signOut()
   else if (type === 'button' && destination)
-    onClick = () => router.push(`${destination}${queryParams}`)
+    onClick = () => router.push(`${destination}${queryParams}` as Route)
 
   if (user) {
     const firstName = user.name.split(' ')[0]
@@ -37,7 +46,7 @@ export default function Button (props) {
     return <Link href='#' onClick={() => navigator.clipboard.writeText(`${destination}`)}>{text}</Link>
 
   if (type === 'link')
-    return <Link href={`${destination}${queryParams}`}>{text}</Link>
+    return <Link href={`${destination}${queryParams}` as Route}>{text}</Link>
 
   if (type === 'button')
     return <button className={styles.button} onClick={onClick}>{text}</button>
@@ -47,7 +56,7 @@ export default function Button (props) {
   )
 }
 
-function appendQueryParams (queryParams, object) {
+function appendQueryParams (queryParams: string, object: Object) {
   if (Object.keys(object).length === 0)
     return queryParams
 
