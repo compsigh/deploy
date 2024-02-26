@@ -1,8 +1,8 @@
 import { Client, isFullPageOrDatabase } from '@notionhq/client'
-import type { GetPageResponse } from '@notionhq/client/build/src/api-endpoints'
+import type { GetPageResponse, PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import type { User } from 'next-auth'
 
-type judgePageTitleType = {
+type TitlePagePropertyType = {
   type: "title",
   id: string,
   title: Array<{
@@ -14,6 +14,14 @@ type judgePageTitleType = {
         } | null
     }
   }>
+}
+
+type RelationPagePropertyType = {
+  type: "relation";
+  relation: Array<{
+      id: string;
+  }>;
+  id: string;
 }
 
 async function fetchJudges () {
@@ -29,8 +37,7 @@ async function fetchJudges () {
     }
   })
 
-  const confirmedJudges = confirmedJudgesResponse.results
-  return confirmedJudges
+  return confirmedJudgesResponse.results
 }
 
 export async function fetchJudgeNotionPage (user: User) {
@@ -40,7 +47,7 @@ export async function fetchJudgeNotionPage (user: User) {
   let judge = confirmedJudges.find((judge) => {
     if (!isFullPageOrDatabase(judge))
       return false
-    const judgeEmail = judge.properties.Email as judgePageTitleType
+    const judgeEmail = judge.properties.Email as TitlePagePropertyType
     return judgeEmail.title[0].text.content === user.email
   })
   if (!judge)
@@ -55,7 +62,7 @@ export async function fetchJudgeTeammatesNotionPages (user: User) {
   let judgeTeammates = confirmedJudges.filter((judge) => {
     if (!isFullPageOrDatabase(judge))
       return false
-    const judgeEmail = judge.properties.Email as judgePageTitleType
+    const judgeEmail = judge.properties.Email as TitlePagePropertyType
     return judgeEmail.title[0].text.content !== user.email
   })
 
@@ -84,7 +91,19 @@ export async function fetchParticipantNotionPage (user: User) {
   if (participantResponse.results.length === 0)
     return null
 
-  const participant = await notion.pages.retrieve({ page_id: participantResponse.results[0].id })
-  return participant
+  return await notion.pages.retrieve({ page_id: participantResponse.results[0].id })
+}
+
+export async function fetchParticipantTeamNotionPage (participant: PageObjectResponse) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const participantTeam = participant.properties.Team as RelationPagePropertyType
+  if (!participantTeam.relation[0])
+    return null
+
+  const teamPageId = participantTeam.relation[0].id
+  return await notion.pages.retrieve({ page_id: teamPageId })
+}
+
 }
 
