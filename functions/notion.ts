@@ -105,5 +105,22 @@ export async function fetchParticipantTeamNotionPage (participant: PageObjectRes
   return await notion.pages.retrieve({ page_id: teamPageId })
 }
 
+export async function fetchReferralCount (participant: PageObjectResponse) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const participantEmailProperty = participant.properties.Email as TitlePagePropertyType
+  const participantEmail = participantEmailProperty.title[0].text.content
+
+  const referrals = await notion.databases.query({
+    database_id: process.env.NOTION_REFERRALS_DATABASE_ID,
+    filter: {
+      property: 'Referred by',
+      rich_text: {
+        contains: participantEmail
+      }
+    }
+  })
+
+  return referrals.results.length
 }
 
