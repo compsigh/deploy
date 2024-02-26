@@ -22,7 +22,7 @@ The participant registration form is courtesy of Tally, a Notion-like form build
 
 ### Authentication
 
-While it's unlikely anything malicious would happen, unfortunately Tally does not yet have any native permissions, so the situation called for a DIY workaround. The form submission page is locked behind an authwall (only accessible to USFCA students) and expects matching `firstName`, `lastName`, and `email` query parameters. We've increased the likelihood that the form is only ever submitted by the logged-in student. Check out [the `ParamsValidator` component](/components/ParamsValidator.js) to see how this works.
+While it's unlikely anything malicious would happen, unfortunately Tally does not yet have any native permissions, so the situation called for a DIY workaround. The form submission page is locked behind an authwall (only accessible to USFCA students) and expects matching `firstName`, `lastName`, and `email` query parameters. We've increased the likelihood that the form is only ever submitted by the logged-in student. Check out [the `ParamsValidator` component](/components/ParamsValidator.tsx) to see how this works.
 
 ### Console
 
