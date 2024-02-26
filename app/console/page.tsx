@@ -17,13 +17,14 @@ export default async function Console () {
   const authed = await checkAuth(session)
   if (!authed)
     redirect('/')
+  const user = session.user
 
   return (
     <main className={styles.main}>
       <h1 className={styles.title}><span className='fade'>► </span>Welcome, Hacker</h1>
-      <Todos />
+      <Todos user={user} />
       <div className={styles['card-wrapper']}>
-        <HackerCard />
+        <HackerCard user={user} />
       </div>
     </main>
   )
