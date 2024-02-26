@@ -7,7 +7,7 @@ import Button from '@/components/Button'
 // Style imports
 import styles from '@/app/console/Console.module.css'
 
-export default async function Todos ({ user }) {
+export async function Todos ({ user }) {
   const teamDeclarationOpenDatetime = new Date('2023-11-17T20:00:00-08:00')
   const projectSubmissionOpenDatetime = new Date('2023-11-19T09:00:00-08:00')
   const teamDeclarationOpen = get('teamDeclarationOpen') || isOpen(teamDeclarationOpenDatetime)
