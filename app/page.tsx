@@ -1,18 +1,21 @@
-// Next imports
+// Next
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Style imports
-import styles from './Home.module.css'
+// Auth
+import { auth } from '@/auth'
+import { checkAuth } from '@/functions/user-management'
 
 // Component imports
-import Button from '@/components/Button'
+import { Button } from '@/components/Button'
 
-// Function imports
-import { getSessionData } from '@/functions/user-management'
+// Styles
+import styles from './Home.module.css'
 
 export default async function Home () {
-  const user = await getSessionData()
+  const session = await auth()
+  const authed = await checkAuth(session)
+  const user = authed ? session.user : null
 
   return (
     <main className={styles.main}>
