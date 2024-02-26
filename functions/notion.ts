@@ -2,7 +2,7 @@ import { Client, isFullPageOrDatabase } from '@notionhq/client'
 import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import type { User } from 'next-auth'
 
-type TitlePagePropertyType = {
+export type TitlePagePropertyType = {
   type: "title",
   id: string,
   title: Array<{
@@ -16,7 +16,7 @@ type TitlePagePropertyType = {
   }>
 }
 
-type RelationPagePropertyType = {
+export type RelationPagePropertyType = {
   type: "relation";
   relation: Array<{
       id: string;
