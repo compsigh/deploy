@@ -165,3 +165,24 @@ export async function submissionFound (participant: PageObjectResponse) {
   return false
 }
 
+export async function peoplesChoiceVoteFound (participant: PageObjectResponse) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const participantEmailProperty = participant.properties.Email as TitlePagePropertyType
+  const participantEmail = participantEmailProperty.title[0].text.content
+
+  const votes = await notion.databases.query({
+    database_id: process.env.NOTION_VOTES_DATABASE_ID,
+    filter: {
+      property: 'Participant email',
+      rich_text: {
+        contains: participantEmail
+      }
+    }
+  })
+
+  if (votes.results.length > 0)
+    return true
+  return false
+}
+
