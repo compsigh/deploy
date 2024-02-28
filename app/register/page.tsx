@@ -39,9 +39,6 @@ export default async function ParticipantRegistration () {
         loading="lazy"
         width="100%"
         height="300"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
         title="DEPLOY/23 Participant Registration">
       </iframe>
     </>

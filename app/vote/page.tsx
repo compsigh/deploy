@@ -10,7 +10,11 @@ import { checkAuth } from '@/functions/user-management'
 import ParamsValidator from '@/components/ParamsValidator'
 
 // Function imports
-import { fetchParticipantNotionPage, fetchParticipantTeamNotionPage } from '@/functions/notion'
+import {
+  fetchParticipantNotionPage,
+  fetchParticipantTeamNotionPage
+} from '@/functions/notion'
+
 import type { TitlePagePropertyType } from '@/functions/notion'
 
 export default async function PeoplesChoiceVote () {
@@ -45,9 +49,6 @@ export default async function PeoplesChoiceVote () {
         loading="lazy"
         width="100%"
         height="400"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
         title="DEPLOY/23 People's Choice Vote">
       </iframe>
     </>
