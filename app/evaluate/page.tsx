@@ -1,15 +1,15 @@
-// Next imports
+// Next
 import { redirect } from 'next/navigation'
 import Script from 'next/script'
 
-// Auth imports
+// Auth
 import { auth } from '@/auth'
 import { checkAuth } from '@/functions/user-management'
 
-// Component imports
+// Components
 import ParamsValidator from '@/components/ParamsValidator'
 
-// Function imports
+// Functions
 import { fetchJudgeNotionPage } from '@/functions/notion'
 
 export default async function ProjectEvaluation () {
