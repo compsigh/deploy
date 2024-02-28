@@ -115,6 +115,25 @@ export async function fetchParticipantTeamNotionPage (participant: PageObjectRes
   return await notion.pages.retrieve({ page_id: teamPageId }) as PageObjectResponse
 }
 
+export async function fetchParticipantTeammatesNotionPages (participant: PageObjectResponse) {
+  const notion = new Client({ auth: process.env.NOTION_API_KEY })
+
+  const team = await fetchParticipantTeamNotionPage(participant)
+  if (!team)
+    return null
+  const teammateMembersProperty = team.properties.Members as RelationPagePropertyType
+  const teammateIds = teammateMembersProperty.relation
+  const teammates = []
+  for (const teammateId of teammateIds) {
+    if (teammateId.id === participant.id)
+      continue
+    const teammate = await notion.pages.retrieve({ page_id: teammateId.id })
+    teammates.push(teammate)
+  }
+
+  return teammates
+}
+
 export async function fetchReferralCount (participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
@@ -195,4 +214,3 @@ export async function peoplesChoiceVoteFound (participant: PageObjectResponse) {
     return true
   return false
 }
-
