@@ -16,6 +16,17 @@ export type TitlePagePropertyType = {
   }>
 }
 
+export type RichTextPagePropertyType = {
+  type: 'rich_text'
+  rich_text: {
+    text: {
+      content: string
+    }
+  }[],
+  id: string,
+  name: string
+}
+
 export type RelationPagePropertyType = {
   type: 'relation'
   relation: Array<{
