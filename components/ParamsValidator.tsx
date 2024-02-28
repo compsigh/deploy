@@ -7,7 +7,7 @@ import type { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.
 import type { ReadonlyURLSearchParams } from 'next/navigation'
 
 export default function ParamsValidator ({ expect, redirect }:
-  { expect: Map<string, string>, redirect: string }
+  { expect: Record<string, string>, redirect: string }
 ) {
   const searchParams = useSearchParams()
   const router = useRouter()
@@ -16,10 +16,12 @@ export default function ParamsValidator ({ expect, redirect }:
   useEffect(() => {
     validateParams(expect, searchParams, routerRef, redirect)
   }, [expect, searchParams, redirect])
+
+  return null
 }
 
 function validateParams (
-  expect: Map<string, string>,
+  expect: Record<string, string>,
   searchParams: ReadonlyURLSearchParams,
   routerRef: MutableRefObject<AppRouterInstance>,
   redirect: string
