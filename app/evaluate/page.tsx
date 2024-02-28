@@ -3,20 +3,23 @@ import { redirect } from 'next/navigation'
 import Script from 'next/script'
 
 // Auth imports
-import { getSessionData } from '@/functions/user-management'
+import { auth } from '@/auth'
+import { checkAuth } from '@/functions/user-management'
 
 // Component imports
 import ParamsValidator from '@/components/ParamsValidator'
 
 // Function imports
-import { fetchJudge } from '@/functions/notion'
+import { fetchJudgeNotionPage } from '@/functions/notion'
 
 export default async function ProjectEvaluation () {
-  const user = await getSessionData()
-  if (!user)
+  const session = await auth()
+  const authed = await checkAuth(session)
+  if (!authed)
     redirect('/')
+  const user = session.user
 
-  const judge = await fetchJudge(user)
+  const judge = await fetchJudgeNotionPage(user)
   if (!judge)
     redirect('/console')
 
