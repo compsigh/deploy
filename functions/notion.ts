@@ -1,5 +1,8 @@
 import { Client, isFullPageOrDatabase } from '@notionhq/client'
-import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import type {
+  PageObjectResponse,
+  UniqueIdPropertyItemObjectResponse
+} from '@notionhq/client/build/src/api-endpoints'
 import type { User } from 'next-auth'
 
 export type TitlePagePropertyType = {
@@ -33,16 +36,6 @@ export type RelationPagePropertyType = {
       id: string
   }>,
   id: string
-}
-
-export type UniqueIdPagePropertyType = {
-  type: 'unique_id'
-  unique_id: {
-      prefix: string | null,
-      number: number | null
-  },
-  id: string,
-  name: string
 }
 
 async function fetchJudges () {

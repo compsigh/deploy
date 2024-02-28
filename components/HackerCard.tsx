@@ -1,8 +1,25 @@
 import type { User } from 'next-auth'
-import { fetchJudgeNotionPage, fetchJudgeTeammatesNotionPages, fetchParticipantNotionPage, fetchParticipantTeamNotionPage, fetchParticipantTeammatesNotionPages, fetchReferralCount } from '@/functions/notion'
-import type { RichTextPagePropertyType, TitlePagePropertyType, UniqueIdPagePropertyType } from '@/functions/notion'
-import { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+
+import {
+  fetchJudgeNotionPage,
+  fetchJudgeTeammatesNotionPages,
+  fetchParticipantNotionPage,
+  fetchParticipantTeamNotionPage,
+  fetchParticipantTeammatesNotionPages,
+  fetchReferralCount } from '@/functions/notion'
+
+import type {
+  RichTextPagePropertyType,
+  TitlePagePropertyType
+} from '@/functions/notion'
+
+import {
+  PageObjectResponse,
+  UniqueIdPropertyItemObjectResponse
+} from '@notionhq/client/build/src/api-endpoints'
+
 import { Button } from './Button'
+
 import styles from './HackerCard.module.css'
 
 export async function HackerCard ({ user }: { user: User }) {
@@ -27,7 +44,7 @@ export async function HackerCard ({ user }: { user: User }) {
   else if (participant = await fetchParticipantNotionPage(user)) {
     const nameProperty = participant.properties.Name as TitlePagePropertyType
     name = nameProperty?.title[0].text.content
-    const hackerIdProperty = participant?.properties['Hacker ID'] as UniqueIdPagePropertyType
+    const hackerIdProperty = participant?.properties['Hacker ID'] as UniqueIdPropertyItemObjectResponse
     hackerId = hackerIdProperty?.unique_id.number
     const team = await fetchParticipantTeamNotionPage(participant)
     const teamNameProperty = team?.properties.Name as TitlePagePropertyType
