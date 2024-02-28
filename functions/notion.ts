@@ -3,10 +3,10 @@ import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoint
 import type { User } from 'next-auth'
 
 export type TitlePagePropertyType = {
-  type: "title",
+  type: 'title',
   id: string,
   title: Array<{
-    type: "text",
+    type: 'text',
     text: {
         content: string,
         link: {
@@ -17,11 +17,21 @@ export type TitlePagePropertyType = {
 }
 
 export type RelationPagePropertyType = {
-  type: "relation";
+  type: 'relation'
   relation: Array<{
-      id: string;
-  }>;
-  id: string;
+      id: string
+  }>,
+  id: string
+}
+
+export type UniqueIdPagePropertyType = {
+  type: 'unique_id'
+  unique_id: {
+      prefix: string | null,
+      number: number | null
+  },
+  id: string,
+  name: string
 }
 
 async function fetchJudges () {
