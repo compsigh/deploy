@@ -11,24 +11,24 @@ export async function HackerCard ({ user }) {
     <>
       <div className={styles.card}>
         <div className={styles.id}>
-        {
-          user.participant
-            ? <>
-                <p className={styles.prefix}>{prefixId(hackerId)}</p>
-                <p className={styles.number}>{hackerId}</p>
-              </>
-            : <p className={styles.prefix}>#TBD</p>
-        }
+          {
+            user.participant
+              ? <>
+                  <p className={styles.prefix}>{prefixId(hackerId)}</p>
+                  <p className={styles.number}>{hackerId}</p>
+                </>
+              : <p className={styles.prefix}>#TBD</p>
+          }
         </div>
 
         <h3 className={styles.name}>{user.name}</h3>
 
         <div className={styles['team-bar']}>
-        {
-          teamName
-            ? <h3 className={styles['team-name']}>{teamName}</h3>
-            : <h3 className={styles['team-name']}>Team TBD</h3>
-        }
+          {
+            teamName
+              ? <h3 className={styles['team-name']}>{teamName}</h3>
+              : <h3 className={styles['team-name']}>Team TBD</h3>
+          }
         </div>
 
         <ul className={styles.teammates}>
