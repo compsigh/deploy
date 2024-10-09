@@ -151,6 +151,19 @@ Ambition & Technical Complexity:
 
 - The team took on an ambitious challenge, through the scale & scope of the problem, their tech stack, or otherwise impressive medium.
 
+### Grade level weighting
+
+To balance the fact we have participants from all grade levels, one idea is to introduce a weighting system that scales by average grade level on a team. e.g.:
+
+- Average 4th-year team: `1.00x` multiplier: `16.0` → `16.0` out of 20 points
+- Average 3rd-year team: `1.10x` multiplier: `16.0` → `17.6` out of 20 points
+- Average 2nd-year team: `1.15x` multiplier: `16.0` → `18.4` out of 20 points
+- Average 1st-year team: `1.20x` multiplier: `16.0` → `19.2` out of 20 points
+
+So, a team composed of a freshman, sophomore, junior, and senior = `1.20x + 1.15x + 1.10x + 1.00x = 4.45 / 4 = 1.1125x`. If that team scored `16.0`, it would be bumped up to a `17.8`.
+
+This would absolve the need for any beginner/advanced team brackets or different evaluation criteria.
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
@@ -171,8 +184,6 @@ Also:
 - Full agenda with deadlines and activities
 - Look through DEPLOY/23 todos and see what we can add here
 - [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
-
-Idea from Edward and Gursh: if we do beginner/advanced categories type shit we should use different criteria for evaluation
 
 ## Links
 
