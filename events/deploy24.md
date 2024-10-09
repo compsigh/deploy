@@ -82,12 +82,80 @@ A checkbox (`[x]`) means the sponsor has agreed to help fund the event. Partiall
 - [ ] Vercel
 - [ ] Wooting
 
+## Point system and rubric
+
+Last year, we operated on a closed-source rubric, only sharing:
+
+> Projects will be evaluated on **Craft & Polish**, **Presentation & Delivery**, and **Ambition & Technical Complexity**.
+>
+> Here are some tips based on what judges will be looking for:
+> 
+> - Be creative and engaging — see some ideas above
+> - Clearly define the problem (and target users for whom) you sought to solve
+> - Really take some time to prepare. This is one of the reasons there is an hour between the submission deadline and check-in!
+
+### Point formula
+
+Our original point formula from DEPLOY/23:
+
+```plaintext
+(average of judge evaluations) +
+(referrals per team member) +
+(number of different majors on the team)
+```
+
+The weighting on this was scuffed — teams that had any more than two referrals had an outsized advantage, and we ended up having to adjust on presentation day.
+
+Here are the changes to the point formula and calculation for DEPLOY/24:
+
+- We will use solely judge evaluations for calculating a team's score. External factors — like referrals or event attendance — will not impact a team's score.
+- Our criteria rating range is going from 1 to 10, to 1 (barely met, if at all) to 4 (met well, if not exceeded).
+- Judges will not be able to input their own offset `-2` to `+2` value, and must use only our criteria and rating range.
+- Rather than calculating the *average* of judge criteria ratings across *categories*, all criteria will be *weighted equally*, and calculated as *sums*.
+- We are removing the criterion, "The team presented themselves as prepared, confident, and engaged."
+- We will open-source this year's rubric — we have no reason to be concerned participants will "game the system"; isn't that what we want? :)
+
+### Basic qualifications
+
+If any of these are lacking in a team's presentation, organizers and/or judges should reach out to the team in question for elaboration. Extenuating circumstances will be evaluated case-by-case, but if a team proves unable to remedy the situation, they are subject to disqualification.
+
+- All teammates (as when they registered by the team declaration deadline) are present and on-stage.
+- All teammates' roles and contributions are clearly articulated.
+- Where applicable, the project is open-source or is otherwise publicly accessible.
+
+### Criteria we're *not* looking to evaluate
+
+- Innovation: whether or not a judge has heard of it doesn't make it innovative. Also, we shouldn't penalize teams for doing something *better* that another product or service does.
+- Completeness: making mistakes & learning from them is one of the key benefits in a scrappy, experimental environment. As long as teams demonstrate that growth, all is well.
+
+### Score calculation
+
+- Criteria are weighted equally.
+- Criteria are rated by judges on a linear scale, from 1 (barely met, if at all) to 4 (met well, if not exceeded).
+- Each criteron's rating is added to a running total to represent the judge's evaluation for a team.
+- The average of all judges' evaluation totals for a given team represents the team's total score.
+
+### Criteria we *are* evaluating
+
+Craft & Polish:
+
+- Despite the time limit, the team showcased their effort in creating a polished solution, with attention to detail and user experience.
+
+Presentation & Delivery:
+
+- The team presented their project in a creative and engaging way.
+- The team defined the problem they sought to solve, identifying a clear and focused target user, need, and context.
+- The team showcased their prototype solution, mentioning whether or not they accomplished their goal. If the project was incomplete, the team mentioned what worked, what didn't, and how the team would continue to develop the project.
+
+Ambition & Technical Complexity:
+
+- The team took on an ambitious challenge, through the scale & scope of the problem, their tech stack, or otherwise impressive medium.
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
 
 - [ ] Catering
-- [ ] Point system
 - [ ] Trailer
 - [ ] Promo & outreach
 - [ ] Landing page & platform
@@ -96,6 +164,10 @@ Also:
 
 - Organizers & ground team
 - Photo & video
+- Broadcast
+- A/V
+- Merch
+- Full agenda with deadlines and activities
 - [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
 
 Idea from Edward and Gursh: if we do beginner/advanced categories type shit we should use different criteria for evaluation
