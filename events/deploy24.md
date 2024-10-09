@@ -58,7 +58,7 @@ The general consensus — both on leadership and our sponsors — is that our pr
 PPL'S CHOICE >> Cat-shaped pillow 🐱
 ```
 
-We agreed during our [DEPLOY/23 debrief](https://www.notion.so/compsigh/DEPLOY-23-Debrief-Notes-for-DEPLOY-24-41fc140f771f4e84aadd7a8b743edccd) that the top-three format + people's choice is a good one. The big coefficient here is that these prizes are per winning team *member*. So, for first place, it's not $200 from us, it's $800.
+We agreed during our DEPLOY/23 debrief that the top-three format + people's choice is a good one. The big coefficient here is that these prizes are per winning team *member*. So, for first place, it's not $200 from us, it's $800.
 
 Some ideas for this year's prizes:
 
@@ -117,7 +117,7 @@ Here are the changes to the point formula and calculation for DEPLOY/24:
 
 ### Basic qualifications
 
-If any of these are lacking in a team's presentation, organizers and/or judges should reach out to the team in question for elaboration. Extenuating circumstances will be evaluated case-by-case, but if a team proves unable to remedy the situation, they are subject to disqualification.
+If any of these are lacking in a team's presentation, organizers and/or judges will reach out to the team in question for elaboration. Extenuating circumstances will be evaluated case-by-case, but if a team proves unable to remedy the situation, they are subject to disqualification.
 
 - All teammates (as when they registered by the team declaration deadline) are present and on-stage.
 - All teammates' roles and contributions are clearly articulated.
@@ -167,7 +167,9 @@ Also:
 - Broadcast
 - A/V
 - Merch
+- Trophies
 - Full agenda with deadlines and activities
+- Look through DEPLOY/23 todos and see what we can add here
 - [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
 
 Idea from Edward and Gursh: if we do beginner/advanced categories type shit we should use different criteria for evaluation
