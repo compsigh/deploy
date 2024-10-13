@@ -164,12 +164,55 @@ So, a team composed of a freshman, sophomore, junior, and senior = `1.20x + 1.15
 
 This would absolve the need for any beginner/advanced team brackets or different evaluation criteria.
 
+## Trailer
+
+### Story & cinematic universe
+
+The DEPLOY/24 trailer builds on the cinematic universe developed last year. Here's what we know:
+
+- The story is set in San Francisco, 2034 (10 years after each hackathon).
+- AGI was developed, but it went wrong, in the sense that:
+- The government commandeered it to impose a surveillance state.
+- Vigilante hackers rose up in 2033 (during the events of DEPLOY/23) to fight.
+- The government is aware of the hackers' existence, but denies it, because (1) it would question their control, and (2) they would be admitting wrongdoing, or giving reason to suspect as much.
+- Ordinary civilians don't know of the hackers' existence, and those that do generally avoid talking about them, for fear of persecution, and because most are not immediately convinced of the hackers' benevolence.
+- The hackers are fighting for a higher cause against the misuse of AGI by the government. In-universe, there may be several factions of hackers, but they aren't explicitly fighting each other — *we are ignoring the IRL competitive nature of DEPLOY (this also contributes to the compsigh narrative of working together)*.
+- The events of DEPLOY are an *ongoing* conflict, rather than yearly (as it is IRL). This is because (1) expanding the cinematic universe can be gradual, rather than a lot of pressure to come up with a new story each hackathon, and (2) it doesn't confine DEPLOY as a hackathon IRL to a yearly cadence, should we ever do it each semester or something like that.
+
+### DEPLOY/24
+
+All a work-in-progress, these describe *potential* shots we could work with to compose scenes for the trailer.
+
+Settings:
+
+- Apartment building
+- Downtown
+- Bay Bridge/Golden Gate Bridge
+- Train station
+
+Plot:
+
+- Fight vs. govt. operatives
+- Escape/extraction
+- Chase on the bridge
+  - Flying cars
+  - Other neon city typeshit
+- Blending in with civilians (closing scene?)
+- Team "mission", some relaying info to others "in the field"
+- Stakeout/scoping out a building (abandoned?)
+- Surveillance cameras
+- CCTV of all the locations
+- Power plant
+- Investigation of the broadcast tower break-in from last year
+- Dialogue by ordinary civilians and/or hackers to introduce the story re: AGI
+- Shots of govt. operatives doing their bad guy things
+- Filler shots of civilian life/aesthetic neon SF
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
 
 - [ ] Catering
-- [ ] Trailer
 - [ ] Promo & outreach
 - [ ] Landing page & platform
 
