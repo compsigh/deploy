@@ -13,6 +13,7 @@ date: 2024-11-08
   - [x] LS 210
   - [x] LS 303
   - [x] LS 307
+- [ ] Reach out to EMS requesting chairs for presentation day and A/V for both
 
 ## Judges
 
@@ -285,6 +286,29 @@ Considerations for brunch on presentation day:
 - [ ] Write up copy to accompany trailer release
 - [ ] Ask Jocelyn to send out trailer
 
+## Agenda
+
+### Friday, November 8th
+
+- 06:00pm: Doors open, check-in & late registration begins
+- 06:30pm: Opening keynote
+- 07:00pm: Dinner & looking-for-group begins
+- 08:00pm: Registration deadline
+- 11:00pm: Team declaration deadline
+
+### Saturday, November 9th
+
+Workshops, TBD
+
+### Sunday, November 10th
+
+- 11:30am: Project submission deadline
+- 12:00pm: Lunch & presentation day check-in begins
+- 01:00pm: Presentations begin
+- 02:00pm: Intermission
+- 02:20pm: Presentations continue
+- 04:00pm: Closing keynote; results announced
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
@@ -296,10 +320,7 @@ Also:
 - Organizers & ground team
 - Photo & video
 - Broadcast
-- A/V
 - Merch
-- Trophies
-- Full agenda with deadlines and activities
 - Look through DEPLOY/23 todos and see what we can add here
 - [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
 
