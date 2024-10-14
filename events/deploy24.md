@@ -31,6 +31,27 @@ A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) mea
 - [ ] Olga Karpenko
 - [ ] Beste Yuksel
 
+### Email template
+
+```plaintext
+Hello dear CS faculty members,
+
+
+I hope you're all doing well! I'm reaching out to cordially invite you to participate on the judges panel of DEPLOY/24, compsigh's second annual Fall hackathon. For those that I or other club leaders have spoken with, now you have it in writing. :)
+
+DEPLOY/24 will take place Friday November 8th through Sunday November 10th in the Social Hive (first floor of Harney). Presentations begin on Sunday at 1pm, and we anticipate will continue for three hours or so. You're all invited to any part of the event you like, including lunch on Sunday at noon, an hour before presentations.
+
+For those of you that offer extra credit for events like this, I've built an attendance API: a simple GET request to deploy.compsigh.club/api/attended/{student_dons_email} will return { "attended": true } or { "attended": false }. Note that "attendance" here means "showed up on Friday". If you prefer to set the bar at seeing the event through and presenting (which I think is a fair middle ground), just swap `attended` for `presented`.
+
+We'd love to have you. If you're interested in participating, please let me (Edward, president of compsigh, emshturman@dons.usfca.edu) know by Friday, October 25th, and we'll be in touch shortly thereafter with more judging logistics!
+
+
+Thank you for your time and consideration,
+
+Edward Shturman
+Class of 2025
+```
+
 ### Extra credit
 
 Last year, we took the Phil position re: extra credit: the incentive for coming to the hackathon should be the experience, not point scrubbing in classes.
