@@ -67,6 +67,22 @@ Some ideas for this year's prizes:
 - Something physical?
 - Trophies in the shape of the event logo would be dope.
 
+### Trophy
+
+Diamond prism to match the logo
+
+![](https://media.cheggcdn.com/media/234/2342320c-ee6e-4014-82f5-502563eda450/phpHhU2J8)
+
+Engraved:
+
+- DEPLOY/24
+- (Logo)
+- 1st place
+- compsigh
+- San Francisco
+
+3D printed or metal if possible
+
 ## Sponsors
 
 In total, DEPLOY/23 cost us $2,066.21, with 52 participants registered. Of course, the situation with prizes and catering likely differ, but scaling that up to 80+, we will need some help.
