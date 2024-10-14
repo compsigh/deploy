@@ -7,13 +7,12 @@ date: 2024-11-08
 ## Venue
 
 - [x] Secure the Social Hive for the weekend
-- [ ] Reserve breakout rooms for the weekend
-  - [ ] LS 103
-  - [ ] LS 209
-  - [ ] LS 210
-  - [ ] LS 303
-  - [ ] UC 402/403
-  - [ ] UC 4th Floor Lounge
+- [x] Reserve breakout rooms for the weekend
+  - [x] LS 103
+  - [x] LS 209
+  - [x] LS 210
+  - [x] LS 303
+  - [x] LS 307
 
 ## Judges
 
