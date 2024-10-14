@@ -81,7 +81,7 @@ A checkbox (`[x]`) means the sponsor has agreed to help fund the event. Partiall
 - [ ] Vercel
 - [ ] Wooting
 
-## Point system and rubric
+## Point system & rubric
 
 Last year, we operated on a closed-source rubric, only sharing:
 
@@ -206,6 +206,12 @@ Plot:
 - Dialogue by ordinary civilians and/or hackers to introduce the story re: AGI
 - Shots of govt. operatives doing their bad guy things
 - Filler shots of civilian life/aesthetic neon SF
+
+Music options:
+
+- Stay
+- Stormy Love
+- Excavator Theme
 
 ## Catering
 
