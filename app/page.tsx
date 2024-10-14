@@ -1,37 +1,56 @@
-// Next imports
+// Next
 import Link from 'next/link'
 import Image from 'next/image'
 
-// Style imports
-import styles from './Home.module.css'
+// Auth
+import { auth } from '@/auth'
+import { checkAuth } from '@/functions/user-management'
 
 // Component imports
-import Button from '@/components/Button'
+import { Button } from '@/components/Button'
 
-// Function imports
-import { getSessionData } from '@/functions/user-management'
+// Styles
+import styles from './Home.module.css'
 
-export default async function Home () {
-  const user = await getSessionData()
+export default async function Home() {
+  const session = await auth()
+  const authed = await checkAuth(session)
+  const user = authed ? session.user : null
 
   return (
     <main className={styles.main}>
       <header className={styles.header}>
-        <h1 className={styles.title}><span className='fade'>► </span>DEPLOY/23</h1>
-        <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>Friday, November 17th<br />Sunday, November 19th</h3>
+        <h1 className={styles.title}>
+          <span className="fade">► </span>DEPLOY/23
+        </h1>
+        <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>
+          Friday, November 17th
+          <br />
+          Sunday, November 19th
+        </h3>
         {
           user
-            ? <Button text='Console >' type='button' destination='/console' />
-            : <Button text='Console >' type='login' />
+            ? <Button text="Console >" type="button" destination="/console" />
+            : <Button text="Console >" type="login" />
         }
       </header>
-      <h3 className={styles.subtitle}>Friday, November 17th – Sunday, November 19th</h3>
+      <h3 className={styles.subtitle}>
+        Friday, November 17th – Sunday, November 19th
+      </h3>
 
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
         <div className={styles['video-container']}>
           <div className={styles.video}>
-            <iframe width='100%' height='100%' src='https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' allowFullScreen></iframe>
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 'none' }}
+              src="https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
 
@@ -94,7 +113,7 @@ export default async function Home () {
         <section className={styles.victory}>
           <h2>Victory</h2>
           <p>Teams fight for a People&apos;s Choice, 3rd, 2nd, and 1st Place victory.</p>
-          <p>Projects will be evaluated on <strong>Craft & Polish</strong>, <strong>Presentation & Delivery</strong>, and <strong>Ambition & Technical Complexity</strong>.</p>
+          <p>Projects will be evaluated on <strong>Craft &amp; Polish</strong>, <strong>Presentation &amp; Delivery</strong>, and <strong>Ambition &amp; Technical Complexity</strong>.</p>
           <p>Here are some tips based on what judges will be looking for:</p>
           <ul>
             <li>Be creative and engaging — see some ideas above</li>
@@ -153,7 +172,7 @@ export default async function Home () {
           <pre className={styles.block}>
             <code>6pm     — Check-in</code>
             <code>6:30pm  — Opening Keynote</code>
-            <code>7pm     — Dinner & LFG</code>
+            <code>7pm     — Dinner &amp; LFG</code>
             <code>8pm     — Registration Deadline</code>
             <code>11pm    — Team Declaration Deadline</code>
           </pre>
@@ -165,7 +184,7 @@ export default async function Home () {
             <li>Opening Keynote</li>
             <br />
             <code>7pm</code>
-            <li>Dinner & LFG</li>
+            <li>Dinner &amp; LFG</li>
             <br />
             <code>8pm</code>
             <li>Registration Deadline</li>
@@ -250,7 +269,7 @@ export default async function Home () {
           <h2>Resources</h2>
           <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event. To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>
-            <p><em>Challenge yourself: in 72 hours, I learned more about React & Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</em></p>
+            <p><em>Challenge yourself: in 72 hours, I learned more about React &amp; Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</em></p>
           </blockquote>
           <blockquote>
             <p><em>Don&apos;t be afraid to mess up or not having something functioning as long as you took something out of it!</em></p>
@@ -272,26 +291,26 @@ export default async function Home () {
         <h2>Good luck, have fun.</h2>
         {
           user
-            ? <Button text='Console >' type='button' destination='/console' />
-            : <Button text='Console >' type='login' />
+            ? <Button text="Console >" type="button" destination="/console" />
+            : <Button text="Console >" type="login" />
         }
 
         <div className={styles['version-status']}>
           <Image
-            src='/circle.svg'
-            alt='circle'
+            src="/circle.svg"
+            alt="circle"
             width={10}
             height={10}
-            className='fade'
+            className="fade"
           />
-          <p>v1.5.1 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
+          <p>v1.6.0 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
         </div>
 
         <div className={styles['logo-wrapper']}>
-          <Link href='https://compsigh.so' target='_blank'>
+          <Link href="https://compsigh.so" target="_blank">
             <Image
-              src='/compsigh-filled.svg'
-              alt='compsigh logo'
+              src="/compsigh-filled.svg"
+              alt="compsigh logo"
               width={30}
               height={30}
               className={styles['compsigh-logo']}

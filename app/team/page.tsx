@@ -1,23 +1,26 @@
-// Next imports
+// Next
 import { redirect } from 'next/navigation'
 import Script from 'next/script'
 
-// Auth imports
-import { getSessionData } from '@/functions/user-management'
+// Auth
+import { auth } from '@/auth'
+import { checkAuth } from '@/functions/user-management'
 
-// Component imports
+// Components
 import ParamsValidator from '@/components/ParamsValidator'
 
-// Function imports
-import { fetchParticipant } from '@/functions/notion'
+// Functions
+import { fetchParticipantNotionPage } from '@/functions/notion'
 
-export default async function TeamDeclaration () {
-  const user = await getSessionData()
-  if (!user)
+export default async function TeamDeclaration() {
+  const session = await auth()
+  const authed = await checkAuth(session)
+  if (!authed)
     redirect('/')
+  const user = session.user
 
-  const registered = await fetchParticipant(user)
-  if (!registered)
+  const participant = await fetchParticipantNotionPage(user)
+  if (!participant)
     redirect('/console')
 
   return (
@@ -26,7 +29,7 @@ export default async function TeamDeclaration () {
         expect={{
           participant_email: user.email
         }}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -34,11 +37,8 @@ export default async function TeamDeclaration () {
         loading="lazy"
         width="100%"
         height="300"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
-        title="DEPLOY/23 Team Declaration">
-      </iframe>
+        title="DEPLOY/23 Team Declaration"
+      ></iframe>
     </>
   )
 }

@@ -1,24 +1,40 @@
 {
   "extends": [
-    "standard",
+    "eslint:recommended",
     "next/core-web-vitals"
   ],
   "rules": {
-    "brace-style": [
+    "capitalized-comments": [
       "error",
-      "stroustrup"
+      "always"
     ],
     "curly": [
       "error",
-      "multi"
+      "multi-or-nest",
+      "consistent"
     ],
-    "camelcase": [
+    "eqeqeq": [
       "error",
-      {
-        "ignoreImports": true,
-        "ignoreDestructuring": true,
-        "allow": ["max_tokens", "database_id", "start_cursor", "page_id", "rich_text", "is_not_empty", "participant_email"]
-      }
-    ]
+      "always"
+    ],
+    "func-style": [
+      "error",
+      "declaration"
+    ],
+    "no-duplicate-imports": "error",
+    "no-lonely-if": "error",
+    "no-nested-ternary": "error",
+    "no-plusplus": "error",
+    "no-undef": "off",
+    "no-undef-init": "error",
+    "no-undefined": "error",
+    "no-unneeded-ternary": "error",
+    "no-self-compare": "error",
+    "no-use-before-define": "error",
+    "no-useless-concat": "error",
+    "no-var": "error",
+    "prefer-const": "error",
+    "require-await": "error",
+    "yoda": "error"
   }
 }

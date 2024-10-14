@@ -1,22 +1,25 @@
-// Next imports
+// Next
 import { redirect } from 'next/navigation'
 import Script from 'next/script'
 
-// Auth imports
-import { getSessionData } from '@/functions/user-management'
+// Auth
+import { auth } from '@/auth'
+import { checkAuth } from '@/functions/user-management'
 
-// Component imports
+// Components
 import ParamsValidator from '@/components/ParamsValidator'
 
-// Function imports
-import { fetchParticipant } from '@/functions/notion'
+// Functions
+import { fetchParticipantNotionPage } from '@/functions/notion'
 
-export default async function ParticipantRegistration () {
-  const user = await getSessionData()
-  if (!user)
+export default async function ParticipantRegistration() {
+  const session = await auth()
+  const authed = checkAuth(session)
+  if (!authed)
     redirect('/')
+  const user = session.user
 
-  const registered = await fetchParticipant(user)
+  const registered = await fetchParticipantNotionPage(user)
   if (registered)
     redirect('/console')
 
@@ -28,7 +31,7 @@ export default async function ParticipantRegistration () {
           lastName: user.name.split(' ')[1],
           email: user.email
         }}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -36,11 +39,8 @@ export default async function ParticipantRegistration () {
         loading="lazy"
         width="100%"
         height="300"
-        frameBorder="0"
-        marginHeight="0"
-        marginWidth="0"
-        title="DEPLOY/23 Participant Registration">
-      </iframe>
+        title="DEPLOY/23 Participant Registration"
+      ></iframe>
     </>
   )
 }
