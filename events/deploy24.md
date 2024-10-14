@@ -207,11 +207,48 @@ Plot:
 - Shots of govt. operatives doing their bad guy things
 - Filler shots of civilian life/aesthetic neon SF
 
+## Catering
+
+Ideally, we have proper food for:
+
+- Opening night, after opening keynote, around 7pm
+- Presentation day, before presentations, around 12pm
+
+Considerations for dinner on opening night:
+
+- Tacos (2 per person, $10 per person):
+  - Mushrooms — 10 people
+  - Chicken — 16 people
+  - Steak — 16 people
+- Mashed potatoes ($10 per person) — 10 people
+- Samosas ($3) — 16
+- Spanakopita ($3) — 16
+- Chicken wings (2 per person, $4) — 16 buffalo, 16 lemon pepper
+- Banh mi ($5) — 16
+- Tostada ($5) — 16
+- Pork belly bun ($6) — 16
+- Butter chicken skewer ($4) — 16
+- Oatmeal raisin cookie ($2.50) — 10
+- Lemon bar ($3.25) — 10
+- Lemon cupcake ($3.75) — 10
+- Carrot cupcake ($3.75) — 10
+- Pumpkin pie $30
+- Hot apple cider (for 60) — $110
+
+Considerations for brunch on presentation day:
+
+- [b patisserie](https://bpatisserie.com/menu)
+- Pineapple King Bakery
+- Toast N Egg
+- Caliente
+- Saigon Sandwich
+- Rise & Grind
+- Palm City
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
 
-- [ ] Catering
 - [ ] Promo & outreach
 - [ ] Landing page & platform
 
