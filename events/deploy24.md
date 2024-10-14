@@ -328,3 +328,4 @@ Also:
 
 - [DEPLOY/23 Debrief & Notes for DEPLOY/24 (Notion)](https://www.notion.so/compsigh/DEPLOY-23-Debrief-Notes-for-DEPLOY-24-41fc140f771f4e84aadd7a8b743edccd)
 - [DEPLOY/24 Figma](https://www.figma.com/design/VpUYrCmMWZ4QgTRxdRYhfz/24?node-id=3-21&t=mqVHo6c71tMPo0hs-1)
+- [DEPLOY/24 Expenses Google Sheet](https://docs.google.com/spreadsheets/d/1iM5mFngB0PDB9p6ZLvPOcF3Sw9zzXs49h19lwstsAcA/edit?usp=sharing)
