@@ -1,3 +1,6 @@
+// Next
+import type { Metadata } from 'next'
+
 // Component imports
 import { AuthWrapper } from '@/components/AuthWrapper'
 
@@ -63,7 +66,7 @@ if (process.env.VERCEL_URL)
 else
   metadataBase = `http://localhost:${process.env.PORT || 3000}`
 
-export const metadata = {
+export const metadata: Metadata = {
   metadataBase,
   title: 'DEPLOY/23',
   description: 'DEPLOY/23 — compsigh\'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.',
@@ -72,10 +75,16 @@ export const metadata = {
   }
 }
 
-export default function RootLayout ({ children }) {
+export default function RootLayout(
+  { children }:
+  Readonly<{ children: React.ReactNode }>
+) {
   return (
     <AuthWrapper>
-      <html lang="en" className={`${ProtoMono.variable} ${iAWriterQuattro.variable}`}>
+      <html
+        lang="en"
+        className={`${ProtoMono.variable} ${iAWriterQuattro.variable}`}
+      >
         <body>{children}</body>
       </html>
     </AuthWrapper>

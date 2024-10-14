@@ -12,7 +12,7 @@ import ParamsValidator from '@/components/ParamsValidator'
 // Functions
 import { fetchParticipantNotionPage } from '@/functions/notion'
 
-export default async function TeamDeclaration () {
+export default async function TeamDeclaration() {
   const session = await auth()
   const authed = await checkAuth(session)
   if (!authed)
@@ -29,7 +29,7 @@ export default async function TeamDeclaration () {
         expect={{
           participant_email: user.email
         }}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -37,8 +37,8 @@ export default async function TeamDeclaration () {
         loading="lazy"
         width="100%"
         height="300"
-        title="DEPLOY/23 Team Declaration">
-      </iframe>
+        title="DEPLOY/23 Team Declaration"
+      ></iframe>
     </>
   )
 }

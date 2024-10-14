@@ -12,9 +12,9 @@ import ParamsValidator from '@/components/ParamsValidator'
 // Functions
 import { fetchParticipantNotionPage } from '@/functions/notion'
 
-export default async function ParticipantRegistration () {
+export default async function ParticipantRegistration() {
   const session = await auth()
-  const authed = await checkAuth(session)
+  const authed = checkAuth(session)
   if (!authed)
     redirect('/')
   const user = session.user
@@ -31,7 +31,7 @@ export default async function ParticipantRegistration () {
           lastName: user.name.split(' ')[1],
           email: user.email
         }}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -39,8 +39,8 @@ export default async function ParticipantRegistration () {
         loading="lazy"
         width="100%"
         height="300"
-        title="DEPLOY/23 Participant Registration">
-      </iframe>
+        title="DEPLOY/23 Participant Registration"
+      ></iframe>
     </>
   )
 }

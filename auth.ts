@@ -6,7 +6,7 @@ export const authOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      profile (profile) {
+      profile(profile) {
         return {
           id: profile.sub,
           name: profile.name,
@@ -18,4 +18,7 @@ export const authOptions = {
   ]
 }
 
-export const { handlers: { GET, POST }, auth } = NextAuth(authOptions)
+export const {
+  handlers: { GET, POST },
+  auth
+} = NextAuth(authOptions)

@@ -1,20 +1,17 @@
 import { Client, isFullPageOrDatabase } from '@notionhq/client'
-import type {
-  PageObjectResponse,
-  UniqueIdPropertyItemObjectResponse
-} from '@notionhq/client/build/src/api-endpoints'
+import type { PageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
 import type { User } from 'next-auth'
 
 export type TitlePagePropertyType = {
-  type: 'title',
-  id: string,
+  type: 'title'
+  id: string
   title: Array<{
-    type: 'text',
+    type: 'text'
     text: {
-        content: string,
-        link: {
-            url: string
-        } | null
+      content: string
+      link: {
+        url: string
+      } | null
     }
   }>
 }
@@ -25,20 +22,20 @@ export type RichTextPagePropertyType = {
     text: {
       content: string
     }
-  }[],
-  id: string,
+  }[]
+  id: string
   name: string
 }
 
 export type RelationPagePropertyType = {
   type: 'relation'
   relation: Array<{
-      id: string
-  }>,
+    id: string
+  }>
   id: string
 }
 
-async function fetchJudges () {
+async function fetchJudges() {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const confirmedJudgesResponse = await notion.databases.query({
@@ -54,11 +51,11 @@ async function fetchJudges () {
   return confirmedJudgesResponse.results as PageObjectResponse[]
 }
 
-export async function fetchJudgeNotionPage (user: User) {
+export async function fetchJudgeNotionPage(user: User) {
   const confirmedJudges = await fetchJudges()
 
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
-  let judge = confirmedJudges.find((judge) => {
+  const judge = confirmedJudges.find((judge) => {
     if (!isFullPageOrDatabase(judge))
       return false
     const judgeEmail = judge.properties.Email as TitlePagePropertyType
@@ -69,11 +66,11 @@ export async function fetchJudgeNotionPage (user: User) {
   return await notion.pages.retrieve({ page_id: judge.id }) as PageObjectResponse
 }
 
-export async function fetchJudgeTeammatesNotionPages (user: User) {
+export async function fetchJudgeTeammatesNotionPages(user: User) {
   const confirmedJudges = await fetchJudges()
 
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
-  let judgeTeammates = confirmedJudges.filter((judge) => {
+  const judgeTeammates = confirmedJudges.filter((judge) => {
     if (!isFullPageOrDatabase(judge))
       return false
     const judgeEmail = judge.properties.Email as TitlePagePropertyType
@@ -89,7 +86,7 @@ export async function fetchJudgeTeammatesNotionPages (user: User) {
   return judgeTeammatesNotionPages
 }
 
-export async function fetchParticipantNotionPage (user: User) {
+export async function fetchParticipantNotionPage(user: User) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const participantResponse = await notion.databases.query({
@@ -108,7 +105,7 @@ export async function fetchParticipantNotionPage (user: User) {
   return await notion.pages.retrieve({ page_id: participantResponse.results[0].id }) as PageObjectResponse
 }
 
-export async function fetchParticipantTeamNotionPage (participant: PageObjectResponse) {
+export async function fetchParticipantTeamNotionPage(participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const participantTeam = participant.properties.Team as RelationPagePropertyType
@@ -119,7 +116,7 @@ export async function fetchParticipantTeamNotionPage (participant: PageObjectRes
   return await notion.pages.retrieve({ page_id: teamPageId }) as PageObjectResponse
 }
 
-export async function fetchParticipantTeammatesNotionPages (participant: PageObjectResponse) {
+export async function fetchParticipantTeammatesNotionPages(participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const team = await fetchParticipantTeamNotionPage(participant)
@@ -138,7 +135,7 @@ export async function fetchParticipantTeammatesNotionPages (participant: PageObj
   return teammates
 }
 
-export async function fetchReferralCount (participant: PageObjectResponse) {
+export async function fetchReferralCount(participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const participantEmailProperty = participant.properties.Email as TitlePagePropertyType
@@ -157,7 +154,7 @@ export async function fetchReferralCount (participant: PageObjectResponse) {
   return referrals.results.length
 }
 
-export async function submissionFound (participant: PageObjectResponse) {
+export async function submissionFound(participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const participantEmailProperty = participant.properties.Email as TitlePagePropertyType
@@ -170,7 +167,7 @@ export async function submissionFound (participant: PageObjectResponse) {
         {
           property: 'Submitted by',
           rich_text: {
-            contains: participantEmail,
+            contains: participantEmail
           }
         }
       ]
@@ -198,7 +195,7 @@ export async function submissionFound (participant: PageObjectResponse) {
   return false
 }
 
-export async function peoplesChoiceVoteFound (participant: PageObjectResponse) {
+export async function peoplesChoiceVoteFound(participant: PageObjectResponse) {
   const notion = new Client({ auth: process.env.NOTION_API_KEY })
 
   const participantEmailProperty = participant.properties.Email as TitlePagePropertyType

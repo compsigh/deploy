@@ -12,7 +12,7 @@ import ParamsValidator from '@/components/ParamsValidator'
 // Functions
 import { fetchJudgeNotionPage } from '@/functions/notion'
 
-export default async function ProjectEvaluation () {
+export default async function ProjectEvaluation() {
   const session = await auth()
   const authed = await checkAuth(session)
   if (!authed)
@@ -31,7 +31,7 @@ export default async function ProjectEvaluation () {
           lastName: user.name.split(' ')[1],
           email: user.email
         }}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -39,8 +39,8 @@ export default async function ProjectEvaluation () {
         loading="lazy"
         width="100%"
         height="300"
-        title="DEPLOY/23 Project Evaluation">
-      </iframe>
+        title="DEPLOY/23 Project Evaluation"
+      ></iframe>
     </>
   )
 }

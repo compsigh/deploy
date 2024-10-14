@@ -10,14 +10,15 @@ import { checkAuth } from '@/functions/user-management'
 import ParamsValidator from '@/components/ParamsValidator'
 
 // Functions
-import { fetchParticipantNotionPage, fetchParticipantTeamNotionPage } from '@/functions/notion'
+import {
+  fetchParticipantNotionPage,
+  fetchParticipantTeamNotionPage,
+  type TitlePagePropertyType
+} from '@/functions/notion'
 
-// Types
-import type { TitlePagePropertyType } from '@/functions/notion'
-
-export default async function ProjectSubmission () {
+export default async function ProjectSubmission() {
   const session = await auth()
-  const authed = await checkAuth(session)
+  const authed = checkAuth(session)
   if (!authed)
     redirect('/')
   const user = session.user
@@ -32,14 +33,14 @@ export default async function ProjectSubmission () {
 
   const expectedParams: Record<string, string> = {
     participant_email: user.email,
-    teamname: teamName,
+    teamname: teamName
   }
 
   return (
     <>
       <ParamsValidator
         expect={expectedParams}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -47,8 +48,8 @@ export default async function ProjectSubmission () {
         loading="lazy"
         width="100%"
         height="300"
-        title="DEPLOY/23 Project Submission">
-      </iframe>
+        title="DEPLOY/23 Project Submission"
+      ></iframe>
     </>
   )
 }

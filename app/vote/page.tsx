@@ -1,25 +1,24 @@
-// Next imports
+// Next
 import { redirect } from 'next/navigation'
 import Script from 'next/script'
 
-// Auth imports
+// Auth
 import { auth } from '@/auth'
 import { checkAuth } from '@/functions/user-management'
 
-// Component imports
+// Components
 import ParamsValidator from '@/components/ParamsValidator'
 
-// Function imports
+// Functions
 import {
   fetchParticipantNotionPage,
-  fetchParticipantTeamNotionPage
+  fetchParticipantTeamNotionPage,
+  type TitlePagePropertyType
 } from '@/functions/notion'
 
-import type { TitlePagePropertyType } from '@/functions/notion'
-
-export default async function PeoplesChoiceVote () {
+export default async function PeoplesChoiceVote() {
   const session = await auth()
-  const authed = await checkAuth(session)
+  const authed = checkAuth(session)
   if (!authed)
     redirect('/')
   const user = session.user
@@ -34,14 +33,14 @@ export default async function PeoplesChoiceVote () {
 
   const expectedParams: Record<string, string> = {
     participant_email: user.email,
-    teamname: teamName,
+    teamname: teamName
   }
 
   return (
     <>
       <ParamsValidator
         expect={expectedParams}
-        redirect='/console'
+        redirect="/console"
       />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
@@ -49,8 +48,8 @@ export default async function PeoplesChoiceVote () {
         loading="lazy"
         width="100%"
         height="400"
-        title="DEPLOY/23 People's Choice Vote">
-      </iframe>
+        title="DEPLOY/23 People's Choice Vote"
+      ></iframe>
     </>
   )
 }
