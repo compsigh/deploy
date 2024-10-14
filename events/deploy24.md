@@ -245,11 +245,28 @@ Considerations for brunch on presentation day:
 - Rise & Grind
 - Palm City
 
+## Promo & outreach
+
+- [ ] Create 8.5 × 11 promotional flyer
+- [ ] Print and put up flyers
+- [ ] Create 1920 × 1080 promotional banner
+- [ ] Request banner to be displayed on the TVs
+- [ ] Create 9:16 story posts
+- [ ] Create 1:1 carousel
+- [ ] Post carousel on Instagram
+- [ ] Post Instagram story and add to highlights
+- [ ] Create Discord announcement
+- [ ] Ping `@announcements` and `@events`
+- [ ] Link compsigh web platform event to DEPLOY/24 platform
+- [ ] Write up announcement email for the department
+- [ ] Ask Jocelyn to send out announcement
+- [ ] Write up copy to accompany trailer release
+- [ ] Ask Jocelyn to send out trailer
+
 ## Other
 
 Things we need to take care of, ordered by ascending complexity:
 
-- [ ] Promo & outreach
 - [ ] Landing page & platform
 
 Also:
