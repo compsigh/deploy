@@ -114,7 +114,7 @@ export async function HackerCard({ user }: { user: User }) {
       </div>
 
       <p className={styles['referral-text']}>
-        For each participant that registers with your link, your team will earna point.
+        For each participant that registers with your link, your team will earn a point.
       </p>
       <p className={styles['referral-link']}>
         <Button

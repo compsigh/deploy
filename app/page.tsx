@@ -45,6 +45,7 @@ export default async function Home() {
             <iframe
               width="100%"
               height="100%"
+              style={{ border: 'none' }}
               src="https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -4,7 +4,6 @@
 import { useSearchParams, useRouter } from 'next/navigation'
 import Link from 'next/link'
 import type { MouseEventHandler } from 'react'
-import type { Route } from 'next'
 
 // Auth
 import { signIn, signOut } from 'next-auth/react'
@@ -56,7 +55,7 @@ export function Button({
   else if (type === 'logout')
     onClick = () => signOut()
   else if (type === 'button' && destination)
-    onClick = () => router.push(`${destination}${queryParams}` as Route)
+    onClick = () => router.push(`${destination}${queryParams}`)
 
   if (user) {
     const firstName = user.name.split(' ')[0]
@@ -79,7 +78,7 @@ export function Button({
   }
 
   if (type === 'link')
-    return <Link href={`${destination}${queryParams}` as Route}>{text}</Link>
+    return <Link href={`${destination}${queryParams}`}>{text}</Link>
 
   if (type === 'button') {
     return (
