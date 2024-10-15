@@ -1,4 +1,4 @@
-[![DEPLOY/23 Banner](https://raw.githubusercontent.com/compsigh/deploy/main/public/banner-grid.png)](https://deploy.compsigh.so)
+[![DEPLOY/23 Banner](https://raw.githubusercontent.com/compsigh/deploy/main/platform/public/banner-grid.png)](https://deploy.compsigh.so)
 
 # DEPLOY/23
 

@@ -1,7 +1,3 @@
----
-date: 2024-11-08
----
-
 # DEPLOY/24
 
 ## Venue
@@ -93,7 +89,7 @@ Some ideas for this year's prizes:
 
 Diamond prism to match the logo
 
-![](https://media.cheggcdn.com/media/234/2342320c-ee6e-4014-82f5-502563eda450/phpHhU2J8)
+![Diamond prism illustration](https://media.cheggcdn.com/media/234/2342320c-ee6e-4014-82f5-502563eda450/phpHhU2J8)
 
 Engraved:
 
@@ -126,7 +122,7 @@ Last year, we operated on a closed-source rubric, only sharing:
 > Projects will be evaluated on **Craft & Polish**, **Presentation & Delivery**, and **Ambition & Technical Complexity**.
 >
 > Here are some tips based on what judges will be looking for:
-> 
+>
 > - Be creative and engaging — see some ideas above
 > - Clearly define the problem (and target users for whom) you sought to solve
 > - Really take some time to prepare. This is one of the reasons there is an hour between the submission deadline and check-in!
@@ -216,7 +212,7 @@ The DEPLOY/24 trailer builds on the cinematic universe developed last year. Here
 - The hackers are fighting for a higher cause against the misuse of AGI by the government. In-universe, there may be several factions of hackers, but they aren't explicitly fighting each other — *we are ignoring the IRL competitive nature of DEPLOY (this also contributes to the compsigh narrative of working together)*.
 - The events of DEPLOY are an *ongoing* conflict, rather than yearly (as it is IRL). This is because (1) expanding the cinematic universe can be gradual, rather than a lot of pressure to come up with a new story each hackathon, and (2) it doesn't confine DEPLOY as a hackathon IRL to a yearly cadence, should we ever do it each semester or something like that.
 
-### DEPLOY/24
+### DEPLOY/24 trailer
 
 All a work-in-progress, these describe *potential* shots we could work with to compose scenes for the trailer.
 
