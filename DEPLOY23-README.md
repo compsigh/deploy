@@ -26,7 +26,7 @@ While it's unlikely anything malicious would happen, unfortunately Tally does no
 
 ### Console
 
-![DEPLOY/23 console](/public/console.png)
+![DEPLOY/23 console](/platform/public/console.png)
 
 The Console shows the participant (or judge) a set of personalized todos. For example, if they've yet to declare a team, the Console will show them a link where they can do so.
 The Console also displays the participant's unique Hacker Card, which renders participant data fetched from the Notion API — we have a database each for **participants**, **teams**, **referrals**, **project submissions**, and **project evaluations**.
