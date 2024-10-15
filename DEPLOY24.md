@@ -300,6 +300,9 @@ Considerations for brunch on presentation day:
 - [ ] Link compsigh web platform event to DEPLOY/24 platform
 - [ ] Write up announcement email for the department
 - [ ] Ask Jocelyn to send out announcement
+- [ ] Ask Samantha from Engineering to send out announcement
+- [ ] Ask Noopur from Design to send out announcement
+- [ ] Ask John from E&I to send out announcement
 - [ ] Write up copy to accompany trailer release
 - [ ] Ask Jocelyn to send out trailer
 
@@ -326,23 +329,29 @@ Workshops, TBD
 - 02:20pm: Presentations continue
 - 04:00pm: Closing keynote; results announced
 
+## Web platform
+
+- Registration
+- Team formation
+- Project submission
+- Project evaluation
+- People's Choice
+- Referrals
+
 ## Other
 
-Things we need to take care of, ordered by ascending complexity:
-
-- [ ] Landing page & platform
-
-Also:
-
+- [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
 - Organizers & ground team
 - Photo & video
 - Broadcast
 - Merch
-- Look through DEPLOY/23 todos and see what we can add here
+  - Custom notecards for handwritten congrats notes
+  - Shirts
+- Opening keynote slides
+  - [Slides from DEPLOY/23](https://www.notion.so/compsigh/Create-opening-keynote-slides-97dec247b5fa4ad4ab75ffcc3298a355)
 - [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
 
 ## Links
 
-- [DEPLOY/23 Debrief & Notes for DEPLOY/24 (Notion)](https://www.notion.so/compsigh/DEPLOY-23-Debrief-Notes-for-DEPLOY-24-41fc140f771f4e84aadd7a8b743edccd)
 - [DEPLOY/24 Figma](https://www.figma.com/design/VpUYrCmMWZ4QgTRxdRYhfz/24?node-id=3-21&t=mqVHo6c71tMPo0hs-1)
 - [DEPLOY/24 Expenses Google Sheet](https://docs.google.com/spreadsheets/d/1iM5mFngB0PDB9p6ZLvPOcF3Sw9zzXs49h19lwstsAcA/edit?usp=sharing)
