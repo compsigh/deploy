@@ -113,7 +113,7 @@ A checkbox (`[x]`) means the sponsor has agreed to help fund the event. Partiall
 - [/] Raycast
 - [/] Resend
 - [ ] Vercel
-- [ ] Wooting
+- [-] Wooting
 
 ## Point system & rubric
 
@@ -246,44 +246,17 @@ Music options:
 - Stay
 - Stormy Love
 - Excavator Theme
+- Human Nature
 
 ## Catering
 
-Ideally, we have proper food for:
+The plan is to provide food for:
 
-- Opening night, after opening keynote, around 7pm
-- Presentation day, before presentations, around 12pm
+- Opening night, after opening keynote, around 7pm; dinner
+- Throughout day two; snacks and such
+- Presentation day, before presentations, around 12pm; lunch
 
-Considerations for dinner on opening night:
-
-- Tacos (2 per person, $10 per person):
-  - Mushrooms — 10 people
-  - Chicken — 16 people
-  - Steak — 16 people
-- Mashed potatoes ($10 per person) — 10 people
-- Samosas ($3) — 16
-- Spanakopita ($3) — 16
-- Chicken wings (2 per person, $4) — 16 buffalo, 16 lemon pepper
-- Banh mi ($5) — 16
-- Tostada ($5) — 16
-- Pork belly bun ($6) — 16
-- Butter chicken skewer ($4) — 16
-- Oatmeal raisin cookie ($2.50) — 10
-- Lemon bar ($3.25) — 10
-- Lemon cupcake ($3.75) — 10
-- Carrot cupcake ($3.75) — 10
-- Pumpkin pie $30
-- Hot apple cider (for 60) — $110
-
-Considerations for brunch on presentation day:
-
-- [b patisserie](https://bpatisserie.com/menu)
-- Pineapple King Bakery
-- Toast N Egg
-- Caliente
-- Saigon Sandwich
-- Rise & Grind
-- Palm City
+See the **Catering** page on the Expenses Google Sheet for vendors and associated costs.
 
 ## Promo & outreach
 
@@ -343,7 +316,7 @@ Workshops, TBD
 - [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
 - Organizers & ground team
 - Photo & video
-- Broadcast
+- ~~Broadcast~~ Probably some sort of video
 - Merch
   - Custom notecards for handwritten congrats notes
   - Shirts
