@@ -40,7 +40,7 @@ model Participant {
 
 model Team {
   id           String        @id @default(uuid())
-  name         String
+  name         String?
   participants Participant[]
   project      Project?
 }
