@@ -107,13 +107,13 @@ In total, DEPLOY/23 cost us $2,066.21, with 52 participants registered. Of cours
 
 A checkbox (`[x]`) means the sponsor has agreed to help fund the event. Partially checked (`[/]`) means they've been asked and we haven't heard back. Crossed (`[-]`) means they are unable to support the event. Not checked (`[ ]`) means we haven't asked.
 
-- [x] CS Department
-- [x] E&I IDEA Initiative
-- [ ] GitHub
-- [/] Raycast
-- [/] Resend
+- [x] CS Department: up to $1000
+- [x] E&I IDEA Initiative: up to $3000
 - [ ] Vercel
-- [-] Wooting
+- [/] Raycast (reached out September 4th)
+- [/] Resend (reached out September 4th)
+- [-] GitHub (past deadline)
+- [-] Wooting (didn't reach out)
 
 ## Point system & rubric
 
@@ -260,24 +260,24 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 ## Promo & outreach
 
-- [ ] Create 8.5 × 11 promotional flyer
-- [ ] Print and put up flyers
-- [ ] Create 1920 × 1080 promotional banner
-- [ ] Request banner to be displayed on the TVs
-- [ ] Create 9:16 story posts
-- [ ] Create 1:1 carousel
-- [ ] Post carousel on Instagram
-- [ ] Post Instagram story and add to highlights
+- [x] Create 8.5 × 11 flyer
+- [x] Create 1:1 Instagram post
+- [x] Create 16:9 banner for the TVs
 - [ ] Create Discord announcement
+- [ ] Write email announcement for departments
+- [ ] Request banner to be displayed on the TVs
+- [ ] Post on Instagram
+- [ ] Post Instagram story of post and add to highlights
 - [ ] Ping `@announcements` and `@events`
-- [ ] Link compsigh web platform event to DEPLOY/24 platform
-- [ ] Write up announcement email for the department
+- [ ] Print and put up flyers
 - [ ] Ask Jocelyn to send out announcement
-- [ ] Ask Samantha from Engineering to send out announcement
-- [ ] Ask Noopur from Design to send out announcement
 - [ ] Ask John from E&I to send out announcement
-- [ ] Write up copy to accompany trailer release
-- [ ] Ask Jocelyn to send out trailer
+- [ ] Ask Noopur from Design to send out announcement
+- [ ] Ask Samantha from Engineering to send out announcement
+- [ ] Ask Christine from Mathematics to send out announcement
+- [x] Link compsigh web platform event to DEPLOY/24 platform
+- [-] Write up copy to accompany trailer release
+- [-] Ask Jocelyn to send out trailer
 
 ## Agenda
 
@@ -316,7 +316,7 @@ Workshops, TBD
 - [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
 - Organizers & ground team
 - Photo & video
-- ~~Broadcast~~ Probably some sort of video
+- Recap/highlight video
 - Merch
   - Custom notecards for handwritten congrats notes
   - Shirts
