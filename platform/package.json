@@ -3,7 +3,7 @@
   "author": "compsigh",
   "bugs": "https://github.com/compsigh/deploy/issues",
   "homepage": "https://deploy.compsigh.club",
-  "version": "1.6.1",
+  "version": "1.7.0",
   "license": "UNLICENSED",
   "description": "Web platform for DEPLOY, the annual Fall hackathon of compsigh — the social computer science club at the University of San Francisco for meeting cool people && building cool things",
   "repository": {
@@ -21,7 +21,6 @@
     "migrate": "dotenv -e .env.local prisma migrate dev"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.15",
     "@prisma/client": "^5.21.0",
     "@vercel/edge-config": "^1.3.0",
     "next": "^14.2.15",
@@ -34,7 +33,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "dotenv-cli": "^7.4.2",
-    "encoding": "^0.1.13",
     "eslint": "^8",
     "eslint-config-next": "^14.2.15",
     "prisma": "^5.21.0",

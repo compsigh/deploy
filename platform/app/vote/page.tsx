@@ -1,38 +1,33 @@
 // Next
-import { redirect } from 'next/navigation'
-import Script from 'next/script'
+import { redirect } from "next/navigation"
+import Script from "next/script"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth } from "@/functions/user-management"
 
 // Components
-import { ParamValidator } from '@/components/ParamValidator'
+import { ParamValidator } from "@/components/ParamValidator"
 
 // Functions
-import {
-  fetchParticipantNotionPage,
-  fetchParticipantTeamNotionPage,
-  type TitlePagePropertyType
-} from '@/functions/notion'
+import { getParticipantByEmail } from "@/functions/db/participant"
+import { getTeamById } from "@/functions/db/team"
 
 export default async function PeoplesChoiceVote() {
   const session = await auth()
   const user = checkAuth(session)
   if (!user)
-    redirect('/')
+    redirect("/")
 
-  const participant = await fetchParticipantNotionPage(user)
+  const participant = await getParticipantByEmail(user.email)
   if (!participant)
-    redirect('/console')
+    redirect("/console")
 
-  const team = await fetchParticipantTeamNotionPage(participant)
-  const teamNameProperty = team.properties.Name as TitlePagePropertyType
-  const teamName = teamNameProperty.title[0].text.content
+  const team = await getTeamById(participant.teamId)
 
   const expectedParams: Record<string, string> = {
     participant_email: user.email,
-    teamname: teamName
+    teamname: team.name
   }
 
   return (

@@ -43,7 +43,7 @@ export async function createProject(
   notes?: string,
   song?: string
 ) {
-  return await prisma.project.create({
+  const project = await prisma.project.create({
     data: {
       teamId,
       name,
@@ -53,4 +53,19 @@ export async function createProject(
       song
     }
   })
+
+  await prisma.team.update({
+    where: {
+      id: teamId
+    },
+    data: {
+      project: {
+        connect: {
+          id: teamId
+        }
+      }
+    }
+  })
+
+  return project
 }

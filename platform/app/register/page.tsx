@@ -1,33 +1,33 @@
 // Next
-import { redirect } from 'next/navigation'
-import Script from 'next/script'
+import { redirect } from "next/navigation"
+import Script from "next/script"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth } from "@/functions/user-management"
 
 // Components
-import { ParamValidator } from '@/components/ParamValidator'
+import { ParamValidator } from "@/components/ParamValidator"
 
 // Functions
-import { fetchParticipantNotionPage } from '@/functions/notion'
+import { getParticipantByEmail } from "@/functions/db/participant"
 
 export default async function ParticipantRegistration() {
   const session = await auth()
   const user = checkAuth(session)
   if (!user)
-    redirect('/')
+    redirect("/")
 
-  const registered = await fetchParticipantNotionPage(user)
+  const registered = await getParticipantByEmail(user.email)
   if (registered)
-    redirect('/console')
+    redirect("/console")
 
   return (
     <>
       <ParamValidator
         expect={{
-          firstName: user.name.split(' ')[0],
-          lastName: user.name.split(' ')[1],
+          firstName: user.name.split(" ")[0],
+          lastName: user.name.split(" ")[1],
           email: user.email
         }}
         redirect="/console"

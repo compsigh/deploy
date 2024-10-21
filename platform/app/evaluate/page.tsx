@@ -1,33 +1,33 @@
 // Next
-import { redirect } from 'next/navigation'
-import Script from 'next/script'
+import { redirect } from "next/navigation"
+import Script from "next/script"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth } from "@/functions/user-management"
 
 // Components
-import { ParamValidator } from '@/components/ParamValidator'
+import { ParamValidator } from "@/components/ParamValidator"
 
 // Functions
-import { fetchJudgeNotionPage } from '@/functions/notion'
+import { getJudgeByEmail } from "@/functions/db/judge"
 
 export default async function ProjectEvaluation() {
   const session = await auth()
   const user = checkAuth(session)
   if (!user)
-    redirect('/')
+    redirect("/")
 
-  const judge = await fetchJudgeNotionPage(user)
+  const judge = await getJudgeByEmail(user.email)
   if (!judge)
-    redirect('/console')
+    redirect("/console")
 
   return (
     <>
       <ParamValidator
         expect={{
-          firstName: user.name.split(' ')[0],
-          lastName: user.name.split(' ')[1],
+          firstName: user.name.split(" ")[0],
+          lastName: user.name.split(" ")[1],
           email: user.email
         }}
         redirect="/console"

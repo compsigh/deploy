@@ -1,25 +1,21 @@
 // Next
-import { get } from '@vercel/edge-config'
+import { get } from "@vercel/edge-config"
 
 // Auth
-import { isStudent } from '@/functions/user-management'
-import type { User } from 'next-auth'
+import { isStudent } from "@/functions/user-management"
+import type { User } from "next-auth"
 
 // Components
-import { Button } from '@/components/Button'
-import { Comment } from '@/components/Comment'
+import { Button } from "@/components/Button"
+import { Comment } from "@/components/Comment"
 
 // Functions
-import {
-  fetchParticipantNotionPage,
-  fetchParticipantTeamNotionPage,
-  peoplesChoiceVoteFound,
-  submissionFound,
-  type TitlePagePropertyType
-} from '@/functions/notion'
+import { getParticipantByEmail } from "@/functions/db/participant"
+import { getTeamById } from "@/functions/db/team"
 
 // Styles
-import styles from '@/app/console/Console.module.css'
+import styles from "@/app/console/Console.module.css"
+import { getProjectById } from "@/functions/db/project"
 
 function isOpen(datetime: Date) {
   const currentDate = new Date()
@@ -30,11 +26,11 @@ function isOpen(datetime: Date) {
 }
 
 export async function Todos({ user }: { user: User }) {
-  const teamDeclarationOpenDatetime = new Date('2023-11-17T20:00:00-08:00')
-  const projectSubmissionOpenDatetime = new Date('2023-11-19T09:00:00-08:00')
-  const teamDeclarationOpen = get('teamDeclarationOpen') || isOpen(teamDeclarationOpenDatetime)
-  const projectSubmissionOpen = get('projectSubmissionOpen') || isOpen(projectSubmissionOpenDatetime)
-  const peoplesChoiceVoteOpen = get('peoplesChoiceVoteOpen') || false
+  const teamDeclarationOpenDatetime = new Date("2023-11-17T20:00:00-08:00")
+  const projectSubmissionOpenDatetime = new Date("2023-11-19T09:00:00-08:00")
+  const teamDeclarationOpen = await get("teamDeclarationOpen") || isOpen(teamDeclarationOpenDatetime)
+  const projectSubmissionOpen = await get("projectSubmissionOpen") || isOpen(projectSubmissionOpenDatetime)
+  const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen") || false
 
   if (!isStudent(user.email)) {
     return (
@@ -59,19 +55,16 @@ export async function Todos({ user }: { user: User }) {
     )
   }
 
-  const participant = await fetchParticipantNotionPage(user)
-  const team = await fetchParticipantTeamNotionPage(participant)
-  const teamNameProperty = team?.properties.Name as TitlePagePropertyType
-  const teamName = teamNameProperty.title[0].text.content
-  const hasSubmitted = await submissionFound(participant)
-  const hasVoted = await peoplesChoiceVoteFound(participant)
+  const participant = await getParticipantByEmail(user.email)
+  const team = await getTeamById(participant.teamId)
+  const hasSubmitted = await getProjectById(team.project.id)
 
   return (
     <ul className={styles.todos}>
       {
         participant
           ?
-            <li style={{ color: 'var(--color-light-50)' }}>
+            <li style={{ color: "var(--color-light-50)" }}>
               You&apos;ve registered        <Comment type="inline">you&apos;re all set to attend</Comment>
             </li>
           :
@@ -103,7 +96,7 @@ export async function Todos({ user }: { user: User }) {
       }
       {
         teamDeclarationOpen && participant && team &&
-          <li style={{ color: 'var(--color-light-50)' }}>
+          <li style={{ color: "var(--color-light-50)" }}>
             You&apos;re on a team         <Comment type="inline">you&apos;re all set to submit</Comment>
           </li>
       }
@@ -120,13 +113,13 @@ export async function Todos({ user }: { user: User }) {
             <Button
               text="Submit your project"
               type="link"
-              destination={`/submit?participant_email=${user.email}&teamname=${teamName}`}
+              destination={`/submit?participant_email=${user.email}&teamname=${team.name}`}
             />
           </li>
       }
       {
         projectSubmissionOpen && hasSubmitted &&
-          <li style={{ color: 'var(--color-light-50)' }}>
+          <li style={{ color: "var(--color-light-50)" }}>
             You&apos;ve submitted         <Comment type="inline">you&apos;re ready, good luck!</Comment>
           </li>
       }
@@ -137,7 +130,7 @@ export async function Todos({ user }: { user: User }) {
             Vote for People&apos;s Choice <Comment type="inline">open after presentations</Comment>
           </li>
       }
-      {
+      {/* {
         peoplesChoiceVoteOpen && participant && team && !hasVoted &&
           <li className="fade">
             <Button
@@ -149,10 +142,10 @@ export async function Todos({ user }: { user: User }) {
       }
       {
         peoplesChoiceVoteOpen && hasVoted &&
-          <li style={{ color: 'var(--color-light-50)' }}>
+          <li style={{ color: "var(--color-light-50)" }}>
             You&apos;ve voted             <Comment type="inline">thanks for participating</Comment>
           </li>
-      }
+      } */}
       <br />
       <li>
         <Button

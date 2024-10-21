@@ -1,26 +1,26 @@
 // Next
-import { redirect } from 'next/navigation'
-import Script from 'next/script'
+import { redirect } from "next/navigation"
+import Script from "next/script"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth } from "@/functions/user-management"
 
 // Components
-import { ParamValidator } from '@/components/ParamValidator'
+import { ParamValidator } from "@/components/ParamValidator"
 
 // Functions
-import { fetchParticipantNotionPage } from '@/functions/notion'
+import { getParticipantByEmail } from "@/functions/db/participant"
 
 export default async function TeamDeclaration() {
   const session = await auth()
   const user = checkAuth(session)
   if (!user)
-    redirect('/')
+    redirect("/")
 
-  const participant = await fetchParticipantNotionPage(user)
+  const participant = await getParticipantByEmail(user.email)
   if (!participant)
-    redirect('/console')
+    redirect("/console")
 
   return (
     <>
