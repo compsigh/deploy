@@ -10,6 +10,12 @@ datasource db {
   url      = env("POSTGRES_URL")
 }
 
+enum Role {
+  ORGANIZER
+  PARTICIPANT
+  JUDGE
+}
+
 enum GraduatingClass {
   CO2028
   CO2027
@@ -33,6 +39,7 @@ enum ProjectType {
 model Participant {
   name            String          @unique
   email           String          @id @unique
+  role            Role            @default(PARTICIPANT)
   graduatingClass GraduatingClass
   team            Team            @relation(fields: [teamId], references: [id])
   teamId          String
