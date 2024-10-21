@@ -4,255 +4,233 @@ import Image from 'next/image'
 
 // Auth
 import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { checkAuth, type User } from '@/functions/user-management'
 
 // Component imports
+import { PlayH1 } from '@/components/PlayH1'
 import { Button } from '@/components/Button'
 
 // Styles
 import styles from './Home.module.css'
 
+function ConsoleButton({ user }: { user: User | false }) {
+  if (user)
+    return <Button destination="/console">Console &gt;</Button>
+  else
+    return <Button type="login">Console &gt;</Button>
+}
+
 export default async function Home() {
   const session = await auth()
-  const authed = checkAuth(session)
-  const user = authed ? session?.user : null
+  const user = checkAuth(session)
 
   return (
     <main className={styles.main}>
       <header className={styles.header}>
-        <h1 className={styles.title}>
-          <span className="fade">► </span>DEPLOY/23
-        </h1>
+        <PlayH1>DEPLOY/24</PlayH1>
         <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>
-          Friday, November 17th
+          Friday, November 08
           <br />
-          Sunday, November 19th
+          Sunday, November 10
         </h3>
+        <h3 className={styles.subtitle}>
+          Friday, November 08 – Sunday, November 10
+        </h3>
+        <p className={styles.description}>
+          <Link href="https://compsigh.club" target="_blank">compsigh</Link>&apos;s second annual hackathon, and our biggest event of the semester. A not-to-miss, hype weekend for meeting cool people &amp;&amp; building cool things.
+        </p>
+        <ConsoleButton user={user} />
       </header>
-      <h3 className={styles.subtitle}>
-        Friday, November 17th – Sunday, November 19th
-      </h3>
-      {
-        user
-          ? <Button destination="/console">Console &gt;</Button>
-          : <Button type="login">Console &gt;</Button>
-      }
 
       <section className={styles.details}>
-        <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
-        <div className={styles['video-container']}>
-          <div className={styles.video}>
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 'none' }}
-              src="https://www.youtube-nocookie.com/embed/EepB7ZA1zNw?si=y5PhTNvH_rmW3ssU"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-
-        <section className={styles.eligibility}>
+        <section>
           <h2>Eligibility</h2>
-          <p>DEPLOY/23 is geared towards CS, design, and engineering majors, but all USF students are welcome and encouraged to participate.</p>
-          <p>Anyone is welcome to come hang out and hack, but <strong>only those that register for the event will be eligible for victory</strong>.</p>
-          <p>Teams (no solo participants) can have a maximum of four members.</p>
-          <p>All team members must present their project for the entire team to be eligible for victory.</p>
-          <pre className={styles.block}>
-            <code>Registration Deadline       &gt;&gt; November 17th, 8pm</code>
-            <code>Team Declaration Deadline   &gt;&gt; November 17th, 11pm</code>
-            <code>Project Submission Deadline &gt;&gt; November 19th, 11:30am</code>
-          </pre>
-          <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>Registration Deadline</code>
-            <code>&gt;&gt; November 17th, 8pm</code>
-            <br />
-            <code>Team Declaration Deadline</code>
-            <code>&gt;&gt; November 17th, 11pm</code>
-            <br />
-            <code>Project Submission Deadline</code>
-            <code>&gt;&gt; November 19th, 11:30am</code>
-          </pre>
+          <p>DEPLOY/24 is geared towards CS and our friends from other creative areas of study like design, engineering, and E&I, but all USF students are welcome and encouraged to participate!</p>
+          <p>Anyone is welcome to come hang out and hack, but <strong>only USF students who register for the event will be eligible to win</strong>.</p>
+          <p>Participants can form teams of 1–4.</p>
+          <p>All team members must be on stage on presentation day to be eligible to win.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Deadline</th>
+                <th>Closes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Registration</td>
+                <td>November 08, 20:00</td>
+              </tr>
+              <tr>
+                <td>Team Formation</td>
+                <td>November 09, 00:00</td>
+              </tr>
+              <tr>
+                <td>Project Submission</td>
+                <td>November 10, 11:30</td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
-        <section className={styles.submissions}>
+        <section>
           <h2>Submissions</h2>
-          <p>Only one team member should submit the project on behalf of the team.</p>
-          <p>Project submissions are not limited to a theme, and the mediums are open-ended. We suggest one of the following:</p>
+          <p>Only one team member has to submit the project on behalf of the team.</p>
+          <p>Project submissions are not limited to a theme — build whatever you like! Common project formats:</p>
           <ul>
             <li>Mobile app</li>
+            <li>Desktop app</li>
+            <li>Applet</li>
+            <li>Game</li>
             <li>Web app</li>
             <li>Website</li>
             <li>Open source contribution</li>
-            <li>Design system</li>
             <li>Hardware/robotics</li>
           </ul>
-          <p>Please do not start working on your project (coding/designing/building, but ideas are great) until after the Opening Keynote on Friday.</p>
-          <p>For any submission, <strong>before you present your project</strong>, please ensure it is open-source or otherwise publicly accessible. You&apos;re welcome to keep it private until project submissions close.</p>
-          <p>Submissions don&apos;t have to be complete. In that case, what would be interesting to hear is what worked, what didn&apos;t, and how you would continue to develop the project.</p>
+          <p>Please do not start actively building your project (brainstorming is great though) until after the Opening Keynote on Friday.</p>
+          <p>For any submission, <em>before you present your project</em>, please ensure it is open-source or otherwise publicly accessible. You&apos;re welcome to keep it private until project submissions close.</p>
+          <p>Submissions don&apos;t have to be complete! <em>What worked? What didn&apos;t? How would you continue to develop the project?</em></p>
         </section>
 
-        <section className={styles.presentations}>
+        <section>
           <h2>Presentations</h2>
-          <p>When your team submits your project, you&apos;ll be asked to input:</p>
           <ul>
-            <li>A team name</li>
-            <li>A song to walk out on stage to (the walkout won&apos;t count against time)</li>
+            <li>Your team presents: 5 minutes</li>
+            <li>Judges ask questions: 2 minutes</li>
+            <li>Audience asks questions: 2 minutes</li>
           </ul>
-          <p>Teams will have a <strong>maximum of five minutes</strong> to present, with questions from judges to follow. You&apos;re welcome to spend the majority of that time on background, a live demo, or whichever way you see fit. We highly encourage creative presentation formats. Some ideas:</p>
+          <p>You&apos;re welcome to spend your presentation time in whichever way you see fit. We highly encourage creative presentation formats! Some ideas:</p>
           <ul>
+            <li>Audience interaction</li>
             <li>Fictitious product launch trailer</li>
             <li>Skit between users and problem solvers</li>
-            <li>Audience interaction (though remember to keep time in mind)</li>
           </ul>
-          <p>In your presentation, please make sure your team members&apos; roles in building the project are clearly articulated.</p>
+          <p>In your presentation, please make sure your team members&apos; roles in bringing the project to life are clearly articulated.</p>
         </section>
 
-        <section className={styles.victory}>
-          <h2>Victory</h2>
-          <p>Teams fight for a People&apos;s Choice, 3rd, 2nd, and 1st Place victory.</p>
-          <p>Projects will be evaluated on <strong>Craft &amp; Polish</strong>, <strong>Presentation &amp; Delivery</strong>, and <strong>Ambition &amp; Technical Complexity</strong>.</p>
-          <p>Here are some tips based on what judges will be looking for:</p>
-          <ul>
-            <li>Be creative and engaging — see some ideas above</li>
-            <li>Clearly define the problem (and target users for whom) you sought to solve</li>
-            <li>Really take some time to prepare. This is one of the reasons there is an hour between the submission deadline and check-in!</li>
-          </ul>
-        </section>
-
-        <section className={styles.judging}>
-          <h2>Judging</h2>
-          <p>An array of professors from the CS, design, and engineering departments will be joining us on Sunday to watch project presentations and assess them in the categories mentioned above.</p>
-          <p>To ensure a fair point count, judge evaluations will be tabulated and <strong>averaged</strong>.</p>
+        <section>
+          <h2>How to win</h2>
+          <p>Teams can earn a People&apos;s Choice, 3rd, 2nd, or 1st Place victory.</p>
+          <p>An array (lol) of professors — primarily from computer science — will be joining us on Sunday to judge presentations.</p>
           <p>Event organizers will not participate directly in judging — with the exception of any tiebreakers — but may adjust points as needed.</p>
-        </section>
-
-        <section className={styles.prizes}>
-          <h2>Prizes</h2>
-          <p>All teammates of the winning teams will receive the prizes below:</p>
-          <pre className={styles.block}>
-            <code>1st Place    &gt;&gt; $100</code>
-            <code>                Semester access to club AI resources</code>
-            <code>                Discord Nitro</code>
-            <code>                Recognition on compsigh platforms</code>
-            <code>2nd Place    &gt;&gt; $50</code>
-            <code>                Discord Nitro</code>
-            <code>                Recognition on compsigh platforms</code>
-            <code>3rd Place    &gt;&gt; $25</code>
-            <code>                Recognition on compsigh platforms</code>
-            <code>PPL&apos;S CHOICE &gt;&gt; Cat-shaped pillow 🐱</code>
-          </pre>
-          <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>1st Place</code>
-            <li>$100</li>
-            <li>Semester access to club AI resources</li>
-            <li>Discord Nitro</li>
-            <li>Recognition on compsigh platforms</li>
-            <br />
-            <code>2nd Place</code>
-            <li>$50</li>
-            <li>Discord Nitro</li>
-            <li>Recognition on compsigh platforms</li>
-            <br />
-            <code>3rd Place</code>
-            <li>$25</li>
-            <li>Recognition on compsigh platforms</li>
-            <br />
-            <code>PPL&apos;S CHOICE</code>
-            <li>Cat-shaped pillow 🐱</li>
-          </pre>
-          <p>Prize distribution will take place after the event.</p>
-        </section>
-
-        <section className={styles.agenda}>
-          <h2>Agenda</h2>
-          <p>Friday, November 17th • The Hive (Harney 1st Floor)</p>
-          <pre className={styles.block}>
-            <code>6pm     — Check-in</code>
-            <code>6:30pm  — Opening Keynote</code>
-            <code>7pm     — Dinner &amp; LFG</code>
-            <code>8pm     — Registration Deadline</code>
-            <code>11pm    — Team Declaration Deadline</code>
-          </pre>
-          <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>6pm</code>
-            <li>Check-in</li>
-            <br />
-            <code>6:30pm</code>
-            <li>Opening Keynote</li>
-            <br />
-            <code>7pm</code>
-            <li>Dinner &amp; LFG</li>
-            <br />
-            <code>8pm</code>
-            <li>Registration Deadline</li>
-            <br />
-            <code>11pm</code>
-            <li>Team Declaration Deadline</li>
-          </pre>
-          <p>Saturday, November 18th • LS 103</p>
-          <pre className={styles.block}>
-            <code>10am    — Mario Kart</code>
-            <code>12pm    — Just Dance</code>
-            <code>2pm     — Super Smash Bros</code>
-            <code>TBD     — Kahoot</code>
-          </pre>
-          <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>10am</code>
-            <li>Mario Kart</li>
-            <br />
-            <code>12pm</code>
-            <li>Just Dance</li>
-            <br />
-            <code>2pm</code>
-            <li>Super Smash Bros</li>
-            <br />
-            <code>TBD</code>
-            <li>Kahoot</li>
-          </pre>
-          <p>Sunday, November 19th • McLaren Conference Center</p>
-          <pre className={styles.block}>
-            <code>11:30am — Project Submission Deadline</code>
-            <code>12pm    — Check-in</code>
-            <code>12:30pm — Presentations Begin</code>
-            <code>1:30pm  — Intermission</code>
-            <code>2pm     — Presentations Continue</code>
-            <code>3pm     — Closing Keynote // Results Announced</code>
-          </pre>
-          <pre className={`${styles['block-mobile']} ${styles.block}`}>
-            <code>11:30am</code>
-            <li>Project Submission Deadline</li>
-            <br />
-            <code>12pm</code>
-            <li>Check-in</li>
-            <br />
-            <code>12:30pm</code>
-            <li>Presentations Begin</li>
-            <br />
-            <code>1:30pm</code>
-            <li>Intermission</li>
-            <br />
-            <code>2pm</code>
-            <li>Presentations Continue</li>
-            <br />
-            <code>3pm</code>
-            <li>Closing Keynote</li>
-            <li>Results Announced</li>
-          </pre>
-        </section>
-
-        <section className={styles.checkin}>
-          <h2>Check-in</h2>
-          <p>During check-in on Friday, we&apos;ll ask for:</p>
+          <p>Here is the full rubric judges will be using:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Despite the time limit, the team showcased their effort in creating a polished solution, with attention to detail and user experience.</td>
+                <td style={{ textAlign: "center" }}>4</td>
+              </tr>
+              <tr>
+                <td>The team presented their project in a creative and engaging way.</td>
+                <td style={{ textAlign: "center" }}>4</td>
+              </tr>
+              <tr>
+                <td>The team defined the problem they sought to solve, identifying a clear and focused target user, need, and context.</td>
+                <td style={{ textAlign: "center" }}>4</td>
+              </tr>
+              <tr>
+                <td>The team showcased their prototype solution, mentioning whether or not they accomplished their goal. If the project was incomplete, the team mentioned what worked, what didn&apos;t, and how the team would continue to develop the project.</td>
+                <td style={{ textAlign: "center" }}>4</td>
+              </tr>
+              <tr>
+                <td>The team took on an ambitious challenge, through the scale &amp; scope of the problem, their tech stack, or otherwise impressive medium.</td>
+                <td style={{ textAlign: "center" }}>4</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Points will be weighed based on the average grade level of your team.</p>
+          <p>For example:</p>
           <ul>
-            <li>Your Hacker ID, which you&apos;ll see on the console after registering</li>
-            <li>A picture of you — this is for presentations on Sunday, but let us know if you wouldn&apos;t be comfortable doing this</li>
+            <li>All 4th-year team: 1.00x multiplier: 16.0 → 16.0 out of 20 points</li>
+            <li>All 3rd-year team: 1.10x multiplier: 16.0 → 17.6 out of 20 points</li>
+            <li>All 2nd-year team: 1.15x multiplier: 16.0 → 18.4 out of 20 points</li>
+            <li>All 1st-year team: 1.20x multiplier: 16.0 → 19.2 out of 20 points</li>
           </ul>
         </section>
 
-        <section className={styles.spaces}>
+        <section>
+          <h2>Prizes</h2>
+          <p>TBA :)</p>
+        </section>
+
+        <section>
+          <h2>Agenda</h2>
+          <p>Friday, November 08</p>
+          <table>
+            <tbody>
+              <tr>
+                <td style={{ width: 100 }}>18:00</td>
+                <td>Doors open, check-in &amp; late registration begins</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>18:30</td>
+                <td>Opening Keynote</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>19:00</td>
+                <td>Dinner &amp; looking-for-group begins</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>20:00</td>
+                <td>Registration deadline</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Saturday, November 09</p>
+          <table>
+            <tbody>
+              <tr>
+                <td style={{ width: 100 }}>00:00</td>
+                <td>Team formation deadline</td>
+              </tr>
+              <tr>
+                <td>TBA</td>
+                <td>Office hours: design jam</td>
+              </tr>
+              <tr>
+                <td>TBA</td>
+                <td>Office hours: how to kill it at presentations</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Sunday, November 10</p>
+          <table>
+            <tbody>
+              <tr>
+                <td style={{ width: 100 }}>11:30</td>
+                <td>Project submission deadline</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>12:00</td>
+                <td>Lunch &amp; presentation day check-in begins</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>13:00</td>
+                <td>Presentations begin</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>14:00</td>
+                <td>Intermission</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>14:20</td>
+                <td>Presentations continue</td>
+              </tr>
+              <tr>
+                <td style={{ width: 100 }}>16:00</td>
+                <td>Closing Keynote; results announced</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
           <h2>Breakout Spaces</h2>
           <p>These rooms will be available throughout the weekend for teams to work in:</p>
           <ul>
@@ -260,14 +238,13 @@ export default async function Home() {
             <li>LS 209</li>
             <li>LS 210</li>
             <li>LS 303</li>
-            <li>UC 402/403</li>
-            <li>UC 4th Floor Lounge</li>
+            <li>LS 307</li>
           </ul>
         </section>
 
         <section className={styles.resources}>
           <h2>Resources</h2>
-          <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event. To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
+          <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event! To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>
             <p><em>Challenge yourself: in 72 hours, I learned more about React &amp; Next.js than I did in the 3 months prior. Don&apos;t be scared to pick a stack you&apos;re not familiar with. You&apos;ll learn more than you think.</em></p>
           </blockquote>
@@ -287,13 +264,8 @@ export default async function Home() {
       </section>
 
       <footer className={styles.footer}>
-        <h2>Theory will only take you so far.</h2>
-        <h2>Good luck, have fun.</h2>
-        {
-          user
-            ? <Button destination="/console">Console &gt;</Button>
-            : <Button type="login">Console &gt;</Button>
-        }
+        <h2>Good luck, have fun!</h2>
+        <ConsoleButton user={user} />
 
         <div className={styles['version-status']}>
           <Image
@@ -304,30 +276,6 @@ export default async function Home() {
             className="fade"
           />
           <p>v1.7.0 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
-        </div>
-
-        <div className={styles['logo-wrapper']}>
-          <Link href="https://compsigh.so" target="_blank">
-            <Image
-              src="/compsigh-filled.svg"
-              alt="compsigh logo"
-              width={30}
-              height={30}
-              className={styles['compsigh-logo']}
-            />
-          </Link>
-          <Image
-            src='/line.svg'
-            alt='delimiter'
-            width={30}
-            height={30}
-          />
-          <Image
-            src='/logo.svg'
-            alt='DEPLOY/23 logo'
-            width={30}
-            height={30}
-          />
         </div>
       </footer>
     </main>

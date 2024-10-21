@@ -4,9 +4,12 @@
   --font-mono: ui-monospace, 'Menlo', 'Monaco', 'Cascadia Mono', 'Segoe UI Mono','Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --color-dark:        hsla(038deg, 010%, 002%, 1.0);
+  --color-dark-30:     hsla(038deg, 010%, 002%, 0.3);
   --color-light:       hsla(038deg, 100%, 090%, 1.0);
   --color-light-50:    hsla(038deg, 100%, 090%, 0.5);
   --color-compsigh:    hsla(038deg, 100%, 050%, 1.0);
+  --color-light-10:    hsla(038deg, 100%, 090%, 0.1);
+  --color-light-30:    hsla(038deg, 100%, 090%, 0.3);
 
   --max-width: 700px;
   --margin: 80px auto;
@@ -112,6 +115,32 @@ select {
   background-color: var(--color-dark);
   color: var(--color-light);
   border: 2px solid var(--color-light);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 1em 0;
+  width: 100%;
+  word-break: break-word;
+  background-color: var(--color-dark-30);
+}
+
+tr {
+  border-top: 1px solid var(--color-light-30);
+  border-bottom: 1px solid var(--color-light-30);
+}
+
+th {
+  font-weight: 400;
+  text-align: left;
+  background-color: var(--color-light-10);
+}
+
+th,
+td {
+  padding: 0.4em 0.8em;
+  min-width: 80px;
 }
 
 @keyframes fade {
