@@ -29,11 +29,15 @@ export default async function Home() {
       <header className={styles.header}>
         <PlayH1>DEPLOY/24</PlayH1>
         <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>
+          Social Hive (Harney First Floor)
+          <br />
           Friday, November 08
           <br />
           Sunday, November 10
         </h3>
         <h3 className={styles.subtitle}>
+          Social Hive (Harney First Floor)
+          <br />
           Friday, November 08 – Sunday, November 10
         </h3>
         <p className={styles.description}>
