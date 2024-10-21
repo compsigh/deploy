@@ -6,11 +6,13 @@ import { auth } from "@/auth"
 import { checkAuth } from "@/functions/user-management"
 
 // Components
+import { PlayH1 } from "@/components/PlayH1"
 import { HackerCard } from "@/components/HackerCard"
 import { Todos } from "@/components/Todos"
 
 // Styles
-import styles from "./Console.module.css"
+import styles from "@/app/console/Page.module.css"
+import consolePageStyles from "@/app/console/Console.module.css"
 
 export default async function Console() {
   const session = await auth()
@@ -20,11 +22,9 @@ export default async function Console() {
 
   return (
     <main className={styles.main}>
-      <h1 className={styles.title}>
-        <span className="fade">► </span>Welcome, Hacker
-      </h1>
+      <PlayH1>Welcome, Hacker</PlayH1>
       <Todos user={user} />
-      <div className={styles["card-wrapper"]}>
+      <div className={consolePageStyles["card-wrapper"]}>
         <HackerCard user={user} />
       </div>
     </main>

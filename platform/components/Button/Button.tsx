@@ -1,8 +1,8 @@
 "use client"
 
 // Next
-import { useRouter } from "next/navigation"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import type { MouseEventHandler } from "react"
 
 // Auth
@@ -12,12 +12,12 @@ import { signIn, signOut } from "next-auth/react"
 import styles from "./Button.module.css"
 
 export function Button({
-  text,
+  children,
   type,
   destination
 }: {
-  text: string
-  type: string
+  children: React.ReactNode
+  type?: "login" | "logout" | "link" | "submit"
   destination?: string
 }) {
   let onClick: MouseEventHandler<HTMLButtonElement>
@@ -26,26 +26,25 @@ export function Button({
     onClick = () => signIn("google", { callbackUrl: "/console" })
   else if (type === "logout")
     onClick = () => signOut()
-  else if (type === "button" && destination)
+  else if (destination)
     onClick = () => router.push(destination)
   else
     onClick = () => {}
 
   if (type === "link")
-    return <Link href={`${destination}`}>{text}</Link>
+    return <Link href={`${destination}`}>{children}</Link>
 
-  if (type === "button") {
+  if (type === "submit") {
     return (
-      <button className={styles.button} onClick={onClick}>
-        {text}
+      <button type="submit" className={styles.button}>
+        {children}
       </button>
     )
   }
 
   return (
     <button className={styles.button} onClick={onClick}>
-      {text}
+      {children}
     </button>
   )
 }
-

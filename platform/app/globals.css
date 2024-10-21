@@ -7,6 +7,9 @@
   --color-light:       hsla(038deg, 100%, 090%, 1.0);
   --color-light-50:    hsla(038deg, 100%, 090%, 0.5);
   --color-compsigh:    hsla(038deg, 100%, 050%, 1.0);
+
+  --max-width: 700px;
+  --margin: 80px auto;
 }
 
 * {
@@ -100,6 +103,15 @@ ol ol > li {
 
 li.back::before {
   content: '<';
+}
+
+select {
+  font-family: var(--font-proto-mono);
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border: 2px solid var(--color-light);
 }
 
 @keyframes fade {

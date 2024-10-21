@@ -28,15 +28,15 @@ export default async function Home() {
           <br />
           Sunday, November 19th
         </h3>
-        {
-          user
-            ? <Button text="Console >" type="button" destination="/console" />
-            : <Button text="Console >" type="login" />
-        }
       </header>
       <h3 className={styles.subtitle}>
         Friday, November 17th – Sunday, November 19th
       </h3>
+      {
+        user
+          ? <Button destination="/console">Console &gt;</Button>
+          : <Button type="login">Console &gt;</Button>
+      }
 
       <section className={styles.details}>
         <p className={styles.description}>DEPLOY/23 — <Link href={'https://compsigh.so'} target='_blank'>compsigh</Link>&apos;s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.</p>
@@ -291,8 +291,8 @@ export default async function Home() {
         <h2>Good luck, have fun.</h2>
         {
           user
-            ? <Button text="Console >" type="button" destination="/console" />
-            : <Button text="Console >" type="login" />
+            ? <Button destination="/console">Console &gt;</Button>
+            : <Button type="login">Console &gt;</Button>
         }
 
         <div className={styles['version-status']}>

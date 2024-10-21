@@ -37,19 +37,15 @@ export async function Todos({ user }: { user: User }) {
     return (
       <ul className={styles.todos}>
         <li className="fade">
-          <Button
-            text="Evaluate a project"
-            type="link"
-            destination="/evaluate"
-          />
+          <Button type="link" destination="/console/evaluate">
+            Evaluate a project
+          </Button>
         </li>
         <br />
         <li className="back">
-          <Button
-            text="Back to DEPLOY/23"
-            type="link"
-            destination="/"
-          />
+          <Button type="link" destination="/">
+            Back to DEPLOY/24
+          </Button>
         </li>
       </ul>
     )
@@ -69,11 +65,9 @@ export async function Todos({ user }: { user: User }) {
             </li>
           :
             <li className="fade">
-              <Button
-                text="Register"
-                type="link"
-                destination="/register"
-              />
+              <Button type="link" destination="/console/register">
+                Register
+              </Button>
             </li>
       }
 
@@ -86,11 +80,9 @@ export async function Todos({ user }: { user: User }) {
       {
         teamDeclarationOpen && participant && !team &&
           <li className="fade">
-            <Button
-              text="Declare your team"
-              type="link"
-              destination={`/team?participant_email=${user.email}`}
-            />
+            <Button type="link" destination={`/team?participant_email=${user.email}`}>
+              Declare your team
+            </Button>
           </li>
       }
       {
@@ -109,11 +101,9 @@ export async function Todos({ user }: { user: User }) {
       {
         projectSubmissionOpen && participant && team && !hasSubmitted &&
           <li className="fade">
-            <Button
-              text="Submit your project"
-              type="link"
-              destination={`/submit?participant_email=${user.email}&teamname=${team.name}`}
-            />
+            <Button type="link" destination={`/submit?participant_email=${user.email}&teamname=${team.name}`}>
+              Submit your project
+            </Button>
           </li>
       }
       {
@@ -147,19 +137,15 @@ export async function Todos({ user }: { user: User }) {
       } */}
       <br />
       <li>
-        <Button
-          text="Discord"
-          type="link"
-          destination="https://discord.compsigh.so"
-        />
+        <Button type="link" destination="https://discord.compsigh.club">
+          Join the Discord
+        </Button>
       </li>
       <br />
       <li className="back">
-        <Button
-          text="Back to DEPLOY/23"
-          type="link"
-          destination="/"
-        />
+        <Button type="link" destination="/">
+          Back to DEPLOY/24
+        </Button>
       </li>
     </ul>
   )
