@@ -7,6 +7,7 @@ import type { User } from 'next-auth'
 
 // Components
 import { Button } from '@/components/Button'
+import { Comment } from '@/components/Comment'
 
 // Functions
 import {
@@ -70,8 +71,8 @@ export async function Todos({ user }: { user: User }) {
       {
         participant
           ?
-            <li style={{ color: '#888888' }}>
-              You&apos;ve registered        <p className="comment">you&apos;re all set to attend</p>
+            <li style={{ color: 'var(--color-light-50)' }}>
+              You&apos;ve registered        <Comment type="inline">you&apos;re all set to attend</Comment>
             </li>
           :
             <li className="fade">
@@ -86,7 +87,9 @@ export async function Todos({ user }: { user: User }) {
 
       {
         !teamDeclarationOpen &&
-          <li>Declare your team        <p className="comment">open Friday, Nov. 17 8pm</p></li>
+          <li>
+            Declare your team        <Comment type="inline">open Friday, Nov. 17 8pm</Comment>
+          </li>
       }
       {
         teamDeclarationOpen && participant && !team &&
@@ -100,14 +103,16 @@ export async function Todos({ user }: { user: User }) {
       }
       {
         teamDeclarationOpen && participant && team &&
-          <li style={{ color: '#888888' }}>
-            You&apos;re on a team         <p className="comment">you&apos;re all set to submit</p>
+          <li style={{ color: 'var(--color-light-50)' }}>
+            You&apos;re on a team         <Comment type="inline">you&apos;re all set to submit</Comment>
           </li>
       }
 
       {
         !projectSubmissionOpen &&
-          <li>Submit your project      <p className="comment">open Sunday, Nov. 19 9am</p></li>
+          <li>
+            Submit your project      <Comment type="inline">open Sunday, Nov. 19 9am</Comment>
+          </li>
       }
       {
         projectSubmissionOpen && participant && team && !hasSubmitted &&
@@ -121,13 +126,16 @@ export async function Todos({ user }: { user: User }) {
       }
       {
         projectSubmissionOpen && hasSubmitted &&
-          <li style={{ color: '#888888' }}>
-            You&apos;ve submitted         <p className="comment">you&apos;re ready, good luck!</p></li>
+          <li style={{ color: 'var(--color-light-50)' }}>
+            You&apos;ve submitted         <Comment type="inline">you&apos;re ready, good luck!</Comment>
+          </li>
       }
 
       {
         !peoplesChoiceVoteOpen &&
-          <li>Vote for People&apos;s Choice <p className="comment">open after presentations</p></li>
+          <li>
+            Vote for People&apos;s Choice <Comment type="inline">open after presentations</Comment>
+          </li>
       }
       {
         peoplesChoiceVoteOpen && participant && team && !hasVoted &&
@@ -141,8 +149,8 @@ export async function Todos({ user }: { user: User }) {
       }
       {
         peoplesChoiceVoteOpen && hasVoted &&
-          <li style={{ color: '#888888' }}>
-            You&apos;ve voted             <p className="comment">thanks for participating</p>
+          <li style={{ color: 'var(--color-light-50)' }}>
+            You&apos;ve voted             <Comment type="inline">thanks for participating</Comment>
           </li>
       }
       <br />

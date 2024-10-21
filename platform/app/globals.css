@@ -1,45 +1,28 @@
-/* CSS Variables */
 :root {
-  /* Typography */
   --font-headers: var(--font-proto-mono), var(--font-mono);
   --font-body: var(--font-ia-writer-quattro), var(--font-mono);
   --font-mono: ui-monospace, 'Menlo', 'Monaco', 'Cascadia Mono', 'Segoe UI Mono','Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  /* Colors */
-  --notion: hsl(0deg, 0%, 100%);
-  --c:      hsl(0deg, 0%, 0%);
-  --gleam:  hsl(41deg, 98%, 59%);
+  --color-dark:        hsla(038deg, 010%, 002%, 1.0);
+  --color-light:       hsla(038deg, 100%, 090%, 1.0);
+  --color-light-50:    hsla(038deg, 100%, 090%, 0.5);
+  --color-compsigh:    hsla(038deg, 100%, 050%, 1.0);
 }
 
-/* Background Grid */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  overflow-x: hidden;
   background-image: url('/gridrect.svg');
   background-repeat: repeat;
-}
-
-/* CSS Resets */
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-a {
-  color: var(--gleam);
-  text-decoration: none;
-}
-
-/* Text Styles */
-body {
-  background-color: var(--c);
-  color: var(--notion);
-  text-align: justify;
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  font-family: var(--font-body);
+  line-height: 180%;
 }
 
 h1,
@@ -48,12 +31,12 @@ h3,
 h4 {
   font-family: var(--font-headers);
   font-weight: 600;
-  line-height: 150%;
+  line-height: 1.2;
 }
 
 h1 {
   font-size: 3rem;
-  text-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+  text-shadow: 0px 0px 30px var(--color-light-50);
 }
 
 h2 {
@@ -68,41 +51,57 @@ h4 {
   font-size: 1.25rem;
 }
 
-p {
-  font-family: var(--font-body);
-  line-height: 150%;
+a {
+  color: var(--color-compsigh);
+  text-decoration: none;
 }
 
-p.comment {
-  display: inline;
-  font-family: var(--font-headers);
-  color: #888888;
+a:hover {
+  text-decoration: underline;
 }
 
-p.comment::before {
-  content: '// ';
+p,
+ul,
+ol {
+  margin: 1em 0;
 }
 
-/* List Styles */
 li {
   font-family: var(--font-proto-mono);
-  list-style-type: none;
-  text-indent: calc(-1em - 2px);
-  line-height: 1.5;
   white-space: pre-wrap;
+  margin: 0.5em 0;
 }
 
-li::before {
+li::before,
+li::marker {
+  color: var(--color-light-50);
+}
+
+ul > li {
+  list-style-type: none;
+}
+
+ul > li::before {
+  position: absolute;
+  margin-left: -22px;
   content: '>';
-  margin-right: 0.5em;
+}
+
+ul ul {
+  margin: unset;
+}
+
+ul ul > li,
+ol ul > li,
+ul ol > li,
+ol ol > li {
+  margin-left: 1em;
 }
 
 li.back::before {
   content: '<';
-  margin-right: 0.5em;
 }
 
-/* Play Button Animation */
 @keyframes fade {
   0% {
     opacity: 1;

@@ -9,8 +9,8 @@ button.button {
   align-items: center;
   padding: 14px 60px;
 
-  background: var(--notion);
-  color: var(--c);
+  background: var(--color-light);
+  color: var(--color-dark);
 
   font-family: var(--font-proto-mono);
   font-style: normal;
@@ -25,7 +25,7 @@ button.button {
 }
 
 button.button:hover {
-  background: var(--c);
-  color: var(--notion);
-  box-shadow: 0 0 0 2px var(--notion);
+  background: var(--color-dark);
+  color: var(--color-light);
+  box-shadow: 0 0 0 2px var(--color-light);
 }

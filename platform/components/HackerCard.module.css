@@ -1,7 +1,7 @@
 .card {
   width: 300px;
   height: 400px;
-  border: 1px solid var(--notion);
+  border: 1px solid var(--color-light);
   border-radius: 20px;
   text-align: center;
   position: relative;
@@ -10,7 +10,7 @@
 .id {
   width: 100px;
   height: 30px;
-  border: 1px solid var(--notion);
+  border: 1px solid var(--color-light);
   border-radius: 20px;
   text-align: center;
 
@@ -19,7 +19,7 @@
   transform: translateX(-50%);
   top: -15px;
 
-  background-color: var(--c);
+  background-color: var(--color-dark);
 }
 
 .id > p {
@@ -28,10 +28,11 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  margin: 0;
 }
 
 .id > p.prefix {
-  color: #888888;
+  color: var(--color-light-50);
 }
 
 h3.name {
@@ -42,11 +43,11 @@ h3.name {
   margin-top: 20px;
   width: 100%;
   height: 48px;
-  background-color: var(--notion);
+  background-color: var(--color-light);
 }
 
 h3.team-name {
-  color: var(--c);
+  color: var(--color-dark);
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -73,7 +74,7 @@ p.referral-count {
 p.referral-text {
   margin-top: 20px;
   width: 300px;
-  color: #888888;
+  color: var(--color-light-50);
   font-size: 0.875rem;
   text-align: center;
 }
@@ -81,7 +82,7 @@ p.referral-text {
 p.referral-link {
   margin-top: 10px;
   width: 300px;
-  color: var(--gleam);
+  color: var(--color-compsigh);
   font-size: 0.875rem;
   font-family: var(--font-headers);
   text-align: center;

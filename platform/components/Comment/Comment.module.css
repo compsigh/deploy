@@ -1,0 +1,28 @@
+.comment {
+  font-family: var(--font-headers);
+  color: var(--color-light-50);
+}
+
+span.inline-comment {
+  margin-left: 20px;
+}
+
+span.inline-comment::before {
+  content: '// ';
+  vertical-align: top;
+}
+
+p.block-comment::before {
+  content: '\002F* ';
+}
+
+p.block-comment::after {
+  content: ' *\002F';
+}
+
+@media (max-width: 700px) {
+  span.inline-comment {
+    display: block;
+    margin-left: 0px;
+  }
+}
