@@ -17,20 +17,10 @@ import styles from "@/app/console/Console.module.css"
 import { getProjectById } from "@/functions/db/project"
 import { getJudgeByEmail } from "@/functions/db/judge"
 
-function isOpen(datetime: Date) {
-  const currentDate = new Date()
-  if (currentDate >= datetime)
-    return true
-  else
-    return false
-}
-
 export async function Todos({ user }: { user: User }) {
-  const teamDeclarationOpenDatetime = new Date("2023-11-17T20:00:00-08:00")
-  const projectSubmissionOpenDatetime = new Date("2023-11-19T09:00:00-08:00")
-  const teamDeclarationOpen = await get("teamDeclarationOpen") || isOpen(teamDeclarationOpenDatetime)
-  const projectSubmissionOpen = await get("projectSubmissionOpen") || isOpen(projectSubmissionOpenDatetime)
-  const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen") || false
+  const teamDeclarationOpen = await get("teamDeclarationOpen")
+  const projectSubmissionOpen = await get("projectSubmissionOpen")
+  const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen")
 
   const isJudge = await getJudgeByEmail(user.email)
   if (isJudge) {
@@ -74,14 +64,14 @@ export async function Todos({ user }: { user: User }) {
       {
         !teamDeclarationOpen &&
           <li>
-            Declare your team        <Comment type="inline">open Friday, Nov. 17 8pm</Comment>
+            Form your team           <Comment type="inline">opens soon!</Comment>
           </li>
       }
       {
         teamDeclarationOpen && participant && !team &&
           <li className="fade">
             <Button type="link" destination={`/team?participant_email=${user.email}`}>
-              Declare your team
+              Form your team
             </Button>
           </li>
       }
@@ -95,7 +85,7 @@ export async function Todos({ user }: { user: User }) {
       {
         !projectSubmissionOpen &&
           <li>
-            Submit your project      <Comment type="inline">open Sunday, Nov. 19 9am</Comment>
+            Submit your project      <Comment type="inline">opens during the event</Comment>
           </li>
       }
       {

@@ -1,4 +1,5 @@
 .main {
+  max-width: var(--max-width);
   margin: var(--margin);
   display: flex;
   flex-direction: column;
