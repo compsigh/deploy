@@ -65,10 +65,10 @@ else
 
 export const metadata: Metadata = {
   metadataBase,
-  title: 'DEPLOY/23',
-  description: 'DEPLOY/23 — compsigh\'s first hackathon, and our biggest event of the semester. An interdisciplinary three-day event, bringing together the best minds in CS, design, and engineering to hack on a project for a weekend.',
+  title: 'DEPLOY/24',
+  description: "compsigh's second annual hackathon, and our biggest event of the semester. A not-to-miss, hype weekend for meeting cool people && building cool things.",
   openGraph: {
-    images: '/banner-grid.png'
+    images: '/DEPLOY24.png'
   }
 }
 
