@@ -7,7 +7,7 @@ import { auth } from '@/auth'
 import { checkAuth } from '@/functions/user-management'
 
 // Components
-import ParamsValidator from '@/components/ParamsValidator'
+import { ParamValidator } from '@/components/ParamValidator'
 
 // Functions
 import {
@@ -38,7 +38,7 @@ export default async function ProjectSubmission() {
 
   return (
     <>
-      <ParamsValidator
+      <ParamValidator
         expect={expectedParams}
         redirect="/console"
       />

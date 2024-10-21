@@ -26,7 +26,7 @@ function validateParams(
   }
 }
 
-export default function ParamsValidator({
+export function ParamValidator({
   expect,
   redirect
 }: {

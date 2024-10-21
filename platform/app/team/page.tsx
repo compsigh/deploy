@@ -7,7 +7,7 @@ import { auth } from '@/auth'
 import { checkAuth } from '@/functions/user-management'
 
 // Components
-import ParamsValidator from '@/components/ParamsValidator'
+import { ParamValidator } from '@/components/ParamValidator'
 
 // Functions
 import { fetchParticipantNotionPage } from '@/functions/notion'
@@ -25,7 +25,7 @@ export default async function TeamDeclaration() {
 
   return (
     <>
-      <ParamsValidator
+      <ParamValidator
         expect={{
           participant_email: user.email
         }}
