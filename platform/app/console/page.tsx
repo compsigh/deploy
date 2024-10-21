@@ -14,10 +14,9 @@ import styles from './Console.module.css'
 
 export default async function Console() {
   const session = await auth()
-  const authed = checkAuth(session)
-  if (!authed)
+  const user = checkAuth(session)
+  if (!user)
     redirect('/')
-  const user = session.user
 
   return (
     <main className={styles.main}>

@@ -14,10 +14,9 @@ import { fetchJudgeNotionPage } from '@/functions/notion'
 
 export default async function ProjectEvaluation() {
   const session = await auth()
-  const authed = await checkAuth(session)
-  if (!authed)
+  const user = checkAuth(session)
+  if (!user)
     redirect('/')
-  const user = session.user
 
   const judge = await fetchJudgeNotionPage(user)
   if (!judge)

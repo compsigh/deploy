@@ -14,8 +14,8 @@ import styles from './Home.module.css'
 
 export default async function Home() {
   const session = await auth()
-  const authed = await checkAuth(session)
-  const user = authed ? session.user : null
+  const authed = checkAuth(session)
+  const user = authed ? session?.user : null
 
   return (
     <main className={styles.main}>

@@ -18,10 +18,9 @@ import {
 
 export default async function PeoplesChoiceVote() {
   const session = await auth()
-  const authed = checkAuth(session)
-  if (!authed)
+  const user = checkAuth(session)
+  if (!user)
     redirect('/')
-  const user = session.user
 
   const participant = await fetchParticipantNotionPage(user)
   if (!participant)

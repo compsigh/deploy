@@ -14,10 +14,9 @@ import { fetchParticipantNotionPage } from '@/functions/notion'
 
 export default async function TeamDeclaration() {
   const session = await auth()
-  const authed = await checkAuth(session)
-  if (!authed)
+  const user = checkAuth(session)
+  if (!user)
     redirect('/')
-  const user = session.user
 
   const participant = await fetchParticipantNotionPage(user)
   if (!participant)

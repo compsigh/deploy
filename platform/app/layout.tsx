@@ -57,11 +57,11 @@ const iAWriterQuattro = localFont({
   variable: '--font-ia-writer-quattro'
 })
 
-let metadataBase
+let metadataBase: URL
 if (process.env.VERCEL_URL)
-  metadataBase = `https://${process.env.VERCEL_URL}`
+  metadataBase = new URL(`https://${process.env.VERCEL_URL}`)
 else
-  metadataBase = `http://localhost:${process.env.PORT || 3000}`
+  metadataBase = new URL(`http://localhost:${process.env.PORT || 3000}`)
 
 export const metadata: Metadata = {
   metadataBase,

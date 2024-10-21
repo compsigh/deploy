@@ -14,10 +14,9 @@ import { fetchParticipantNotionPage } from '@/functions/notion'
 
 export default async function ParticipantRegistration() {
   const session = await auth()
-  const authed = checkAuth(session)
-  if (!authed)
+  const user = checkAuth(session)
+  if (!user)
     redirect('/')
-  const user = session.user
 
   const registered = await fetchParticipantNotionPage(user)
   if (registered)
