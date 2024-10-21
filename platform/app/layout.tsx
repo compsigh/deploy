@@ -1,9 +1,6 @@
 // Next
 import type { Metadata } from 'next'
 
-// Component imports
-import { AuthWrapper } from '@/components/AuthWrapper'
-
 // Style imports
 import localFont from 'next/font/local'
 import './globals.css'
@@ -80,13 +77,11 @@ export default function RootLayout(
   Readonly<{ children: React.ReactNode }>
 ) {
   return (
-    <AuthWrapper>
-      <html
-        lang="en"
-        className={`${ProtoMono.variable} ${iAWriterQuattro.variable}`}
-      >
-        <body>{children}</body>
-      </html>
-    </AuthWrapper>
+    <html
+      lang="en"
+      className={`${ProtoMono.variable} ${iAWriterQuattro.variable}`}
+    >
+      <body>{children}</body>
+    </html>
   )
 }
