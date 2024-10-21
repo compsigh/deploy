@@ -16,7 +16,7 @@ import {
   type UniqueIdPropertyItemObjectResponse
 } from '@notionhq/client/build/src/api-endpoints'
 
-import { Button } from './Button'
+import { Button } from '@/components/Button'
 
 import styles from './HackerCard.module.css'
 
