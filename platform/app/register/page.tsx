@@ -6,9 +6,6 @@ import Script from "next/script"
 import { auth } from "@/auth"
 import { checkAuth } from "@/functions/user-management"
 
-// Components
-import { ParamValidator } from "@/components/ParamValidator"
-
 // Functions
 import { getParticipantByEmail } from "@/functions/db/participant"
 
@@ -24,14 +21,6 @@ export default async function ParticipantRegistration() {
 
   return (
     <>
-      <ParamValidator
-        expect={{
-          firstName: user.name.split(" ")[0],
-          lastName: user.name.split(" ")[1],
-          email: user.email
-        }}
-        redirect="/console"
-      />
       <Script async src="https://tally.so/widgets/embed.js" />
       <iframe
         data-tally-src="https://tally.so/embed/w7KEWZ?transparentBackground=1&dynamicHeight=1"

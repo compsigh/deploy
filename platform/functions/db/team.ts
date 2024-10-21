@@ -7,7 +7,9 @@ import { getParticipantByEmail } from "@/functions/db/participant"
  * @export
  * @param {string} id The team ID.
  */
-export async function getTeamById(id: string) {
+export async function getTeamById(id: string | undefined) {
+  if (!id)
+    return null
   return await prisma.team.findUnique({
     where: {
       id

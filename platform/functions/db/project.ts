@@ -7,7 +7,9 @@ import { ProjectType } from "@prisma/client"
  * @export
  * @param {string} id The project ID.
  */
-export async function getProjectById(id: string) {
+export async function getProjectById(id: string | undefined) {
+  if (!id)
+    return null
   return await prisma.project.findUnique({
     where: {
       id

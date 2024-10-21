@@ -2,8 +2,7 @@
 import { get } from "@vercel/edge-config"
 
 // Auth
-import { isStudent } from "@/functions/user-management"
-import type { User } from "next-auth"
+import type { User } from "@/functions/user-management"
 
 // Components
 import { Button } from "@/components/Button"
@@ -16,6 +15,7 @@ import { getTeamById } from "@/functions/db/team"
 // Styles
 import styles from "@/app/console/Console.module.css"
 import { getProjectById } from "@/functions/db/project"
+import { getJudgeByEmail } from "@/functions/db/judge"
 
 function isOpen(datetime: Date) {
   const currentDate = new Date()
@@ -32,7 +32,8 @@ export async function Todos({ user }: { user: User }) {
   const projectSubmissionOpen = await get("projectSubmissionOpen") || isOpen(projectSubmissionOpenDatetime)
   const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen") || false
 
-  if (!isStudent(user.email)) {
+  const isJudge = await getJudgeByEmail(user.email)
+  if (isJudge) {
     return (
       <ul className={styles.todos}>
         <li className="fade">
@@ -40,7 +41,6 @@ export async function Todos({ user }: { user: User }) {
             text="Evaluate a project"
             type="link"
             destination="/evaluate"
-            user={user}
           />
         </li>
         <br />
@@ -56,8 +56,8 @@ export async function Todos({ user }: { user: User }) {
   }
 
   const participant = await getParticipantByEmail(user.email)
-  const team = await getTeamById(participant.teamId)
-  const hasSubmitted = await getProjectById(team.project.id)
+  const team = await getTeamById(participant?.teamId)
+  const hasSubmitted = await getProjectById(team?.project?.id)
 
   return (
     <ul className={styles.todos}>
@@ -73,7 +73,6 @@ export async function Todos({ user }: { user: User }) {
                 text="Register"
                 type="link"
                 destination="/register"
-                user={user}
               />
             </li>
       }

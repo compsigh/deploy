@@ -1,22 +1,22 @@
 // Next
-import { redirect } from 'next/navigation'
+import { redirect } from "next/navigation"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth } from "@/functions/user-management"
 
 // Components
-import { HackerCard } from '@/components/HackerCard'
-import { Todos } from '@/components/Todos'
+import { HackerCard } from "@/components/HackerCard"
+import { Todos } from "@/components/Todos"
 
 // Styles
-import styles from './Console.module.css'
+import styles from "./Console.module.css"
 
 export default async function Console() {
   const session = await auth()
   const user = checkAuth(session)
   if (!user)
-    redirect('/')
+    redirect("/")
 
   return (
     <main className={styles.main}>
@@ -24,7 +24,7 @@ export default async function Console() {
         <span className="fade">► </span>Welcome, Hacker
       </h1>
       <Todos user={user} />
-      <div className={styles['card-wrapper']}>
+      <div className={styles["card-wrapper"]}>
         <HackerCard user={user} />
       </div>
     </main>
