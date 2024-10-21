@@ -1,0 +1,63 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("POSTGRES_URL")
+}
+
+enum GraduatingClass {
+  CO2028
+  CO2027
+  CO2026
+  CO2025
+  MASTERS
+}
+
+enum ProjectType {
+  MOBILE_APP
+  DESKTOP_APP
+  APPLET
+  GAME
+  WEB_APP
+  WEBSITE
+  OPEN_SOURCE_CONTRIBUTION
+  HARDWARE
+  OTHER
+}
+
+model Participant {
+  name            String          @unique
+  email           String          @id @unique
+  graduatingClass GraduatingClass
+  team            Team            @relation(fields: [teamId], references: [id])
+  teamId          String
+}
+
+model Team {
+  id           String        @id @default(uuid())
+  name         String
+  participants Participant[]
+  project      Project?
+}
+
+model Invite {
+  id                   String @id @default(uuid())
+  fromParticipantEmail String
+  toParticipantEmail   String
+}
+
+model Project {
+  id     String      @id @default(uuid())
+  name   String
+  type   ProjectType
+  link   String
+  notes  String?
+  song   String?
+  team   Team        @relation(fields: [teamId], references: [id])
+  teamId String      @unique
+}
