@@ -67,7 +67,7 @@ export default async function Home() {
               </tr>
               <tr>
                 <td>Team Formation</td>
-                <td>November 09, 12:00am (midnight)</td>
+                <td>November 08, 11:59pm</td>
               </tr>
               <tr>
                 <td>Project Submission</td>
@@ -143,7 +143,7 @@ export default async function Home() {
                 <td style={{ textAlign: "center" }}>4</td>
               </tr>
               <tr>
-                <td>The team took on an ambitious challenge, through the scale &amp; scope of the problem, their tech stack, or otherwise impressive medium.</td>
+                <td>The team took on anambitious challenge, through the scale &amp; scope of the problem, their tech stack, or otherwise impressive medium.</td>
                 <td style={{ textAlign: "center" }}>4</td>
               </tr>
             </tbody>
@@ -170,30 +170,31 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 110 }}>6:00 PM</td>
+                <td style={{ width: 110 }}>6:00pm</td>
                 <td>Doors open, check-in &amp; late registration begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>6:30 PM</td>
+                <td style={{ width: 110 }}>6:30pm</td>
                 <td>Opening Keynote</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>7:00 PM</td>
+                <td style={{ width: 110 }}>7:00pm</td>
                 <td>Dinner &amp; looking-for-group begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>8:00 PM</td>
+                <td style={{ width: 110 }}>8:00pm</td>
                 <td>Registration deadline</td>
+              </tr>
+              <tr>
+                <td style={{ width: 110 }}>11:59pm
+                </td>
+                <td>Team formation deadline</td>
               </tr>
             </tbody>
           </table>
           <p>Saturday, November 09</p>
           <table>
             <tbody>
-              <tr>
-                <td style={{ width: 110 }}>12:00 AM</td>
-                <td>Team formation deadline</td>
-              </tr>
               <tr>
                 <td>TBA</td>
                 <td>Office hours: design jam</td>
@@ -208,27 +209,27 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 110 }}>11:30 AM</td>
+                <td style={{ width: 110 }}>11:30am</td>
                 <td>Project submission deadline</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>12:00 PM</td>
+                <td style={{ width: 110 }}>12:00pm</td>
                 <td>Lunch &amp; presentation day check-in begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>1:00 PM</td>
+                <td style={{ width: 110 }}>1:00pm</td>
                 <td>Presentations begin</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>2:00 PM</td>
+                <td style={{ width: 110 }}>2:00pm</td>
                 <td>Intermission</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>2:20 PM</td>
+                <td style={{ width: 110 }}>2:20pm</td>
                 <td>Presentations continue</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>4:00 PM</td>
+                <td style={{ width: 110 }}>4:00pm</td>
                 <td>Closing Keynote; results announced</td>
               </tr>
             </tbody>
