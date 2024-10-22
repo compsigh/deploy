@@ -23,7 +23,6 @@
 
 body {
   overflow-x: hidden;
-  background-image: url('/gridrect.svg');
   background-repeat: repeat;
   background-color: var(--color-dark);
   color: var(--color-light);
