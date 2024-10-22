@@ -1,1 +1,1 @@
-export { ParamClearer } from './ParamClearer'
+export { ParamClearer } from "./ParamClearer"

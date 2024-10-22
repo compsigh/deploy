@@ -1,18 +1,18 @@
-'use client'
+"use client"
 
 import {
   useRouter,
   useSearchParams,
   type ReadonlyURLSearchParams
-} from 'next/navigation'
+} from "next/navigation"
 
 import {
   useEffect,
   useRef,
   type MutableRefObject
-} from 'react'
+} from "react"
 
-import { type AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime'
+import { type AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
 function validateParams(
   expect: Record<string, string>,

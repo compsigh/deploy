@@ -4,6 +4,10 @@
     "next/core-web-vitals"
   ],
   "rules": {
+    "quotes": [
+      "error",
+      "double"
+    ],
     "capitalized-comments": [
       "error",
       "always"

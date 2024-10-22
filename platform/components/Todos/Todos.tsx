@@ -13,7 +13,6 @@ import { getParticipantByEmail } from "@/functions/db/participant"
 import { getTeamById } from "@/functions/db/team"
 
 // Styles
-import styles from "@/app/console/Console.module.css"
 import { getProjectById } from "@/functions/db/project"
 import { getJudgeByEmail } from "@/functions/db/judge"
 

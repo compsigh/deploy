@@ -1,17 +1,17 @@
 // Next
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link"
+import Image from "next/image"
 
 // Auth
-import { auth } from '@/auth'
-import { checkAuth, type User } from '@/functions/user-management'
+import { auth } from "@/auth"
+import { checkAuth, type User } from "@/functions/user-management"
 
 // Component imports
-import { PlayH1 } from '@/components/PlayH1'
-import { Button } from '@/components/Button'
+import { PlayH1 } from "@/components/PlayH1"
+import { Button } from "@/components/Button"
 
 // Styles
-import styles from './Home.module.css'
+import styles from "./Home.module.css"
 
 function ConsoleButton({ user }: { user: User | false }) {
   if (user)
@@ -28,7 +28,7 @@ export default async function Home() {
     <main className={styles.main}>
       <header className={styles.header}>
         <PlayH1>DEPLOY/24</PlayH1>
-        <h3 className={`${styles['subtitle-mobile']} ${styles.subtitle}`}>
+        <h3 className={`${styles["subtitle-mobile"]} ${styles.subtitle}`}>
           Social Hive (Harney First Floor)
           <br />
           Friday, November 08
@@ -260,7 +260,7 @@ export default async function Home() {
             <p><em>Go in with a plan to learn, and have fun. It&apos;s a good place to network, meet new people, and explore different opportunities as well.</em></p>
           </blockquote>
           <blockquote>
-            <p><em>Check out <a href='https://www.figma.com/community/file/1144013421600974167'>GitHub&apos;s design system for hackathons</a>.</em></p>
+            <p><em>Check out <Link href="https://www.figma.com/community/file/1144013421600974167">GitHub&apos;s design system for hackathons</Link>.</em></p>
           </blockquote>
           <blockquote>
             <p><em>Document your process! Not just for the presentations, but for the camera roll too. :)</em></p>
@@ -272,7 +272,7 @@ export default async function Home() {
         <h2>Good luck, have fun!</h2>
         <ConsoleButton user={user} />
 
-        <div className={styles['version-status']}>
+        <div className={styles["version-status"]}>
           <Image
             src="/circle.svg"
             alt="circle"
@@ -280,7 +280,7 @@ export default async function Home() {
             height={10}
             className="fade"
           />
-          <p>v1.7.0 | <Link href={'https://github.com/compsigh/deploy'} target='_blank'>Source Code</Link></p>
+          <p>v1.7.0 | <Link href={"https://github.com/compsigh/deploy"} target="_blank">Source Code</Link></p>
         </div>
       </footer>
     </main>
