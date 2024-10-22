@@ -148,13 +148,14 @@ export default async function Home() {
               </tr>
             </tbody>
           </table>
-          <p>Points will be weighed based on the average grade level of your team.</p>
+          <p>Points will be weighed based on the <em>average grade level</em> of your team.</p>
           <p>For example:</p>
           <ul>
             <li>All 4th-year team: 1.00x multiplier: 16.0 → 16.0 out of 20 points</li>
             <li>All 3rd-year team: 1.10x multiplier: 16.0 → 17.6 out of 20 points</li>
             <li>All 2nd-year team: 1.15x multiplier: 16.0 → 18.4 out of 20 points</li>
             <li>All 1st-year team: 1.20x multiplier: 16.0 → 19.2 out of 20 points</li>
+            <li>One out of each: 1.1125x multiplier: 16.0 → 17.8 out of 20 points</li>
           </ul>
         </section>
 
