@@ -263,14 +263,14 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Create 8.5 × 11 flyer
 - [x] Create 1:1 Instagram post
 - [x] Create 16:9 banner for the TVs
-- [ ] Create Discord announcement
+- [x] Create Discord announcement
 - [ ] Write email announcement for departments
-- [ ] Request banner to be displayed on the TVs
-- [ ] Post on Instagram
-- [ ] Post Instagram story of post and add to highlights
-- [ ] Ping `@announcements` and `@events`
+- [x] Request banner to be displayed on the TVs
+- [x] Post on Instagram
+- [x] Post Instagram story of post and add to highlights
+- [x] Ping `@announcements` and `@events`
 - [ ] Print and put up flyers
-- [ ] Ask Jocelyn to send out announcement
+- [x] Ask Jocelyn to send out announcement
 - [ ] Ask John from E&I to send out announcement
 - [ ] Ask Noopur from Design to send out announcement
 - [ ] Ask Samantha from Engineering to send out announcement
@@ -287,11 +287,10 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - 06:30pm: Opening keynote
 - 07:00pm: Dinner & looking-for-group begins
 - 08:00pm: Registration deadline
-- 11:00pm: Team declaration deadline
 
 ### Saturday, November 9th
 
-Workshops, TBD
+- 12:00am: Team formation deadline
 
 ### Sunday, November 10th
 
