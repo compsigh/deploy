@@ -86,12 +86,6 @@ ul > li {
   list-style-type: none;
 }
 
-ul > li::before {
-  position: absolute;
-  margin-left: -22px;
-  content: '>';
-}
-
 ul ul {
   margin: unset;
 }
@@ -101,10 +95,6 @@ ol ul > li,
 ul ol > li,
 ol ol > li {
   margin-left: 1em;
-}
-
-li.back::before {
-  content: '<';
 }
 
 select {
