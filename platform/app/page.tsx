@@ -63,15 +63,15 @@ export default async function Home() {
             <tbody>
               <tr>
                 <td>Registration</td>
-                <td>November 08, 20:00</td>
+                <td>November 08, 8:00pm</td>
               </tr>
               <tr>
                 <td>Team Formation</td>
-                <td>November 09, 00:00</td>
+                <td>November 09, 12:00am (midnight)</td>
               </tr>
               <tr>
                 <td>Project Submission</td>
-                <td>November 10, 11:30</td>
+                <td>November 10, 11:30am</td>
               </tr>
             </tbody>
           </table>
