@@ -247,7 +247,7 @@ export default async function Home() {
           </ul>
         </section>
 
-        <section className={styles.resources}>
+        <section className={styles.innerSections}>
           <h2>Resources</h2>
           <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event! To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>
