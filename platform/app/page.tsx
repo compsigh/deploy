@@ -170,19 +170,19 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 100 }}>18:00</td>
+                <td style={{ width: 110 }}>6:00 PM</td>
                 <td>Doors open, check-in &amp; late registration begins</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>18:30</td>
+                <td style={{ width: 110 }}>6:30 PM</td>
                 <td>Opening Keynote</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>19:00</td>
+                <td style={{ width: 110 }}>7:00 PM</td>
                 <td>Dinner &amp; looking-for-group begins</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>20:00</td>
+                <td style={{ width: 110 }}>8:00 PM</td>
                 <td>Registration deadline</td>
               </tr>
             </tbody>
@@ -191,7 +191,7 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 100 }}>00:00</td>
+                <td style={{ width: 110 }}>12:00 AM</td>
                 <td>Team formation deadline</td>
               </tr>
               <tr>
@@ -208,31 +208,34 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 100 }}>11:30</td>
+                <td style={{ width: 110 }}>11:30 AM</td>
                 <td>Project submission deadline</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>12:00</td>
+                <td style={{ width: 110 }}>12:00 PM</td>
                 <td>Lunch &amp; presentation day check-in begins</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>13:00</td>
+                <td style={{ width: 110 }}>1:00 PM</td>
                 <td>Presentations begin</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>14:00</td>
+                <td style={{ width: 110 }}>2:00 PM</td>
                 <td>Intermission</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>14:20</td>
+                <td style={{ width: 110 }}>2:20 PM</td>
                 <td>Presentations continue</td>
               </tr>
               <tr>
-                <td style={{ width: 100 }}>16:00</td>
+                <td style={{ width: 110 }}>4:00 PM</td>
                 <td>Closing Keynote; results announced</td>
               </tr>
             </tbody>
           </table>
+          <Link href="https://calndr.link/event/HPLPX7Si10">
+            add to calendar
+          </Link>
         </section>
 
         <section>
