@@ -287,10 +287,10 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - 06:30pm: Opening keynote
 - 07:00pm: Dinner & looking-for-group begins
 - 08:00pm: Registration deadline
+- 11:59pm: Team formation deadline
 
 ### Saturday, November 9th
 
-- 12:00am: Team formation deadline
 
 ### Sunday, November 10th
 
