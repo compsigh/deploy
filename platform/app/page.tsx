@@ -143,7 +143,7 @@ export default async function Home() {
                 <td style={{ textAlign: "center" }}>4</td>
               </tr>
               <tr>
-                <td>The team took on anambitious challenge, through the scale &amp; scope of the problem, their tech stack, or otherwise impressive medium.</td>
+                <td>The team took on an ambitious challenge, through the scale &amp; scope of the problem, their tech stack, or otherwise impressive medium.</td>
                 <td style={{ textAlign: "center" }}>4</td>
               </tr>
             </tbody>
@@ -186,8 +186,7 @@ export default async function Home() {
                 <td>Registration deadline</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>11:59pm
-                </td>
+                <td style={{ width: 110 }}>11:59pm</td>
                 <td>Team formation deadline</td>
               </tr>
             </tbody>
@@ -235,7 +234,7 @@ export default async function Home() {
             </tbody>
           </table>
           <Link href="https://calndr.link/event/HPLPX7Si10">
-            add to calendar
+            Add to calendar
           </Link>
         </section>
 
