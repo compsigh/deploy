@@ -270,6 +270,10 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Post Instagram story of post and add to highlights
 - [x] Ping `@announcements` and `@events`
 - [ ] Print and put up flyers
+  - [ ] Bulletin board outside staircase
+  - [ ] Flight leading up to 4th floor
+  - [ ] 411
+  - [ ] 413
 - [x] Ask Jocelyn to send out announcement
 - [ ] Ask John from E&I to send out announcement
 - [ ] Ask Noopur from Design to send out announcement
@@ -303,12 +307,11 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 ## Web platform
 
-- Registration
-- Team formation
-- Project submission
-- Project evaluation
-- People's Choice
-- Referrals
+- [x] Registration
+- [ ] Team formation
+- [ ] Project submission
+- [ ] Project evaluation
+- [ ] People's Choice vote
 
 ## Other
 
