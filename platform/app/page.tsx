@@ -63,7 +63,7 @@ export default async function Home() {
             <tbody>
               <tr>
                 <td>Registration</td>
-                <td>November 08, 8:00pm</td>
+                <td>November 08, 08:00pm</td>
               </tr>
               <tr>
                 <td>Team Formation</td>
@@ -166,27 +166,30 @@ export default async function Home() {
 
         <section>
           <h2>Agenda</h2>
+          <p>
+            Click to <Link href="https://calndr.link/event/HPLPX7Si10">add DEPLOY/24 to your calendar</Link>!
+          </p>
           <p>Friday, November 08</p>
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 110 }}>6:00pm</td>
+                <td style={{ width: 120 }}>06:00pm</td>
                 <td>Doors open, check-in &amp; late registration begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>6:30pm</td>
+                <td style={{ width: 120 }}>06:30pm</td>
                 <td>Opening Keynote</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>7:00pm</td>
+                <td style={{ width: 120 }}>07:00pm</td>
                 <td>Dinner &amp; looking-for-group begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>8:00pm</td>
+                <td style={{ width: 120 }}>08:00pm</td>
                 <td>Registration deadline</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>11:59pm</td>
+                <td style={{ width: 120 }}>11:59pm</td>
                 <td>Team formation deadline</td>
               </tr>
             </tbody>
@@ -195,11 +198,11 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td>TBA</td>
+                <td style={{ width: 120 }}>TBA</td>
                 <td>Office hours: design jam</td>
               </tr>
               <tr>
-                <td>TBA</td>
+                <td style={{ width: 120 }}>TBA</td>
                 <td>Office hours: how to kill it at presentations</td>
               </tr>
             </tbody>
@@ -208,34 +211,31 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 110 }}>11:30am</td>
+                <td style={{ width: 120 }}>11:30am</td>
                 <td>Project submission deadline</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>12:00pm</td>
+                <td style={{ width: 120 }}>12:00pm</td>
                 <td>Lunch &amp; presentation day check-in begins</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>1:00pm</td>
+                <td style={{ width: 120 }}>01:00pm</td>
                 <td>Presentations begin</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>2:00pm</td>
+                <td style={{ width: 120 }}>02:00pm</td>
                 <td>Intermission</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>2:20pm</td>
+                <td style={{ width: 120 }}>02:20pm</td>
                 <td>Presentations continue</td>
               </tr>
               <tr>
-                <td style={{ width: 110 }}>4:00pm</td>
+                <td style={{ width: 120 }}>04:00pm</td>
                 <td>Closing Keynote; results announced</td>
               </tr>
             </tbody>
           </table>
-          <Link href="https://calndr.link/event/HPLPX7Si10">
-            Add to calendar
-          </Link>
         </section>
 
         <section>
