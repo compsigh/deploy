@@ -119,6 +119,9 @@ export async function Todos({ user }: { user: User }) {
       </ul>
       <ul>
         <li>
+          <Link href="https://calndr.link/event/HPLPX7Si10">Add to calendar</Link>
+        </li>
+        <li>
           <Link href="https://discord.compsigh.club">Join the Discord</Link>
         </li>
         <li className="back">
