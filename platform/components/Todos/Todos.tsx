@@ -1,20 +1,18 @@
 // Next
+import Link from "next/link"
 import { get } from "@vercel/edge-config"
 
 // Auth
 import type { User } from "@/functions/user-management"
 
 // Components
-import { Button } from "@/components/Button"
 import { Comment } from "@/components/Comment"
 
 // Functions
-import { getParticipantByEmail } from "@/functions/db/participant"
 import { getTeamById } from "@/functions/db/team"
-
-// Styles
-import { getProjectById } from "@/functions/db/project"
 import { getJudgeByEmail } from "@/functions/db/judge"
+import { getProjectById } from "@/functions/db/project"
+import { getParticipantByEmail } from "@/functions/db/participant"
 
 export async function Todos({ user }: { user: User }) {
   const teamDeclarationOpen = await get("teamDeclarationOpen")
@@ -24,19 +22,18 @@ export async function Todos({ user }: { user: User }) {
   const isJudge = await getJudgeByEmail(user.email)
   if (isJudge) {
     return (
-      <ul>
-        <li className="fade">
-          <Button type="link" destination="/console/evaluate">
-            Evaluate a project
-          </Button>
-        </li>
-        <br />
-        <li className="back">
-          <Button type="link" destination="/">
-            Back to DEPLOY/24
-          </Button>
-        </li>
-      </ul>
+      <>
+        <ul>
+          <li className="fade">
+            <Link href="/console/evaluate">Evaluate a project</Link>
+          </li>
+        </ul>
+        <ul>
+          <li className="back">
+            <Link href="/">Back to DEPLOY/24</Link>
+          </li>
+        </ul>
+      </>
     )
   }
 
@@ -55,9 +52,7 @@ export async function Todos({ user }: { user: User }) {
               </li>
             :
               <li className="fade">
-                <Button type="link" destination="/console/register">
-                  Register
-                </Button>
+                <Link href="/console/register">Register</Link>
               </li>
         }
 
@@ -70,9 +65,7 @@ export async function Todos({ user }: { user: User }) {
         {
           teamDeclarationOpen && participant && !team &&
             <li className="fade">
-              <Button type="link" destination={`/team?participant_email=${user.email}`}>
-                Form your team
-              </Button>
+              <Link href="/team">Form your team</Link>
             </li>
         }
         {
@@ -91,9 +84,7 @@ export async function Todos({ user }: { user: User }) {
         {
           projectSubmissionOpen && participant && team && !hasSubmitted &&
             <li className="fade">
-              <Button type="link" destination={`/submit?participant_email=${user.email}&teamname=${team.name}`}>
-                Submit your project
-              </Button>
+              <Link href="/console/submit">Submit your project</Link>
             </li>
         }
         {
@@ -128,14 +119,10 @@ export async function Todos({ user }: { user: User }) {
       </ul>
       <ul>
         <li>
-          <Button type="link" destination="https://discord.compsigh.club">
-            Join the Discord
-          </Button>
+          <Link href="https://discord.compsigh.club">Join the Discord</Link>
         </li>
         <li className="back">
-          <Button type="link" destination="/">
-            Back to DEPLOY/24
-          </Button>
+          <Link href="/">Back to DEPLOY/24</Link>
         </li>
       </ul>
     </>
