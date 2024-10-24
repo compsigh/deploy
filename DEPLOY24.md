@@ -23,7 +23,7 @@ A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) mea
 - [/] Greg Benson
 - [x] Mehmet Emre
 - [-] Sophie Engle
-- [ ] Paul Haskell
+- [x] Paul Haskell
 - [ ] Olga Karpenko
 - [ ] Beste Yuksel
 
