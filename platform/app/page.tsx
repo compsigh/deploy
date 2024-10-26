@@ -47,7 +47,7 @@ export default async function Home() {
       </header>
 
       <section className={styles.details}>
-        <section>
+        <section className={styles.innerSections}>
           <h2>Eligibility</h2>
           <p>DEPLOY/24 is geared towards CS and our friends from other creative areas of study like design, engineering, and E&I, but all USF students are welcome and encouraged to participate!</p>
           <p>Anyone is welcome to come hang out and hack, but <strong>only USF students who register for the event will be eligible to win</strong>.</p>
@@ -77,7 +77,7 @@ export default async function Home() {
           </table>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>Submissions</h2>
           <p>Only one team member has to submit the project on behalf of the team.</p>
           <p>Project submissions are not limited to a theme — build whatever you like! Common project formats:</p>
@@ -96,7 +96,7 @@ export default async function Home() {
           <p>Submissions don&apos;t have to be complete! <em>What worked? What didn&apos;t? How would you continue to develop the project?</em></p>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>Presentations</h2>
           <ul>
             <li>Your team presents: 5 minutes</li>
@@ -112,7 +112,7 @@ export default async function Home() {
           <p>In your presentation, please make sure your team members&apos; roles in bringing the project to life are clearly articulated.</p>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>How to win</h2>
           <p>Teams can earn a People&apos;s Choice, 3rd, 2nd, or 1st Place victory.</p>
           <p>An array (lol) of professors — primarily from computer science — will be joining us on Sunday to judge presentations.</p>
@@ -159,12 +159,12 @@ export default async function Home() {
           </ul>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>Prizes</h2>
           <p>TBA :)</p>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>Agenda</h2>
           <p>
             Click to <Link href="https://calndr.link/event/HPLPX7Si10">add DEPLOY/24 to your calendar</Link>!
@@ -238,7 +238,7 @@ export default async function Home() {
           </table>
         </section>
 
-        <section>
+        <section className={styles.innerSections}>
           <h2>Breakout Spaces</h2>
           <p>These rooms will be available throughout the weekend for teams to work in:</p>
           <ul>
@@ -250,7 +250,7 @@ export default async function Home() {
           </ul>
         </section>
 
-        <section className={styles.resources}>
+        <section className={styles.innerSections}>
           <h2>Resources</h2>
           <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event! To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>

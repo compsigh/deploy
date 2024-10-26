@@ -21,6 +21,12 @@ section.details {
   margin-bottom: 80px;
 }
 
+section.innerSections {
+  border: 2px solid var(--color-compsigh);
+  padding: 20px;
+  border-radius: 10px;
+}
+
 .block code {
   display: block;
   font-family: var(--font-proto-mono);
