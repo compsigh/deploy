@@ -264,18 +264,17 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Create 1:1 Instagram post
 - [x] Create 16:9 banner for the TVs
 - [x] Create Discord announcement
-- [ ] Write email announcement for departments
 - [x] Request banner to be displayed on the TVs
 - [x] Post on Instagram
 - [x] Post Instagram story of post and add to highlights
 - [x] Ping `@announcements` and `@events`
-- [ ] Print and put up flyers
-  - [ ] Bulletin board outside staircase
-  - [ ] Flight leading up to 4th floor
-  - [ ] 411
-  - [ ] 413
+- [x] Print and put up flyers
+  - [x] Bulletin board outside staircase
+  - [x] Flight leading up to 4th floor
+  - [x] 411
+  - [x] 413
 - [x] Ask Jocelyn to send out announcement
-- [ ] Ask John from E&I to send out announcement
+- [x] Ask John from E&I to send out announcement
 - [ ] Ask Noopur from Design to send out announcement
 - [ ] Ask Samantha from Engineering to send out announcement
 - [ ] Ask Christine from Mathematics to send out announcement
