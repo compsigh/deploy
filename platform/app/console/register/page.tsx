@@ -20,8 +20,10 @@ import Link from "next/link"
 export default async function ParticipantRegistration() {
   const session = await auth()
   const user = checkAuth(session)
-  if (!user)
+  if (!session)
     redirect("/")
+  if (!user)
+    redirect("/console/unauthorized")
 
   const registered = await getParticipantByEmail(user.email)
   if (registered)

@@ -1,4 +1,4 @@
-import { type Session } from 'next-auth'
+import { type Session } from "next-auth"
 
 export type User = {
   name: string
@@ -20,7 +20,7 @@ export function checkAuth(session: Session | null): User | false {
     return false
   if (!user.email || !user.name)
     return false
-  if (!user.email.endsWith('usfca.edu'))
+  if (!user.email.endsWith("usfca.edu"))
     return false
   return {
     name: user.name,

@@ -15,8 +15,10 @@ import { getJudgeByEmail } from "@/functions/db/judge"
 export default async function ProjectEvaluation() {
   const session = await auth()
   const user = checkAuth(session)
-  if (!user)
+  if (!session)
     redirect("/")
+  if (!user)
+    redirect("/console/unauthorized")
 
   const judge = await getJudgeByEmail(user.email)
   if (!judge)

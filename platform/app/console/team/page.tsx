@@ -15,8 +15,10 @@ import { getParticipantByEmail } from "@/functions/db/participant"
 export default async function TeamDeclaration() {
   const session = await auth()
   const user = checkAuth(session)
-  if (!user)
+  if (!session)
     redirect("/")
+  if (!user)
+    redirect("/console/unauthorized")
 
   const participant = await getParticipantByEmail(user.email)
   if (!participant)

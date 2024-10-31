@@ -25,7 +25,7 @@ export function Button({
   if (type === "login")
     onClick = () => signIn("google", { callbackUrl: "/console" })
   else if (type === "logout")
-    onClick = () => signOut()
+    onClick = () => signOut({ callbackUrl: "/" })
   else if (destination)
     onClick = () => router.push(destination)
   else

@@ -14,8 +14,10 @@ import styles from "@/app/console/Page.module.css"
 export default async function Attendees() {
   const session = await auth()
   const user = checkAuth(session)
-  if (!user)
+  if (!session)
     redirect("/")
+  if (!user)
+    redirect("/console/unauthorized")
 
   const participants = await getAllParticipants()
   return (

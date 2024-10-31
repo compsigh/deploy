@@ -17,8 +17,10 @@ import consolePageStyles from "@/app/console/Console.module.css"
 export default async function Console() {
   const session = await auth()
   const user = checkAuth(session)
-  if (!user)
+  if (!session)
     redirect("/")
+  if (!user)
+    redirect("/console/unauthorized")
 
   return (
     <main className={styles.main}>
