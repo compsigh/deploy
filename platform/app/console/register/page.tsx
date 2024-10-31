@@ -44,6 +44,7 @@ export default async function ParticipantRegistration() {
             <option value="2027">2027</option>
             <option value="2026">2026</option>
             <option value="2025">2025</option>
+            <option value="2024">2024</option>
             <option value="Masters">Masters</option>
           </select>
           <p>By registering, you agree to the <Link href="https://compsigh.club/docs/code-of-conduct">compsigh Code of Conduct</Link>.</p>

@@ -15,6 +15,7 @@ enum GraduatingClass {
   CO2027
   CO2026
   CO2025
+  CO2024
   MASTERS
 }
 

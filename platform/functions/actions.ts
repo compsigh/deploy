@@ -14,6 +14,8 @@ function getGraduatingClass(graduatingClassField: string) {
       return GraduatingClass.CO2026
     case "2025":
       return GraduatingClass.CO2025
+    case "2024":
+      return GraduatingClass.CO2024
     case "Masters":
       return GraduatingClass.MASTERS
     default:
