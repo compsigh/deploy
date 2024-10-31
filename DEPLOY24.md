@@ -19,34 +19,12 @@ A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) mea
 
 - [ ] Chris Brooks
 - [ ] Phil Peterson
-- [x] John Cromwell
-- [/] Greg Benson
-- [x] Mehmet Emre
-- [-] Sophie Engle
-- [x] Paul Haskell
 - [ ] Olga Karpenko
-- [ ] Beste Yuksel
-
-### Email template
-
-```plaintext
-Hello dear CS faculty members,
-
-
-I hope you're all doing well! I'm reaching out to cordially invite you to participate on the judges panel of DEPLOY/24, compsigh's second annual Fall hackathon. For those that I or other club leaders have spoken with, now you have it in writing. :)
-
-DEPLOY/24 will take place Friday November 8th through Sunday November 10th in the Social Hive (first floor of Harney). Presentations begin on Sunday at 1pm, and we anticipate will continue for three hours or so. You're all invited to any part of the event you like, including lunch on Sunday at noon, an hour before presentations.
-
-For those of you that offer extra credit for events like this, I've built an attendance API: a simple GET request to deploy.compsigh.club/api/attended/{student_dons_email} will return { "attended": true } or { "attended": false }. Note that "attendance" here means "showed up on Friday". If you prefer to set the bar at seeing the event through and presenting (which I think is a fair middle ground), just swap `attended` for `presented`.
-
-We'd love to have you. If you're interested in participating, please let me (Edward, president of compsigh, emshturman@dons.usfca.edu) know by Friday, October 25th, and we'll be in touch shortly thereafter with more judging logistics!
-
-
-Thank you for your time and consideration,
-
-Edward Shturman
-Class of 2025
-```
+- [/] Greg Benson
+- [x] Paul Haskell
+- [x] Mehmet Emre
+- [x] John Cromwell
+- [-] Sophie Engle
 
 ### Extra credit
 
@@ -56,7 +34,20 @@ For this year, John from E&I gave an interesting counter to that: yes, people sh
 
 Suppose a student has an upcoming midterm, a project due, etc. They're most excited about DEPLOY/24, but with no *guaranteed* exchange for their time, they might not be so inclined to attend. The idea is that extra credit would bump it up on their list at least a bit.
 
-At minimum, we can ask professors if they'd be willing to provide students who attend extra credit. After the event, we will provide participating professors with a list of students who attend *on presentation day*, as a fair middle ground.
+This year, we are asking professors if they'd be willing to provide students who attend with extra credit. We'll have an attendance API professors can query with a `student_email`. They'll be able to set the bar at attending opening night, or presenting on day three as a fair middle ground.
+
+Professors' responses:
+
+- Jon Rahoi: yes
+- Paul Haskell: no
+- Alark Joshi: yes
+- Sophie Engle: yes
+- Edward Rees: yes
+- Phil Peterson: yes
+- Kristin Jones: yes
+- Julia Nolfo: maybe
+- Matthew Malensek: yes
+- Vahab Pournaghshband: no
 
 ## Prizes
 
@@ -75,7 +66,7 @@ The general consensus — both on leadership and our sponsors — is that our pr
 PPL'S CHOICE >> Cat-shaped pillow 🐱
 ```
 
-We agreed during our DEPLOY/23 debrief that the top-three format + people's choice is a good one. The big coefficient here is that these prizes are per winning team *member*. So, for first place, it's not $200 from us, it's $800.
+We agreed during our DEPLOY/23 debrief that the top-three format + people's choice is a good one. The big coefficient here is that these prizes were per winning team *member*. So, for first place, it wasn't $200 from us, it was $800.
 
 Some ideas for this year's prizes:
 
@@ -87,19 +78,18 @@ Some ideas for this year's prizes:
 
 ### Trophy
 
-Diamond prism to match the logo
+The working idea for the first place trophy — one given to each member of the first place team — is a diamond prism to match the logo:
 
 ![Diamond prism illustration](https://media.cheggcdn.com/media/234/2342320c-ee6e-4014-82f5-502563eda450/phpHhU2J8)
 
-Engraved:
+Engraved on one of the top faces is:
 
-- DEPLOY/24
-- (Logo)
-- 1st place
-- compsigh
-- San Francisco
+- "DEPLOY/24" with the event logo
+- "1st Place"
+- "compsigh"
+- "San Francisco"
 
-3D printed or metal if possible
+We want the trophy cast in metal if possible; if not, 3D printed.
 
 ## Sponsors
 
@@ -279,6 +269,26 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [ ] Ask Samantha from Engineering to send out announcement
 - [ ] Ask Christine from Mathematics to send out announcement
 - [x] Link compsigh web platform event to DEPLOY/24 platform
+- [/] Reach out to professors and promote in classes
+  - [x] CS 110 Section 04
+  - [x] CS 221 Section 03
+  - [x] CS 110 Section 01
+  - [x] CS 272 Section 04
+  - [x] CS 245 Section 01
+  - [x] CS 245 Section 02
+  - [x] CS 272 Section 03
+  - [x] CS 221 Section 01
+  - [ ] CS 221 Section 02
+  - [ ] CS 256 Section 01
+  - [ ] CS 186 Section 01
+  - [ ] CS 272N Section 01
+  - [ ] CS 111 Section 02
+  - [ ] CS 111 Section 03
+  - [ ] CS 315 Section 01
+  - [ ] CS 326 Section 01
+  - [ ] CS 110 Section 02
+  - [ ] CS 112 Section 02
+  - [ ] CS 112 Section 01
 - [-] Write up copy to accompany trailer release
 - [-] Ask Jocelyn to send out trailer
 
