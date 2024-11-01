@@ -46,6 +46,7 @@ Professors' responses:
 - Phil Peterson: yes
 - Kristin Jones: yes
 - Julia Nolfo: maybe
+- Mehmet Emre: yes
 - Matthew Malensek: yes
 - Vahab Pournaghshband: no
 
@@ -279,7 +280,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
   - [x] CS 272 Section 03
   - [x] CS 221 Section 01
   - [x] CS 221 Section 02
-  - [ ] CS 256 Section 01
+  - [x] CS 256 Section 01
   - [ ] CS 186 Section 01
   - [ ] CS 272N Section 01
   - [ ] CS 111 Section 02
@@ -339,3 +340,4 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 - [DEPLOY/24 Figma](https://www.figma.com/design/VpUYrCmMWZ4QgTRxdRYhfz/24?node-id=3-21&t=mqVHo6c71tMPo0hs-1)
 - [DEPLOY/24 Expenses Google Sheet](https://docs.google.com/spreadsheets/d/1iM5mFngB0PDB9p6ZLvPOcF3Sw9zzXs49h19lwstsAcA/edit?usp=sharing)
+- [John's slide: info on microgrants for winners](https://docs.google.com/presentation/d/1q7fzgZxfGLvUy__q3HdlrrSeyPpcWWuRDsohANkHsMw/edit)
