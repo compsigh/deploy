@@ -268,7 +268,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Ask John from E&I to send out announcement
 - [ ] Ask Noopur from Design to send out announcement
 - [ ] Ask Samantha from Engineering to send out announcement
-- [ ] Ask Christine from Mathematics to send out announcement
+- [x] Ask Christine from Mathematics to send out announcement
 - [x] Link compsigh web platform event to DEPLOY/24 platform
 - [/] Reach out to professors and promote in classes
   - [x] CS 110 Section 04
