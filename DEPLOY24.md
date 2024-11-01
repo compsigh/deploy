@@ -282,7 +282,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
   - [x] CS 221 Section 02
   - [x] CS 256 Section 01
   - [x] CS 186 Section 01
-  - [ ] CS 272N Section 01
+  - [x] CS 272N Section 01
   - [ ] CS 111 Section 02
   - [ ] CS 111 Section 03
   - [ ] CS 315 Section 01
