@@ -9,7 +9,7 @@
   - [x] LS 210
   - [x] LS 303
   - [x] LS 307
-- [ ] Reach out to EMS requesting chairs for presentation day and A/V for both
+- [x] Reach out to EMGS requesting chairs for presentation day and A/V for both
 
 ## Judges
 
@@ -249,6 +249,8 @@ The plan is to provide food for:
 
 See the **Catering** page on the Expenses Google Sheet for vendors and associated costs.
 
+- [x] Place catering order with EMGS
+
 ## Promo & outreach
 
 - [x] Create 8.5 × 11 flyer
@@ -325,16 +327,17 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 ## Other
 
-- [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
-- Organizers & ground team
-- Photo & video
-- Recap/highlight video
-- Merch
+- [x] Figure out photo & video
+  - Gursh on photos
+  - John will reach out re: student videographers
+- [ ] Figure out ground team — who is checking people in, etc.
+- [ ] Opening keynote slides
+  - [Slides from DEPLOY/23](https://www.notion.so/compsigh/Create-opening-keynote-slides-97dec247b5fa4ad4ab75ffcc3298a355)
+- [-] [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
+- [-] Merch
   - Custom notecards for handwritten congrats notes
   - Shirts
-- Opening keynote slides
-  - [Slides from DEPLOY/23](https://www.notion.so/compsigh/Create-opening-keynote-slides-97dec247b5fa4ad4ab75ffcc3298a355)
-- [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
+- [-] [Request mention in the Phoenix](https://docs.google.com/forms/d/e/1FAIpQLScWKWlOVSR_ml85Y0-NKSXUdYFdP2S9aRZj1sUvhh_3z-FO1A/viewform)
 
 ## Links
 
