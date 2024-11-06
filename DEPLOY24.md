@@ -100,11 +100,11 @@ A checkbox (`[x]`) means the sponsor has agreed to help fund the event. Partiall
 
 - [x] CS Department: up to $1000
 - [x] E&I IDEA Initiative: up to $3000
-- [ ] Vercel
-- [/] Raycast (reached out September 4th)
-- [/] Resend (reached out September 4th)
 - [-] GitHub (past deadline)
+- [-] Vercel (budget covered)
 - [-] Wooting (didn't reach out)
+- [-] Resend (reached out September 4th, never heard back)
+- [-] Raycast (reached out September 4th, never heard back)
 
 ## Point system & rubric
 
