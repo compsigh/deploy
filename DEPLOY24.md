@@ -77,6 +77,22 @@ Some ideas for this year's prizes:
 - Something physical?
 - Trophies in the shape of the event logo would be dope.
 
+First place:
+
+- Automatic approval for $500 microgrant from the E&I IDEA Initiative
+- Discord Nitro
+- A semester's worth ChatGPT Plus subscription
+- Trophies
+
+Second place:
+
+- Automatic approval for $500 microgrant from the E&I IDEA Initiative
+- Discord Nitro
+
+Third place:
+
+- Automatic approval for $500 microgrant from the E&I IDEA Initiative
+
 ### Trophy
 
 The working idea for the first place trophy — one given to each member of the first place team — is a diamond prism to match the logo:
