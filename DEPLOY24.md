@@ -103,10 +103,11 @@ Engraved on one of the top faces is:
 
 - "DEPLOY/24" with the event logo
 - "1st Place"
-- "compsigh"
-- "San Francisco"
 
 We want the trophy cast in metal if possible; if not, 3D printed.
+
+- [x] Trophy vector design
+- [ ] Order build
 
 ## Sponsors
 
