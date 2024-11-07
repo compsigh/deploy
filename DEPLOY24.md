@@ -19,12 +19,12 @@ A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) mea
 
 - [ ] Chris Brooks
 - [ ] Phil Peterson
-- [ ] Olga Karpenko
-- [/] Greg Benson
+- [x] Greg Benson
 - [x] Paul Haskell
 - [x] Mehmet Emre
 - [x] John Cromwell
 - [-] Sophie Engle
+- [-] Olga Karpenko
 
 ### Extra credit
 
