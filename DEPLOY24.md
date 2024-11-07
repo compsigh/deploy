@@ -285,11 +285,9 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
   - [x] 413
 - [x] Ask Jocelyn to send out announcement
 - [x] Ask John from E&I to send out announcement
-- [ ] Ask Noopur from Design to send out announcement
-- [ ] Ask Samantha from Engineering to send out announcement
 - [x] Ask Christine from Mathematics to send out announcement
 - [x] Link compsigh web platform event to DEPLOY/24 platform
-- [/] Reach out to professors and promote in classes
+- [x] Reach out to professors and promote in classes
   - [x] CS 110 Section 04
   - [x] CS 221 Section 03
   - [x] CS 110 Section 01
@@ -306,9 +304,11 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
   - [x] CS 111 Section 03
   - [x] CS 110 Section 02
   - [x] CS 112 Section 02
-  - [ ] CS 112 Section 01
-- [-] Write up copy to accompany trailer release
+  - [x] CS 112 Section 01
 - [-] Ask Jocelyn to send out trailer
+- [-] Write up copy to accompany trailer release
+- [-] Ask Noopur from Design to send out announcement
+- [-] Ask Samantha from Engineering to send out announcement
 
 ## Agenda
 
