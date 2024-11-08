@@ -130,7 +130,7 @@ export async function updateTeamNameServerAction(formData: FormData) {
   const name = nameField.toString()
 
   await updateTeamName(id, name)
-  revalidatePath("/console/team")
+  redirect("/console")
 }
 
 export async function checkInParticipantServerAction(formData: FormData) {
