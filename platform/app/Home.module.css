@@ -37,8 +37,19 @@ pre.block-mobile {
   margin-bottom: 80px;
 }
 
+.footer div.version-status {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer div.version-status div.status-indicator-wrapper {
+  position: absolute;
+  margin-left: -32px;
+}
+
 .footer div.version-status p {
-  margin-left: 10px;
   font-family: var(--font-proto-mono);
   display: inline;
 }

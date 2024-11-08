@@ -15,6 +15,7 @@ import { getProjectById } from "@/functions/db/project"
 import { getParticipantByEmail } from "@/functions/db/participant"
 
 export async function Todos({ user }: { user: User }) {
+  const registrationOpen = await get("registrationOpen")
   const teamFormationOpen = await get("teamFormationOpen")
   const projectSubmissionOpen = await get("projectSubmissionOpen")
   const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen")
@@ -46,13 +47,23 @@ export async function Todos({ user }: { user: User }) {
       <ul>
         {
           participant
-            ?
+            &&
               <li style={{ color: "var(--color-light-50)" }}>
                 You&apos;ve registered        <Comment type="inline">you&apos;re all set to attend</Comment>
               </li>
-            :
+        }
+        {
+          !participant && registrationOpen
+            &&
               <li className="fade">
                 <Link href="/console/register">Register</Link>
+              </li>
+        }
+        {
+          !participant && !registrationOpen
+            &&
+              <li style={{ color: "var(--color-light-50)" }}>
+                Registration closed      <Comment type="inline">let us know if there&apos;s an issue</Comment>
               </li>
         }
 

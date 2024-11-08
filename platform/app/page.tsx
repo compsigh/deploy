@@ -1,14 +1,14 @@
 // Next
 import Link from "next/link"
-import Image from "next/image"
 
 // Auth
 import { auth } from "@/auth"
 import { checkAuth, type User } from "@/functions/user-management"
 
-// Component imports
+// Components
 import { PlayH1 } from "@/components/PlayH1"
 import { Button } from "@/components/Button"
+import { StatusIndicator } from "@/components/StatusIndicator"
 
 // Styles
 import styles from "./Home.module.css"
@@ -276,14 +276,10 @@ export default async function Home() {
         <ConsoleButton user={user} />
 
         <div className={styles["version-status"]}>
-          <Image
-            src="/circle.svg"
-            alt="circle"
-            width={10}
-            height={10}
-            className="fade"
-          />
-          <p>v2.1.1 | <Link href={"https://github.com/compsigh/deploy"} target="_blank">Source Code</Link></p>
+          <div className={styles["status-indicator-wrapper"]}>
+            <StatusIndicator />
+          </div>
+          <p>DEPLOY Platform v2.1.2 • <Link href="https://github.com/compsigh/deploy">Source Code</Link> • <Link href="https://compsigh.club/docs/code-of-conduct">compsigh Code of Conduct</Link></p>
         </div>
       </footer>
     </main>

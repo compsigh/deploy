@@ -336,7 +336,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 ## Web platform
 
 - [x] Registration
-- [ ] Team formation
+- [x] Team formation
 - [ ] Project submission
 - [ ] Project evaluation
 - [ ] People's Choice vote
