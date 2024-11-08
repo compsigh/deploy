@@ -71,10 +71,12 @@ async function IncomingInviteList({ participant }: { participant: Participant })
               <input type="hidden" name="id" value={invite.id} />
               <Button type="submit">Accept</Button>
             </form>
+            <Spacer size={8} />
             <form action={declineInviteServerAction}>
               <input type="hidden" name="id" value={invite.id} />
               <Button type="submit">Decline</Button>
             </form>
+            <Spacer size={32} />
           </li>
         ))}
       </ul>
@@ -194,7 +196,7 @@ export default async function TeamFormation() {
         <InviteForm participant={participant} />
         <ul>
           <li className="back">
-            <Link href="/">Back to Console</Link>
+            <Link href="/console">Back to Console</Link>
           </li>
         </ul>
       </main>
