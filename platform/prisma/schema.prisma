@@ -32,8 +32,9 @@ enum ProjectType {
 }
 
 model Judge {
-  name  String
-  email String @id @unique
+  name        String
+  email       String       @id @unique
+  evaluations Evaluation[]
 }
 
 model Participant {
@@ -59,12 +60,26 @@ model Invite {
 }
 
 model Project {
-  id     String      @id @default(uuid())
-  name   String
-  type   ProjectType
-  link   String
-  notes  String?
-  song   String?
-  team   Team        @relation(fields: [teamId], references: [id])
-  teamId String      @unique
+  id          String       @id @default(uuid())
+  name        String
+  type        ProjectType
+  link        String
+  notes       String?
+  song        String?
+  team        Team         @relation(fields: [teamId], references: [id])
+  teamId      String       @unique
+  evaluations Evaluation[]
+}
+
+model Evaluation {
+  id         String  @id @default(uuid())
+  judge      Judge   @relation(fields: [judgeEmail], references: [email])
+  judgeEmail String
+  project    Project @relation(fields: [projectId], references: [id])
+  projectId  String
+  criterion1 Int
+  criterion2 Int
+  criterion3 Int
+  criterion4 Int
+  criterion5 Int
 }
