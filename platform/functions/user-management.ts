@@ -27,3 +27,15 @@ export function checkAuth(session: Session | null): User | false {
     email: user.email
   }
 }
+
+/**
+ * Checks if the current user is an organizer.
+ *
+ * @export
+ * @param {User} user The `User` object to check.
+ */
+export function isOrganizer(user: User) {
+  if (process.env.ORGANIZERS?.includes(user.email))
+    return true
+  return false
+}

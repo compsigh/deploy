@@ -3,7 +3,7 @@ import Link from "next/link"
 import { get } from "@vercel/edge-config"
 
 // Auth
-import type { User } from "@/functions/user-management"
+import { isOrganizer, type User } from "@/functions/user-management"
 
 // Components
 import { Comment } from "@/components/Comment"
@@ -128,6 +128,15 @@ export async function Todos({ user }: { user: User }) {
             </li>
         } */}
       </ul>
+      {
+        isOrganizer(user)
+          &&
+            <ul>
+              <li>
+                <Link href="/console/checkin">Check in participants</Link>
+              </li>
+            </ul>
+      }
       <ul>
         <li>
           <Link href="https://calndr.link/event/HPLPX7Si10">Add to calendar</Link>

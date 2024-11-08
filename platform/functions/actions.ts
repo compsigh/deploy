@@ -1,11 +1,23 @@
 "use server"
 
-import { acceptInvite, cancelInvite, declineInvite, sendInvite } from "@/functions/db/invite"
-import { createParticipant, getParticipantByEmail } from "@/functions/db/participant"
-import { removeParticipantFromTeam, updateTeamName } from "@/functions/db/team"
-import { GraduatingClass } from "@prisma/client"
-import { revalidatePath } from "next/cache"
+import {
+  checkInParticipant,
+  createParticipant,
+  getParticipantByEmail
+} from "@/functions/db/participant"
+import {
+  removeParticipantFromTeam,
+  updateTeamName
+} from "@/functions/db/team"
+import {
+  acceptInvite,
+  cancelInvite,
+  declineInvite,
+  sendInvite
+} from "@/functions/db/invite"
 import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
+import { GraduatingClass } from "@prisma/client"
 
 function getGraduatingClass(graduatingClassField: string) {
   switch (graduatingClassField) {
@@ -119,4 +131,19 @@ export async function updateTeamNameServerAction(formData: FormData) {
 
   await updateTeamName(id, name)
   revalidatePath("/console/team")
+}
+
+export async function checkInParticipantServerAction(formData: FormData) {
+  const emailField = formData.get("email")
+  if (!emailField)
+    return null
+
+  const email = emailField.toString()
+
+  const participant = await getParticipantByEmail(email)
+  if (!participant)
+    return null
+
+  await checkInParticipant(participant.email)
+  revalidatePath("/console/checkin")
 }
