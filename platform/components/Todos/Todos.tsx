@@ -15,7 +15,7 @@ import { getProjectById } from "@/functions/db/project"
 import { getParticipantByEmail } from "@/functions/db/participant"
 
 export async function Todos({ user }: { user: User }) {
-  const teamDeclarationOpen = await get("teamDeclarationOpen")
+  const teamFormationOpen = await get("teamFormationOpen")
   const projectSubmissionOpen = await get("projectSubmissionOpen")
   const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen")
 
@@ -57,19 +57,19 @@ export async function Todos({ user }: { user: User }) {
         }
 
         {
-          !teamDeclarationOpen &&
+          !teamFormationOpen &&
             <li>
               Form your team           <Comment type="inline">opens soon!</Comment>
             </li>
         }
         {
-          teamDeclarationOpen && participant && !team &&
+          teamFormationOpen && participant && !team &&
             <li className="fade">
               <Link href="/team">Form your team</Link>
             </li>
         }
         {
-          teamDeclarationOpen && participant && team &&
+          teamFormationOpen && participant && team &&
             <li style={{ color: "var(--color-light-50)" }}>
               You&apos;re on a team         <Comment type="inline">you&apos;re all set to submit</Comment>
             </li>

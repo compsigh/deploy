@@ -27,7 +27,7 @@ export default async function Attendees() {
         <h2>Who&apos;s going to DEPLOY/24</h2>
         <ul>
           <li className="back">
-            <Link href="/console">Back to DEPLOY/24</Link>
+            <Link href="/console">Back to Console</Link>
           </li>
         </ul>
         <ul>

@@ -1,21 +1,19 @@
-// Next
-import { redirect } from "next/navigation"
-
 // Auth
 import { auth } from "@/auth"
 import { checkAuth } from "@/functions/user-management"
 
 // Functions
+import { redirect } from "next/navigation"
 import { registerServerAction } from "@/functions/actions"
 import { getParticipantByEmail } from "@/functions/db/participant"
 
 // Components
+import Link from "next/link"
 import { PlayH1 } from "@/components/PlayH1"
 import { Button } from "@/components/Button"
 
 // Styles
 import styles from "@/app/console/Page.module.css"
-import Link from "next/link"
 
 export default async function ParticipantRegistration() {
   const session = await auth()
