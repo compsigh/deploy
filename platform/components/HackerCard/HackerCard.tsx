@@ -39,10 +39,10 @@ export async function HackerCard({ user }: { user: User }) {
               ?
                 teammates.map(teammate => (
                   <li key={teammate.email}>
-                    <h4>{teammate.name}</h4>
+                    {teammate.name}
                   </li>
                 ))
-              : <li key="tbd"><h4>Teammates TBD</h4></li>
+              : <li key="tbd">Teammates TBD</li>
           }
         </ul>
       </div>

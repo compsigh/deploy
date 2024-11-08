@@ -33,8 +33,7 @@ body {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
   font-family: var(--font-headers);
   font-weight: 600;
   line-height: 1.2;
@@ -51,10 +50,6 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.25rem;
 }
 
 a {
