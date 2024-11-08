@@ -17,10 +17,11 @@ We want to have as many CS faculty members as possible this year.
 
 A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) means they've been asked but are checking their schedule or something and will get back to us. Crossed (`[-]`) means they are unavailable. Not checked (`[ ]`) means we haven't asked.
 
-- [ ] Chris Brooks
-- [ ] Phil Peterson
+- [/] Julia Nolfo
 - [x] Greg Benson
 - [x] Paul Haskell
+- [x] Chris Brooks
+- [x] Phil Peterson
 - [x] Mehmet Emre
 - [x] John Cromwell
 - [-] Sophie Engle
