@@ -146,3 +146,20 @@ export async function deleteParticipant(email: string) {
 
   return deletedParticipant
 }
+
+/**
+ * Check in a participant for opening night attendance.
+ *
+ * @export
+ * @param {string} participantEmail The participant's email.
+ */
+export async function checkInParticipant(participantEmail: string) {
+  return await prisma.participant.update({
+    where: {
+      email: participantEmail
+    },
+    data: {
+      attended: true
+    }
+  })
+}

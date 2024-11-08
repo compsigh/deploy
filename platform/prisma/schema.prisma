@@ -42,6 +42,7 @@ model Participant {
   graduatingClass GraduatingClass
   team            Team            @relation(fields: [teamId], references: [id])
   teamId          String
+  attended        Boolean         @default(false)
 }
 
 model Team {
