@@ -1,7 +1,6 @@
 "use client"
 
 // Next
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import type { MouseEventHandler } from "react"
 
@@ -14,10 +13,12 @@ import styles from "./Button.module.css"
 export function Button({
   children,
   type,
+  style = "primary",
   destination
 }: {
   children: React.ReactNode
   type?: "login" | "logout" | "link" | "submit"
+  style?: "primary" | "secondary"
   destination?: string
 }) {
   let onClick: MouseEventHandler<HTMLButtonElement>
@@ -31,19 +32,16 @@ export function Button({
   else
     onClick = () => {}
 
-  if (type === "link")
-    return <Link href={`${destination}`}>{children}</Link>
-
   if (type === "submit") {
     return (
-      <button type="submit" className={styles.button}>
+      <button type="submit" className={`${styles.button} ${styles[style]}`}>
         {children}
       </button>
     )
   }
 
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={`${styles.button} ${styles[style]}`} onClick={onClick}>
       {children}
     </button>
   )

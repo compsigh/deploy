@@ -29,6 +29,13 @@ import { type Participant } from "@prisma/client"
 import styles from "@/app/console/Page.module.css"
 import teamPageStyles from "@/app/console/team/Team.module.css"
 
+async function getParticipantName(email: string) {
+  const participant = await getParticipantByEmail(email)
+  if (!participant)
+    return null
+  return participant.name
+}
+
 async function TeamView({ participant }: { participant: Participant }) {
   const team = await getTeamById(participant.teamId)
   if (!team)
@@ -46,10 +53,12 @@ async function TeamView({ participant }: { participant: Participant }) {
       {
         participants.length > 1
           &&
-            <form action={leaveTeamServerAction}>
-              <input type="hidden" name="email" value={participant.email} />
-              <Button type="submit">Leave team</Button>
-            </form>
+            <div className={teamPageStyles["form-buttons-wrapper"]}>
+              <form action={leaveTeamServerAction}>
+                <input type="hidden" name="email" value={participant.email} />
+                <Button type="submit">Leave team</Button>
+              </form>
+            </div>
       }
     </>
   )
@@ -66,16 +75,18 @@ async function IncomingInviteList({ participant }: { participant: Participant })
       <ul>
         {incomingInvites.map(invite => (
           <li key={invite.id}>
-            <p>{invite.fromParticipantEmail}</p>
-            <form action={acceptInviteServerAction}>
-              <input type="hidden" name="id" value={invite.id} />
-              <Button type="submit">Accept</Button>
-            </form>
+            <p>{getParticipantName(invite.fromParticipantEmail)}</p>
             <Spacer size={8} />
-            <form action={declineInviteServerAction}>
-              <input type="hidden" name="id" value={invite.id} />
-              <Button type="submit">Decline</Button>
-            </form>
+            <div className={teamPageStyles["form-buttons-wrapper"]}>
+              <form action={acceptInviteServerAction}>
+                <input type="hidden" name="id" value={invite.id} />
+                <Button type="submit" style="secondary">Accept</Button>
+              </form>
+              <form action={declineInviteServerAction}>
+                <input type="hidden" name="id" value={invite.id} />
+                <Button type="submit" style="secondary">Decline</Button>
+              </form>
+            </div>
             <Spacer size={32} />
           </li>
         ))}
@@ -89,13 +100,6 @@ async function OutgoingInviteList({ participant }: { participant: Participant })
   if (outgoingInvites.length === 0)
     return <></>
 
-  async function getParticipantName(email: string) {
-    const participant = await getParticipantByEmail(email)
-    if (!participant)
-      return null
-    return participant.name
-  }
-
   return (
     <>
       <h3 className={styles.heading}>Outgoing invites</h3>
@@ -103,11 +107,13 @@ async function OutgoingInviteList({ participant }: { participant: Participant })
         {outgoingInvites.map(invite => (
           <li key={invite.id}>
             <p>{getParticipantName(invite.toParticipantEmail)}</p>
-            <form action={cancelInviteServerAction}>
-              <input type="hidden" name="id" value={invite.id} />
-              <Spacer size={8} />
-              <Button type="submit">Cancel</Button>
-            </form>
+            <Spacer size={8} />
+            <div className={teamPageStyles["form-buttons-wrapper"]}>
+              <form action={cancelInviteServerAction}>
+                <input type="hidden" name="id" value={invite.id} />
+                <Button type="submit" style="secondary">Cancel</Button>
+              </form>
+            </div>
             <Spacer size={32} />
           </li>
         ))}
@@ -151,12 +157,14 @@ async function InviteForm({ participant }: { participant: Participant }) {
 
   return (
     <>
-      <form action={sendInviteServerAction}>
-        <input type="hidden" name="from" value={participant.email} />
-        <input type="email" name="to" placeholder="USF email address" size={30} />
-        <Spacer size={24} />
-        <Button type="submit">Send invite</Button>
-      </form>
+      <div className={teamPageStyles["form-buttons-wrapper"]}>
+        <form action={sendInviteServerAction}>
+          <input type="hidden" name="from" value={participant.email} />
+          <input type="email" name="to" placeholder="USF email address" />
+          <Spacer size={24} />
+          <Button type="submit" style="secondary">Send invite</Button>
+        </form>
+      </div>
     </>
   )
 }
@@ -191,7 +199,7 @@ export default async function TeamFormation() {
         <h3 className={styles.heading}>Invites</h3>
         <p>Invite a friend to join your team!</p>
         <p><em>Please make sure your friend has also registered.</em></p>
-        <p>Please be sure to enter their email exactly as it appears on their USF Google account. <em>Note: this won&apos;t send them an email; just ask them to refresh this page on their end.</em></p>
+        <p>Be sure to enter their email exactly as it appears on their USF Google account. <em>Note: this won&apos;t send them an email; just ask them to refresh this page on their end.</em></p>
         <Spacer size={32} />
         <InviteForm participant={participant} />
         <ul>

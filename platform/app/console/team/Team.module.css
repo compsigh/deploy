@@ -2,3 +2,15 @@
   /* I hate margin */
   margin: 0.5em 0;
 }
+
+div.form-buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+div.form-buttons-wrapper > form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
