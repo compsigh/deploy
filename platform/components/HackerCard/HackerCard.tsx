@@ -34,15 +34,18 @@ export async function HackerCard({ user }: { user: User }) {
         </div>
 
         <ul className={styles.teammates}>
+          <li key={participant?.email}>
+            {participant?.name}
+          </li>
           {
-            teammates
+            teammates && teammates.length > 0
               ?
                 teammates.map(teammate => (
                   <li key={teammate.email}>
                     {teammate.name}
                   </li>
                 ))
-              : <li key="tbd">Teammates TBD</li>
+              : <li key="tbd" style={{ color: "var(--color-light-50)" }}>Teammates TBD</li>
           }
         </ul>
       </div>

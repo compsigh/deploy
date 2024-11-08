@@ -283,7 +283,7 @@ export default async function Home() {
             height={10}
             className="fade"
           />
-          <p>v2.1.0 | <Link href={"https://github.com/compsigh/deploy"} target="_blank">Source Code</Link></p>
+          <p>v2.1.1 | <Link href={"https://github.com/compsigh/deploy"} target="_blank">Source Code</Link></p>
         </div>
       </footer>
     </main>

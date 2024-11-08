@@ -205,6 +205,11 @@ export default async function TeamFormation() {
       <main className={`${styles.main} ${teamPageStyles.main}`}>
         <PlayH1>Welcome, Hacker</PlayH1>
         <h2 className={styles.heading}>Team Formation</h2>
+        <ul>
+          <li className="back">
+            <Link href="/console">Back to Console</Link>
+          </li>
+        </ul>
         <TeamView participant={participant} />
         <IncomingInviteList participant={participant} />
         <OutgoingInviteList participant={participant} />
@@ -214,11 +219,6 @@ export default async function TeamFormation() {
         <p>Be sure to enter their email exactly as it appears on their USF Google account. <em>Note: this won&apos;t send them an email; just ask them to refresh this page on their end.</em></p>
         <Spacer size={32} />
         <InviteForm participant={participant} />
-        <ul>
-          <li className="back">
-            <Link href="/console">Back to Console</Link>
-          </li>
-        </ul>
       </main>
     </>
   )

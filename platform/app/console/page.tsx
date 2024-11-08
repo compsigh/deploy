@@ -1,4 +1,4 @@
-// Next
+// Functions
 import { redirect } from "next/navigation"
 
 // Auth
@@ -6,9 +6,9 @@ import { auth } from "@/auth"
 import { checkAuth } from "@/functions/user-management"
 
 // Components
+import { Todos } from "@/components/Todos"
 import { PlayH1 } from "@/components/PlayH1"
 import { HackerCard } from "@/components/HackerCard"
-import { Todos } from "@/components/Todos"
 
 // Styles
 import styles from "@/app/console/Page.module.css"
@@ -16,11 +16,12 @@ import consolePageStyles from "@/app/console/Console.module.css"
 
 export default async function Console() {
   const session = await auth()
-  const user = checkAuth(session)
   if (!session)
     redirect("/")
-  if (!user)
+  const authed = checkAuth(session)
+  if (!authed)
     redirect("/console/unauthorized")
+  const user = authed
 
   return (
     <main className={styles.main}>

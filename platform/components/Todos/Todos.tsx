@@ -57,48 +57,48 @@ export async function Todos({ user }: { user: User }) {
         }
 
         {
-          !teamFormationOpen &&
-            <li>
-              Form your team           <Comment type="inline">opens soon!</Comment>
-            </li>
+          teamFormationOpen && participant
+            &&
+              <li className="fade">
+                <Link href="/console/team">Form your team</Link>
+              </li>
         }
         {
-          teamFormationOpen && participant && !team &&
-            <li className="fade">
-              <Link href="/team">Form your team</Link>
-            </li>
-        }
-        {
-          teamFormationOpen && participant && team &&
-            <li style={{ color: "var(--color-light-50)" }}>
-              You&apos;re on a team         <Comment type="inline">you&apos;re all set to submit</Comment>
-            </li>
+          !teamFormationOpen
+            &&
+              <li style={{ color: "var(--color-light-50)" }}>
+                Team formation closed    <Comment type="inline">let us know if there&apos;s an issue</Comment>
+              </li>
         }
 
         {
-          !projectSubmissionOpen &&
-            <li>
-              Submit your project      <Comment type="inline">opens during the event</Comment>
-            </li>
+          !projectSubmissionOpen
+            &&
+              <li>
+                Submit your project      <Comment type="inline">opens during the event</Comment>
+              </li>
         }
         {
-          projectSubmissionOpen && participant && team && !hasSubmitted &&
-            <li className="fade">
-              <Link href="/console/submit">Submit your project</Link>
-            </li>
+          projectSubmissionOpen && participant && team && !hasSubmitted
+            &&
+              <li className="fade">
+                <Link href="/console/submit">Submit your project</Link>
+              </li>
         }
         {
-          projectSubmissionOpen && hasSubmitted &&
-            <li style={{ color: "var(--color-light-50)" }}>
-              You&apos;ve submitted         <Comment type="inline">you&apos;re ready, good luck!</Comment>
-            </li>
+          projectSubmissionOpen && hasSubmitted
+            &&
+              <li style={{ color: "var(--color-light-50)" }}>
+                You&apos;ve submitted         <Comment type="inline">you&apos;re ready, good luck!</Comment>
+              </li>
         }
 
         {
-          !peoplesChoiceVoteOpen &&
-            <li>
-              Vote for People&apos;s Choice <Comment type="inline">open after presentations</Comment>
-            </li>
+          !peoplesChoiceVoteOpen
+            &&
+              <li>
+                Vote for People&apos;s Choice <Comment type="inline">open after presentations</Comment>
+              </li>
         }
         {/* {
           peoplesChoiceVoteOpen && participant && team && !hasVoted &&

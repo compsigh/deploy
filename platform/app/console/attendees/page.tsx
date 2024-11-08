@@ -24,7 +24,7 @@ export default async function Attendees() {
     <>
       <main className={styles.main}>
         <PlayH1>Welcome, Hacker</PlayH1>
-        <h2>Who&apos;s going to DEPLOY/24</h2>
+        <h2 className={styles.heading}>Who&apos;s going to DEPLOY/24</h2>
         <ul>
           <li className="back">
             <Link href="/console">Back to Console</Link>
