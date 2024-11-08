@@ -103,13 +103,21 @@ li.back::before {
   content: '<';
 }
 
+input,
 select {
-  font-family: var(--font-proto-mono);
   font-size: 1rem;
   padding: 0.5em 1em;
   background-color: var(--color-dark);
   color: var(--color-light);
   border: 2px solid var(--color-light);
+}
+
+input {
+  font-family: var(--font-body);
+}
+
+select {
+  font-family: var(--font-proto-mono);
 }
 
 table {
