@@ -153,13 +153,12 @@ export async function deleteParticipant(email: string) {
  * @export
  * @param {string} participantEmail The participant's email.
  */
-export async function checkInParticipant(participantEmail: string) {
+export async function checkInParticipant(
+  participantEmail: string,
+  attended: boolean = true
+) {
   return await prisma.participant.update({
-    where: {
-      email: participantEmail
-    },
-    data: {
-      attended: true
-    }
+    where: { email: participantEmail },
+    data: { attended }
   })
 }

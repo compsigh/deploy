@@ -51,8 +51,16 @@ export default async function CheckIn() {
                   <input type="hidden" name="email" value={participant.email} />
                   {
                     !participant.attended
-                      &&
-                        <Button type="submit" style="secondary">Check in</Button>
+                      ?
+                        <>
+                          <input type="hidden" name="attended" value="true" />
+                          <Button type="submit" style="secondary">Check in</Button>
+                        </>
+                      :
+                      <>
+                        <input type="hidden" name="attended" value="false" />
+                        <Button type="submit" style="secondary">Undo</Button>
+                      </>
                   }
                 </form>
                 <Spacer size={32} />

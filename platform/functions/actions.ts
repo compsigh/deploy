@@ -135,15 +135,17 @@ export async function updateTeamNameServerAction(formData: FormData) {
 
 export async function checkInParticipantServerAction(formData: FormData) {
   const emailField = formData.get("email")
-  if (!emailField)
+  const attendedField = formData.get("attended")
+  if (!emailField || !attendedField)
     return null
 
   const email = emailField.toString()
+  const attended = attendedField.toString() === "true"
 
   const participant = await getParticipantByEmail(email)
   if (!participant)
     return null
 
-  await checkInParticipant(participant.email)
+  await checkInParticipant(participant.email, attended)
   revalidatePath("/console/checkin")
 }
