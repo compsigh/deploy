@@ -11,7 +11,8 @@ import {
   cancelInviteServerAction,
   declineInviteServerAction,
   leaveTeamServerAction,
-  sendInviteServerAction
+  sendInviteServerAction,
+  updateTeamNameServerAction
 } from "@/functions/actions"
 import { getParticipantByEmail } from "@/functions/db/participant"
 import { getInvitesFromEmail, getInvitesToEmail } from "@/functions/db/invite"
@@ -44,7 +45,7 @@ async function TeamView({ participant }: { participant: Participant }) {
 
   return (
     <>
-      <h3 className={styles.heading}>Your team</h3>
+      <h3 className={styles.heading}>Your team: {team.name}</h3>
       <ul>
         {participants.map(participant => (
           <li key={participant.email}>{participant.name}</li>
@@ -56,10 +57,21 @@ async function TeamView({ participant }: { participant: Participant }) {
             <div className={teamPageStyles["form-buttons-wrapper"]}>
               <form action={leaveTeamServerAction}>
                 <input type="hidden" name="email" value={participant.email} />
-                <Button type="submit">Leave team</Button>
+                <Button type="submit" style="secondary">Leave team</Button>
               </form>
             </div>
       }
+      <p>You can update your team&apos;s name if you&apos;d like:</p>
+      <Spacer size={8} />
+      <div className={teamPageStyles["form-buttons-wrapper"]}>
+        <form action={updateTeamNameServerAction}>
+          <input type="hidden" name="id" value={team.id} />
+          <input type="text" name="name" placeholder="Team name" />
+          <Spacer size={24} />
+          <Button type="submit" style="secondary">Update team name</Button>
+        </form>
+      </div>
+      <Spacer size={32} />
     </>
   )
 }

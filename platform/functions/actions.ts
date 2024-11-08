@@ -2,7 +2,7 @@
 
 import { acceptInvite, cancelInvite, declineInvite, sendInvite } from "@/functions/db/invite"
 import { createParticipant, getParticipantByEmail } from "@/functions/db/participant"
-import { removeParticipantFromTeam } from "@/functions/db/team"
+import { removeParticipantFromTeam, updateTeamName } from "@/functions/db/team"
 import { GraduatingClass } from "@prisma/client"
 import { revalidatePath } from "next/cache"
 import { redirect } from "next/navigation"
@@ -105,5 +105,18 @@ export async function leaveTeamServerAction(formData: FormData) {
     return null
 
   await removeParticipantFromTeam(participant.email)
+  revalidatePath("/console/team")
+}
+
+export async function updateTeamNameServerAction(formData: FormData) {
+  const idField = formData.get("id")
+  const nameField = formData.get("name")
+  if (!idField || !nameField)
+    return null
+
+  const id = idField.toString()
+  const name = nameField.toString()
+
+  await updateTeamName(id, name)
   revalidatePath("/console/team")
 }
