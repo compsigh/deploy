@@ -1,5 +1,5 @@
 import prisma from "@/functions/db"
-import { ProjectType } from "@prisma/client"
+import { type ProjectType } from "@prisma/client"
 
 /**
  * Get a project by ID.
@@ -13,6 +13,9 @@ export async function getProjectById(id: string | undefined) {
   return await prisma.project.findUnique({
     where: {
       id
+    },
+    include: {
+      evaluations: true
     }
   })
 }
