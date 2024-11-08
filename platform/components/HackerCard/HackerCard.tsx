@@ -28,7 +28,7 @@ export async function HackerCard({ user }: { user: User }) {
         <div className={styles["team-bar"]}>
           {
             teamName
-              ? <h3 className={styles["team-name"]}>{"a really long team name for the one time"}</h3>
+              ? <h3 className={styles["team-name"]}>{teamName}</h3>
               : <h3 className={styles["team-name"]}>Team TBD</h3>
           }
         </div>

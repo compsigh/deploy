@@ -338,10 +338,10 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Registration
 - [x] Team formation
 - [ ] Project submission
-- [ ] Project evaluation
+- [/] Project evaluation
 - [ ] People's Choice vote
 - [ ] Scoreboard logic
-- [ ] Attendance API
+- [x] Attendance/Presentation API
 
 ## Other
 

@@ -66,7 +66,12 @@ async function TeamView({ participant }: { participant: Participant }) {
       <div className={teamPageStyles["form-buttons-wrapper"]}>
         <form action={updateTeamNameServerAction}>
           <input type="hidden" name="id" value={team.id} />
-          <input type="text" name="name" placeholder="Team name" />
+          <input
+            type="text"
+            name="name"
+            placeholder={`${participant.name.split(" ")[0]}'s team`}
+            maxLength={18}
+          />
           <Spacer size={24} />
           <Button type="submit" style="secondary">Update team name</Button>
         </form>

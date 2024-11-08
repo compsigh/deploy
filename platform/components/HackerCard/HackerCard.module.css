@@ -40,20 +40,18 @@ h3.name {
 }
 
 .team-bar {
-  margin-top: 20px;
-  width: 100%;
-  min-height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  min-height: 48px;
   padding: 12px;
+  margin-top: 20px;
   background-color: var(--color-light);
 }
 
 h3.team-name {
   color: var(--color-dark);
-  position: relative;
-  top: 50%;
 }
 
 .teammates {

@@ -3,7 +3,7 @@
   "author": "compsigh",
   "bugs": "https://github.com/compsigh/deploy/issues",
   "homepage": "https://deploy.compsigh.club",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "license": "UNLICENSED",
   "description": "Web platform for DEPLOY, the annual Fall hackathon of compsigh — the social computer science club at the University of San Francisco for meeting cool people && building cool things",
   "repository": {
