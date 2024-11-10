@@ -80,19 +80,19 @@ Some ideas for this year's prizes:
 
 First place:
 
-- Automatic approval for $500 microgrant from the E&I IDEA Initiative
-- Discord Nitro
-- A semester's worth ChatGPT Plus subscription
-- Trophies
+- Custom-made trophies for all team members
+- A year of Discord Nitro for all team members
+- A semester of ChatGPT Plus for all team members
+- Automatic approval for $500 microgrant from the Entrepreneurship & Innovation IDEA Initiative
 
 Second place:
 
-- Automatic approval for $500 microgrant from the E&I IDEA Initiative
-- Discord Nitro
+- A year of Discord Nitro for all team members
+- Automatic approval for $500 microgrant from the Entrepreneurship & Innovation IDEA Initiative
 
 Third place:
 
-- Automatic approval for $500 microgrant from the E&I IDEA Initiative
+- Automatic approval for $500 microgrant from the Entrepreneurship & Innovation IDEA Initiative
 
 ### Trophy
 

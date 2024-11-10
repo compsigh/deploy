@@ -161,7 +161,38 @@ export default async function Home() {
 
         <section>
           <h2>Prizes</h2>
-          <p>TBA :)</p>
+          <table>
+            <tbody>
+              <tr>
+                <td style={{ width: 160 }}>First place</td>
+                <td>
+                  <ul>
+                    <li>Custom-made trophies for all team members</li>
+                    <li>A year of Discord Nitro for all team members</li>
+                    <li>A semester of ChatGPT Plus for all team members</li>
+                    <li>Automatic approval for $500 microgrant from the Entrepreneurship &amp; Innovation IDEA Initiative</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td style={{ width: 160 }}>Second place</td>
+                <td>
+                  <ul>
+                    <li>A year of Discord Nitro for all team members</li>
+                    <li>Automatic approval for $500 microgrant from the Entrepreneurship &amp; Innovation IDEA Initiative</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td style={{ width: 160 }}>Third place</td>
+                <td>
+                  <ul>
+                    <li>Automatic approval for $500 microgrant from the Entrepreneurship &amp; Innovation IDEA Initiative</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </section>
 
         <section>
