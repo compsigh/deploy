@@ -1,47 +1,65 @@
 // Next
 import { redirect } from "next/navigation"
-import Script from "next/script"
 
 // Auth
 import { auth } from "@/auth"
-import { checkAuth } from "@/functions/user-management"
-
-// Components
-import { ParamValidator } from "@/components/ParamValidator"
+import { checkAuth, isJudge } from "@/functions/user-management"
 
 // Functions
-import { getJudgeByEmail } from "@/functions/db/judge"
+import { getTeamById } from "@/functions/db/team"
+import { getAllProjects, getProjectById } from "@/functions/db/project"
+
+// Components
+import Link from "next/link"
+import { PlayH1 } from "@/components/PlayH1"
+
+// Styles
+import styles from "@/app/console/Page.module.css"
+
+async function getProjectTeamName(projectId: string) {
+  const project = await getProjectById(projectId)
+  if (!project)
+    throw new Error("Project not found")
+  const team = await getTeamById(project.teamId)
+  if (!team)
+    throw new Error("Team not found")
+  return team.name
+}
 
 export default async function ProjectEvaluation() {
   const session = await auth()
-  const user = checkAuth(session)
   if (!session)
     redirect("/")
-  if (!user)
+  const authed = checkAuth(session)
+  if (!authed)
     redirect("/console/unauthorized")
-
-  const judge = await getJudgeByEmail(user.email)
+  const user = authed
+  const judge = isJudge(user)
   if (!judge)
     redirect("/console")
 
+  const projects = await getAllProjects()
   return (
     <>
-      <ParamValidator
-        expect={{
-          firstName: user.name.split(" ")[0],
-          lastName: user.name.split(" ")[1],
-          email: user.email
-        }}
-        redirect="/console"
-      />
-      <Script async src="https://tally.so/widgets/embed.js" />
-      <iframe
-        data-tally-src="https://tally.so/embed/mZ29ja?transparentBackground=1&dynamicHeight=1"
-        loading="lazy"
-        width="100%"
-        height="300"
-        title="DEPLOY/23 Project Evaluation"
-      ></iframe>
+      <main className={styles.main}>
+        <PlayH1>Welcome, Judge</PlayH1>
+        <h2 className={styles.heading}>Project Evaluations</h2>
+        <p>Welcome judges! Once we get going, a team presents for five minutes, judges ask questions for two minutes, then we open it up to the audience for two minutes — after which judges submit their evaluation for that team.</p>
+        <p>Rinse and repeat.</p>
+        <p>Please note you can&apos;t edit an evaluation after you submit it, so be sure!</p>
+        <h3 className={styles.heading}>Reviewable projects</h3>
+        <ul>
+          {projects.map(project => {
+            const team = getProjectTeamName(project.id)
+            return (
+            <li key={project.id}>
+              <Link href={`/console/evaluate/${project.id}`}>{project.name}</Link>
+              <br />
+              <small>Team {team}</small>
+            </li>
+          )})}
+        </ul>
+      </main>
     </>
   )
 }

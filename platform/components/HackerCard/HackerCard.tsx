@@ -1,19 +1,21 @@
-import { type User } from "@/functions/user-management"
+import { isJudge, type User } from "@/functions/user-management"
 import { getTeamById } from "@/functions/db/team"
 import { getParticipantByEmail } from "@/functions/db/participant"
-import { getAllJudges, getJudgeByEmail } from "@/functions/db/judge"
 
 import styles from "./HackerCard.module.css"
 
 export async function HackerCard({ user }: { user: User }) {
-  const judge = await getJudgeByEmail(user.email)
+  const judge = isJudge(user)
   const participant = await getParticipantByEmail(user.email)
   if (!judge && !participant)
     return null
   const name = user.name
   const team = await getTeamById(participant?.teamId)
-  const teamName = (judge && "Judge") || team?.name || `${name.split(" ")[0]}'s Team`
-  const teammates = (judge && (await getAllJudges()).filter(judge => judge.email !== user.email))
+  const teamName = (judge && "Judges") || team?.name || `${name.split(" ")[0]}'s Team`
+  const teammates = (judge &&
+                      ["Greg Benson", "Paul Haskell", "Chris Brooks", "Phil Peterson", "Mehmet Emre", "John Cromwell", "Edward Shturman"]
+                      .filter(judgeName => judgeName !== name)
+                      .map(judgeName => ({ name: judgeName })))
                   || team?.participants.filter(participant => participant.email !== user.email)
 
   return (
@@ -41,7 +43,7 @@ export async function HackerCard({ user }: { user: User }) {
             teammates && teammates.length > 0
               ?
                 teammates.map(teammate => (
-                  <li key={teammate.email}>
+                  <li key={teammate.name}>
                     {teammate.name}
                   </li>
                 ))

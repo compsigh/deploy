@@ -31,12 +31,6 @@ enum ProjectType {
   OTHER
 }
 
-model Judge {
-  name        String
-  email       String       @id @unique
-  evaluations Evaluation[]
-}
-
 model Participant {
   name            String          @unique
   email           String          @id @unique
@@ -73,7 +67,7 @@ model Project {
 
 model Evaluation {
   id         String  @id @default(uuid())
-  judge      Judge   @relation(fields: [judgeEmail], references: [email])
+  judgeName  String
   judgeEmail String
   project    Project @relation(fields: [projectId], references: [id])
   projectId  String
@@ -82,4 +76,5 @@ model Evaluation {
   criterion3 Int
   criterion4 Int
   criterion5 Int
+  vibes      Int
 }

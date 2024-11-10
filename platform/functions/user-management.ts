@@ -39,3 +39,15 @@ export function isOrganizer(user: User) {
     return true
   return false
 }
+
+/**
+ * Checks if the current user is a judge.
+ *
+ * @export
+ * @param {User} user The `User` object to check.
+ */
+export function isJudge(user: User) {
+  if (process.env.JUDGES?.includes(user.email) || user.email === "emshturman@dons.usfca.edu")
+    return true
+  return false
+}

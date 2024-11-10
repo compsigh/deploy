@@ -19,6 +19,7 @@ import {
   declineInvite,
   sendInvite
 } from "@/functions/db/invite"
+import { createEvaluation } from "@/functions/db/evaluation"
 import { createProject, deleteProject } from "@/functions/db/project"
 
 function getGraduatingClass(graduatingClassField: string) {
@@ -210,4 +211,33 @@ export async function deleteProjectServerAction(formData: FormData) {
 
   await deleteProject(id)
   redirect("/console")
+}
+
+export async function evaluateProjectServerAction(formData: FormData) {
+  const idField = formData.get("id")
+  const judgeNameField = formData.get("judgeName")
+  const judgeEmailField = formData.get("judgeEmail")
+  const criterion1Field = formData.get("criterion1")
+  const criterion2Field = formData.get("criterion2")
+  const criterion3Field = formData.get("criterion3")
+  const criterion4Field = formData.get("criterion4")
+  const criterion5Field = formData.get("criterion5")
+  const vibesField = formData.get("vibes")
+
+  if (!idField || !judgeNameField || !judgeEmailField || !criterion1Field || !criterion2Field || !criterion3Field || !criterion4Field || !criterion5Field || !vibesField) {
+    return null
+  }
+
+  const id = idField.toString()
+  const judgeName = judgeNameField.toString()
+  const judgeEmail = judgeEmailField.toString()
+  const criterion1 = parseFloat(criterion1Field.toString())
+  const criterion2 = parseFloat(criterion2Field.toString())
+  const criterion3 = parseFloat(criterion3Field.toString())
+  const criterion4 = parseFloat(criterion4Field.toString())
+  const criterion5 = parseFloat(criterion5Field.toString())
+  const vibes = parseFloat(vibesField.toString())
+
+  await createEvaluation(id, judgeName, judgeEmail, criterion1, criterion2, criterion3, criterion4, criterion5, vibes)
+  redirect("/console/evaluate")
 }

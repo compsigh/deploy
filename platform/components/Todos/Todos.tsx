@@ -3,14 +3,13 @@ import Link from "next/link"
 import { get } from "@vercel/edge-config"
 
 // Auth
-import { isOrganizer, type User } from "@/functions/user-management"
+import { isJudge, isOrganizer, type User } from "@/functions/user-management"
 
 // Components
 import { Comment } from "@/components/Comment"
 
 // Functions
 import { getTeamById } from "@/functions/db/team"
-import { getJudgeByEmail } from "@/functions/db/judge"
 import { getProjectById } from "@/functions/db/project"
 import { getParticipantByEmail } from "@/functions/db/participant"
 
@@ -20,8 +19,8 @@ export async function Todos({ user }: { user: User }) {
   const projectSubmissionOpen = await get("projectSubmissionOpen")
   const peoplesChoiceVoteOpen = await get("peoplesChoiceVoteOpen")
 
-  const isJudge = await getJudgeByEmail(user.email)
-  if (isJudge) {
+  const judge = isJudge(user)
+  if (judge) {
     return (
       <>
         <ul>
