@@ -19,7 +19,7 @@ import {
   declineInvite,
   sendInvite
 } from "@/functions/db/invite"
-import { createEvaluation } from "@/functions/db/evaluation"
+import { createEvaluation, deleteEvaluation } from "@/functions/db/evaluation"
 import { createProject, deleteProject } from "@/functions/db/project"
 
 function getGraduatingClass(graduatingClassField: string) {
@@ -240,4 +240,15 @@ export async function evaluateProjectServerAction(formData: FormData) {
 
   await createEvaluation(id, judgeName, judgeEmail, criterion1, criterion2, criterion3, criterion4, criterion5, vibes)
   redirect("/console/evaluate")
+}
+
+export async function deleteEvaluationServerAction(formData: FormData) {
+  const idField = formData.get("id")
+  if (!idField)
+    return null
+
+  const id = idField.toString()
+
+  await deleteEvaluation(id)
+  revalidatePath("/console/evaluations")
 }

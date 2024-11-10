@@ -24,6 +24,20 @@ export async function getAllEvaluations() {
 }
 
 /**
+ * Get all evaluations for a project.
+ *
+ * @export
+ * @param {string} projectId The project ID.
+ */
+export async function getEvaluationsByProjectId(projectId: string) {
+  return await prisma.evaluation.findMany({
+    where: {
+      projectId
+    }
+  })
+}
+
+/**
  * Create a new evaluation.
  *
  * @export
@@ -71,6 +85,20 @@ export async function createEvaluation(
           id: evaluation.id
         }
       }
+    }
+  })
+}
+
+/**
+ * Delete an evaluation by ID.
+ *
+ * @export
+ * @param {string} id The evaluation ID.
+ */
+export async function deleteEvaluation(id: string) {
+  return await prisma.evaluation.delete({
+    where: {
+      id
     }
   })
 }

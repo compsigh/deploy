@@ -4,12 +4,15 @@ import { checkAuth, isOrganizer } from "@/functions/user-management"
 
 // Functions
 import { redirect } from "next/navigation"
+import { weigh } from "@/functions/scoreboard"
 import { getTeamById } from "@/functions/db/team"
 import { getProjectById } from "@/functions/db/project"
-import { getAllEvaluations } from "@/functions/db/evaluation"
+import { deleteEvaluationServerAction } from "@/functions/actions"
+import { getAllEvaluations, getEvaluationsByProjectId } from "@/functions/db/evaluation"
 
 // Components
 import Link from "next/link"
+import { Button } from "@/components/Button"
 
 // Styles
 import styles from "@/app/console/Page.module.css"
@@ -61,7 +64,10 @@ export default async function Evaluations() {
             <tr>
               <th>Participants</th>
               <th>Judge</th>
-              <th>Score</th>
+              <th>Evaluation score</th>
+              <th>Average score of all evaluations</th>
+              <th>Weighted score</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +80,12 @@ export default async function Evaluations() {
                 const team = await getTeamById(project.teamId)
                 if (!team)
                   throw new Error("Team not found")
+
+                const projectEvaluations = await getEvaluationsByProjectId(evaluation.projectId)
+                const totalScore = projectEvaluations.reduce((acc, evaluation) => acc + evaluation.criterion1 + evaluation.criterion2 + evaluation.criterion3 + evaluation.criterion4 + evaluation.criterion5 + evaluation.vibes, 0)
+                const averageScore = totalScore / projectEvaluations.length
+                const weightedScore = await weigh(team.id, averageScore)
+
                 return (
                 <tr key={evaluation.id}>
                   <td>
@@ -84,6 +96,14 @@ export default async function Evaluations() {
                   </td>
                   <td>
                     {evaluation.criterion1 + evaluation.criterion2 + evaluation.criterion3 + evaluation.criterion4 + evaluation.criterion5 + evaluation.vibes}
+                  </td>
+                  <td>{averageScore}</td>
+                  <td>{weightedScore}</td>
+                  <td>
+                    <form action={deleteEvaluationServerAction}>
+                      <input type="hidden" name="id" value={evaluation.id} />
+                      <Button type="submit" style="secondary">Delete</Button>
+                    </form>
                   </td>
                 </tr>
               )})
