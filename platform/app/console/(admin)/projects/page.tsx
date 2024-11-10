@@ -15,7 +15,7 @@ import { Button } from "@/components/Button"
 // Styles
 import styles from "@/app/console/Page.module.css"
 
-async function TeamList({ teamId }: { teamId: string }) {
+async function TeamMembersList({ teamId }: { teamId: string }) {
   const team = await getTeamById(teamId)
   if (!team)
     throw new Error("Project is not associated with a team")
@@ -79,7 +79,7 @@ export default async function CheckIn() {
                       <small>{project.type}</small>
                     </td>
                     <td>
-                      <TeamList teamId={project.teamId} />
+                      <TeamMembersList teamId={project.teamId} />
                     </td>
                     <td style={{ maxWidth: 400 }}>{project.notes}</td>
                     <td>{project.song}</td>
