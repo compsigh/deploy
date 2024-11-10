@@ -47,7 +47,7 @@ export function isOrganizer(user: User) {
  * @param {User} user The `User` object to check.
  */
 export function isJudge(user: User) {
-  if (process.env.JUDGES?.includes(user.email) || user.email === "emshturman@dons.usfca.edu")
+  if (process.env.JUDGES?.includes(user.email))
     return true
   return false
 }
