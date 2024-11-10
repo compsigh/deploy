@@ -74,3 +74,16 @@ export async function createProject(
 
   return project
 }
+
+/**
+ * Delete a project by ID.
+ *
+ * @export
+ */
+export async function deleteProject(id: string) {
+  return await prisma.project.delete({
+    where: {
+      id
+    }
+  })
+}

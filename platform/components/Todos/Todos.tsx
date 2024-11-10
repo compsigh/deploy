@@ -135,6 +135,9 @@ export async function Todos({ user }: { user: User }) {
               <li>
                 <Link href="/console/checkin">Check in participants</Link>
               </li>
+              <li>
+                <Link href="/console/projects">View submitted projects</Link>
+              </li>
             </ul>
       }
       <ul>

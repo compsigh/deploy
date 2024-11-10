@@ -19,7 +19,7 @@ import {
   declineInvite,
   sendInvite
 } from "@/functions/db/invite"
-import { createProject } from "@/functions/db/project"
+import { createProject, deleteProject } from "@/functions/db/project"
 
 function getGraduatingClass(graduatingClassField: string) {
   switch (graduatingClassField) {
@@ -198,5 +198,16 @@ export async function submitProjectServerAction(formData: FormData) {
   const song = songField?.toString()
 
   await createProject(teamId, name, type, link, notes, song)
+  redirect("/console")
+}
+
+export async function deleteProjectServerAction(formData: FormData) {
+  const idField = formData.get("id")
+  if (!idField)
+    return null
+
+  const id = idField.toString()
+
+  await deleteProject(id)
   redirect("/console")
 }
