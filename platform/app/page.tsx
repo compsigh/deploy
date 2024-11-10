@@ -178,7 +178,7 @@ export default async function Home() {
               </tr>
               <tr>
                 <td style={{ width: 120 }}>06:30pm</td>
-                <td>Opening Keynote</td>
+                <td>Opening keynote</td>
               </tr>
               <tr>
                 <td style={{ width: 120 }}>07:00pm</td>
@@ -198,12 +198,8 @@ export default async function Home() {
           <table>
             <tbody>
               <tr>
-                <td style={{ width: 120 }}>TBA</td>
-                <td>Office hours: design jam</td>
-              </tr>
-              <tr>
-                <td style={{ width: 120 }}>TBA</td>
-                <td>Office hours: how to kill it at presentations</td>
+                <td style={{ width: 120 }}>11:00am – 04:00pm</td>
+                <td>Office hours: chill social, light lunch, and getting help/advice from organizers/other teams on React &amp; Next.js, design, presentations, and other topics of interest</td>
               </tr>
             </tbody>
           </table>
@@ -232,7 +228,7 @@ export default async function Home() {
               </tr>
               <tr>
                 <td style={{ width: 120 }}>04:00pm</td>
-                <td>Closing Keynote; results announced</td>
+                <td>Closing keynote; results announced</td>
               </tr>
             </tbody>
           </table>
@@ -250,7 +246,7 @@ export default async function Home() {
           </ul>
         </section>
 
-        <section className={styles.resources}>
+        <section>
           <h2>Resources</h2>
           <p>Whether it&apos;s your first-ever hackathon, or you&apos;re a seasoned hacker, we hope you&apos;ll enjoy the event! To get the most out of the experience, here are some pieces of advice compsigh members have contributed:</p>
           <blockquote>

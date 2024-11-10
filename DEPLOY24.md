@@ -17,13 +17,13 @@ We want to have as many CS faculty members as possible this year.
 
 A checkbox (`[x]`) means the professor has agreed. Partially checked (`[/]`) means they've been asked but are checking their schedule or something and will get back to us. Crossed (`[-]`) means they are unavailable. Not checked (`[ ]`) means we haven't asked.
 
-- [/] Julia Nolfo
 - [x] Greg Benson
 - [x] Paul Haskell
 - [x] Chris Brooks
 - [x] Phil Peterson
 - [x] Mehmet Emre
 - [x] John Cromwell
+- [-] Julia Nolfo
 - [-] Sophie Engle
 - [-] Olga Karpenko
 
@@ -323,6 +323,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 ### Saturday, November 9th
 
+- 11:00am: Office hours — chill social, light lunch, and getting help/advice from organizers/other teams on React & Next.js, design, presentations, and other topics of interest
 
 ### Sunday, November 10th
 
@@ -337,7 +338,7 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 
 - [x] Registration
 - [x] Team formation
-- [ ] Project submission
+- [x] Project submission
 - [/] Project evaluation
 - [ ] People's Choice vote
 - [ ] Scoreboard logic
@@ -348,8 +349,8 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Figure out photo & video
   - Gursh on photos
   - John will reach out re: student videographers
-- [ ] Figure out ground team — who is checking people in, etc.
-- [ ] Opening keynote slides
+- [x] Figure out ground team — who is checking people in, etc.
+- [x] Opening keynote slides
   - [Slides from DEPLOY/23](https://www.notion.so/compsigh/Create-opening-keynote-slides-97dec247b5fa4ad4ab75ffcc3298a355)
 - [-] [Explainer video idea from DEPLOY/23](https://www.notion.so/compsigh/Explainer-8af12435af134c9eb560e542080ef5da)
 - [-] Merch
