@@ -66,7 +66,7 @@ export async function createProject(
     data: {
       project: {
         connect: {
-          id: teamId
+          id: project.id
         }
       }
     }
