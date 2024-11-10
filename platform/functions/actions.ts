@@ -1,5 +1,9 @@
 "use server"
 
+import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
+import { GraduatingClass, ProjectType } from "@prisma/client"
+
 import {
   checkInParticipant,
   createParticipant,
@@ -15,9 +19,7 @@ import {
   declineInvite,
   sendInvite
 } from "@/functions/db/invite"
-import { redirect } from "next/navigation"
-import { revalidatePath } from "next/cache"
-import { GraduatingClass } from "@prisma/client"
+import { createProject } from "@/functions/db/project"
 
 function getGraduatingClass(graduatingClassField: string) {
   switch (graduatingClassField) {
@@ -33,6 +35,31 @@ function getGraduatingClass(graduatingClassField: string) {
       return GraduatingClass.CO2024
     case "Masters":
       return GraduatingClass.MASTERS
+    default:
+      return null
+  }
+}
+
+function getProjectType(projectTypeField: string) {
+  switch (projectTypeField) {
+    case "mobile":
+      return ProjectType.MOBILE_APP
+    case "desktop":
+      return ProjectType.DESKTOP_APP
+    case "applet":
+      return ProjectType.APPLET
+    case "game":
+      return ProjectType.GAME
+    case "webapp":
+      return ProjectType.WEB_APP
+    case "website":
+      return ProjectType.WEBSITE
+    case "oss":
+      return ProjectType.OPEN_SOURCE_CONTRIBUTION
+    case "hardware":
+      return ProjectType.HARDWARE
+    case "other":
+      return ProjectType.OTHER
     default:
       return null
   }
@@ -148,4 +175,28 @@ export async function checkInParticipantServerAction(formData: FormData) {
 
   await checkInParticipant(participant.email, attended)
   revalidatePath("/console/checkin")
+}
+
+export async function submitProjectServerAction(formData: FormData) {
+  const teamIdField = formData.get("teamId")
+  const nameField = formData.get("name")
+  const typeField = formData.get("type")
+  const linkField = formData.get("link")
+  const notesField = formData.get("notes")
+  const songField = formData.get("song")
+
+  if (!teamIdField || !nameField || !typeField || !linkField)
+    return null
+
+  const teamId = teamIdField.toString()
+  const name = nameField.toString()
+  const type = getProjectType(typeField.toString())
+  if (!type)
+    return null
+  const link = linkField.toString()
+  const notes = notesField?.toString()
+  const song = songField?.toString()
+
+  await createProject(teamId, name, type, link, notes, song)
+  redirect("/console")
 }

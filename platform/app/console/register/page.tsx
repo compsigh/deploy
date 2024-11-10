@@ -17,12 +17,11 @@ import styles from "@/app/console/Page.module.css"
 
 export default async function ParticipantRegistration() {
   const session = await auth()
-  const user = checkAuth(session)
   if (!session)
     redirect("/")
+  const user = checkAuth(session)
   if (!user)
     redirect("/console/unauthorized")
-
   const registered = await getParticipantByEmail(user.email)
   if (registered)
     redirect("/console")

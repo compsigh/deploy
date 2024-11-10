@@ -1,0 +1,16 @@
+.main > form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.main > form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main > form > div > div > p {
+  margin: 0;
+  color: var(--color-light-50);
+}

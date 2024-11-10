@@ -105,7 +105,8 @@ li.back::before {
 }
 
 input,
-select {
+select,
+textarea {
   font-size: 1rem;
   padding: 0.5em 1em;
   background-color: var(--color-dark);
@@ -113,7 +114,8 @@ select {
   border: 2px solid var(--color-light);
 }
 
-input {
+input,
+textarea {
   font-family: var(--font-body);
 }
 
