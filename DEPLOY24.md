@@ -108,7 +108,7 @@ Engraved on one of the top faces is:
 We want the trophy cast in metal if possible; if not, 3D printed.
 
 - [x] Trophy vector design
-- [ ] Order build
+- [-] Order build (3D printed by Jet)
 
 ## Sponsors
 
@@ -340,8 +340,8 @@ See the **Catering** page on the Expenses Google Sheet for vendors and associate
 - [x] Team formation
 - [x] Project submission
 - [x] Project evaluation
-- [ ] People's Choice vote
-- [ ] Scoreboard logic
+- [x] Scoreboard logic
+- [x] People's Choice vote
 - [x] Attendance/Presentation API
 
 ## Other
