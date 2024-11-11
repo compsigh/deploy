@@ -11,6 +11,7 @@ import { Comment } from "@/components/Comment"
 // Functions
 import { getTeamById } from "@/functions/db/team"
 import { getProjectById } from "@/functions/db/project"
+import { getVoteByParticipantEmail } from "@/functions/db/vote"
 import { getParticipantByEmail } from "@/functions/db/participant"
 
 export async function Todos({ user }: { user: User }) {
@@ -40,6 +41,7 @@ export async function Todos({ user }: { user: User }) {
   const participant = await getParticipantByEmail(user.email)
   const team = await getTeamById(participant?.teamId)
   const hasSubmitted = await getProjectById(team?.project?.id)
+  const hasVoted = await getVoteByParticipantEmail(user.email)
 
   return (
     <>
@@ -110,14 +112,10 @@ export async function Todos({ user }: { user: User }) {
                 Vote for People&apos;s Choice <Comment type="inline">open after presentations</Comment>
               </li>
         }
-        {/* {
+        {
           peoplesChoiceVoteOpen && participant && team && !hasVoted &&
             <li className="fade">
-              <Button
-                text="Vote for People&apos;s Choice"
-                type="link"
-                destination={`/vote?participant_email=${user.email}&teamname=${teamName}`}
-              />
+              <Link href="/console/vote">Vote for People&apos;s Choice</Link>
             </li>
         }
         {
@@ -125,7 +123,7 @@ export async function Todos({ user }: { user: User }) {
             <li style={{ color: "var(--color-light-50)" }}>
               You&apos;ve voted             <Comment type="inline">thanks for participating</Comment>
             </li>
-        } */}
+        }
       </ul>
       {
         isOrganizer(user)
@@ -139,6 +137,12 @@ export async function Todos({ user }: { user: User }) {
               </li>
               <li>
                 <Link href="/console/projects">View submitted projects</Link>
+              </li>
+              <li>
+                <Link href="/console/evaluations">View project evaluations</Link>
+              </li>
+              <li>
+                <Link href="/console/votes">View People&apos;s Choice votes</Link>
               </li>
             </ul>
       }

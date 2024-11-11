@@ -78,3 +78,9 @@ model Evaluation {
   criterion5 Int
   vibes      Int
 }
+
+model Vote {
+  id               String @id @default(uuid())
+  participantEmail String
+  projectId        String
+}

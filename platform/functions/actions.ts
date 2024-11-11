@@ -19,8 +19,9 @@ import {
   declineInvite,
   sendInvite
 } from "@/functions/db/invite"
-import { createEvaluation, deleteEvaluation } from "@/functions/db/evaluation"
 import { createProject, deleteProject } from "@/functions/db/project"
+import { createVote, getVoteByParticipantEmail } from "@/functions/db/vote"
+import { createEvaluation, deleteEvaluation } from "@/functions/db/evaluation"
 
 function getGraduatingClass(graduatingClassField: string) {
   switch (graduatingClassField) {
@@ -251,4 +252,22 @@ export async function deleteEvaluationServerAction(formData: FormData) {
 
   await deleteEvaluation(id)
   revalidatePath("/console/evaluations")
+}
+
+export async function createVoteServerAction(formData: FormData) {
+  const projectIdField = formData.get("projectId")
+  const participantEmailField = formData.get("participantEmail")
+
+  if (!projectIdField || !participantEmailField)
+    return null
+
+  const projectId = projectIdField.toString()
+  const participantEmail = participantEmailField.toString()
+
+  const hasVoted = await getVoteByParticipantEmail(participantEmail)
+  if (hasVoted)
+    return null
+
+  await createVote(projectId, participantEmail)
+  redirect("/console")
 }
