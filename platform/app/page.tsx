@@ -306,7 +306,7 @@ export default async function Home() {
           <div className={styles["status-indicator-wrapper"]}>
             <StatusIndicator />
           </div>
-          <p>DEPLOY Platform v2.8.0 • <Link href="https://github.com/compsigh/deploy">Source Code</Link> • <Link href="https://compsigh.club/docs/code-of-conduct">compsigh Code of Conduct</Link></p>
+          <p>DEPLOY Platform v2.8.1 • <Link href="https://github.com/compsigh/deploy">Source Code</Link> • <Link href="https://compsigh.club/docs/code-of-conduct">compsigh Code of Conduct</Link></p>
         </div>
       </footer>
     </main>
