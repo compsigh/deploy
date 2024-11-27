@@ -28,6 +28,9 @@ export async function Todos({ user }: { user: User }) {
           <li className="fade">
             <Link href="/console/evaluate">Evaluate a project</Link>
           </li>
+          <li>
+            <Link href="/console/participants">View all participants</Link>
+          </li>
         </ul>
         <ul>
           <li className="back">
@@ -125,10 +128,14 @@ export async function Todos({ user }: { user: User }) {
             </li>
         }
       </ul>
+
       {
         isOrganizer(user)
           &&
             <ul>
+              <li>
+                <Link href="/console/participants">View all participants</Link>
+              </li>
               <li>
                 <Link href="/console/checkin">Check in participants</Link>
               </li>
@@ -146,6 +153,7 @@ export async function Todos({ user }: { user: User }) {
               </li>
             </ul>
       }
+
       <ul>
         <li>
           <Link href="https://calndr.link/event/HPLPX7Si10">Add to calendar</Link>
