@@ -80,3 +80,11 @@ created: 2024-11-13
 
 - Team formation UI needs to go up early
 - Some sort of "team queue" for solos
+
+## Live stream
+
+Ideas for next year re: live-streaming DEPLOY/25:
+
+- "The desk" — hosts; commentary on presentations during intermissions
+- Opening night getting people hyped and interviewing them on what they expect to happen
+- Good for club exposure and memories :)
